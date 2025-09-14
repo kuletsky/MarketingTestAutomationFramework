@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Desktop Suite" parallel="methods" thread-count="5">
+    <test name="Desktop tests">
+        <groups>
+            <run>
+                <include name="desktop"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.empower"/>
+        </packages>
+    </test>
+</suite>

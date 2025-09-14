@@ -1,0 +1,44 @@
+name: Desktop tests via BrowserStack
+
+on:
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 4,6,8 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    name: 'Run tests on BrowserStack'
+    runs-on: ubuntu-latest
+    env:
+      BROWSERSTACK_CONFIG_FILE: browserstack-desktop.yml
+
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v4
+
+      - name: Write browserstack.yml from secret
+        run: |
+          # Write the exact secret contents to a file (no extra newline)
+          printf '%s' "${{ secrets.BROWSERSTACK_YML }}" > browserstack-desktop.yml
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: '21'
+
+      - name: Install dependencies
+        run: mvn -B -q -DskipTests package
+
+      - name: Run Desktop suite on BrowserStack
+        run: mvn -B test -Pdesktop-test
+
+      - name: Attach screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: desktop
+          path: ${{ github.workspace }}/screenshots

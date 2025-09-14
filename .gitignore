@@ -1,0 +1,35 @@
+*.png
+target/
+local.log
+.idea
+*.iml
+.gradle
+build
+.DS_Store
+gradle
+gradlew
+gradlew.bat
+logs
+log
+*.log
+
+browserstack.err
+README.md
+.properties
+browserstack.yml
+browserstack-desktop.yml
+browserstack-mobile.yml
+browserstack-tablet.yml
+
+# Allure results and report directories
+allure-results/
+allure-report/
+
+### utils ###
+generate-report.sh
+/generate-report.sh
+
+### BrowserStack###
+log/
+logs/
+

@@ -19,28 +19,28 @@ framework: testng
 # =======================================
 # Platforms object contains all the browser / device combinations you want to test on.
 # Entire list available here -> (https://www.browserstack.com/list-of-browsers-and-platforms/automate)
-platforms:
-  - os: Windows
-    osVersion: 10
-    browserName: Chrome
-    browserVersion: latest
-    goog:chromeOptions:
-      args:
-        - "--window-size=1920,1080"
-    bstack:options:
-      resolution: 1920x1080
-      idleTimeout: 120
-      headerParams: '{"Authorization":"Basic ${STAGE_AUTH_HEADER}"}'
-  - os: OS X
-    osVersion: Sonoma
-    browserName: Safari
-    browserVersion: latest
-    bstack:options:
-      resolution: 1920x1080
-      idleTimeout: 120
-      headerParams: '{"Authorization":"Basic ${STAGE_AUTH_HEADER}"}'
-
-resolution: 1920x1080
+#platforms:
+#  - os: Windows
+#    osVersion: 10
+#    browserName: Chrome
+#    browserVersion: latest
+#    goog:chromeOptions:
+#      args:
+#        - "--window-size=1920,1080"
+#    bstack:options:
+#      resolution: 1920x1080
+#      idleTimeout: 120
+#      headerParams: '{"Authorization":"Basic ${STAGE_AUTH_HEADER}"}'
+#  - os: OS X
+#    osVersion: Sonoma
+#    browserName: Safari
+#    browserVersion: latest
+#    bstack:options:
+#      resolution: 1920x1080
+#      idleTimeout: 120
+#      headerParams: '{"Authorization":"Basic ${STAGE_AUTH_HEADER}"}'
+#
+#resolution: 1920x1080
 # =======================
 # Parallels per Platform
 # =======================

@@ -30,6 +30,12 @@ jobs:
           distribution: 'corretto'
           java-version: '21'
 
+      - name: Set up BrowserStack env
+        uses: browserstack/github-actions/setup-env@master
+        with:
+          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+
       - name: Install dependencies
         run: mvn -B -q -DskipTests package
 

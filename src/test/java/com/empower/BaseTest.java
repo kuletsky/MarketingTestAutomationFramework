@@ -5,9 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-//import static com.empower.BaseTest.loadProps;
-//import static java.lang.Thread.sleep;
-
 public class BaseTest {
     public WebDriver driver;
 

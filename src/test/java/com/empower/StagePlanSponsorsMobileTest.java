@@ -116,7 +116,7 @@ public class StagePlanSponsorsMobileTest extends BaseTest{
     @Test(groups = {"mobile", "tablet"})
     public void testOpenMenuSolutionsDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
-                "Total retirement solutions",
+                "Integrated workplace solutions",
                 "Advisory services",
                 "Retirement solutions",
                 "Defined contribution plans",

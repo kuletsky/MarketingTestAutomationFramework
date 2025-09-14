@@ -77,17 +77,6 @@
                     <argLine>
                         -javaagent:${com.browserstack:browserstack-java-sdk:jar}
                     </argLine>
-
-                    <forkCount>1</forkCount>
-                    <reuseForks>false</reuseForks>
-                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                    <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>
-
-                    <argLine>
-                        -javaagent:${com.browserstack:browserstack-java-sdk:jar}
-                        ${surefire.commonArgs}
-                    </argLine>
-
                 </configuration>
             </plugin>
 
@@ -117,13 +106,6 @@
                             <environmentVariables>
                                 <BROWSERSTACK_CONFIG_FILE>browserstack-desktop.yml</BROWSERSTACK_CONFIG_FILE>
                             </environmentVariables>
-
-
-                            <forkCount>1</forkCount>
-                            <reuseForks>false</reuseForks>
-                            <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>
-
                             <argLine>
                                 -javaagent:${com.browserstack:browserstack-java-sdk:jar}
                             </argLine>
@@ -147,12 +129,6 @@
                             <environmentVariables>
                                 <BROWSERSTACK_CONFIG_FILE>browserstack-mobile.yml</BROWSERSTACK_CONFIG_FILE>
                             </environmentVariables>
-
-                            <forkCount>1</forkCount>
-                            <reuseForks>false</reuseForks>
-                            <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>
-
                             <argLine>
                                 -javaagent:${com.browserstack:browserstack-java-sdk:jar}
                             </argLine>
@@ -176,12 +152,6 @@
                             <environmentVariables>
                                 <BROWSERSTACK_CONFIG_FILE>browserstack-tablet.yml</BROWSERSTACK_CONFIG_FILE>
                             </environmentVariables>
-
-                            <forkCount>1</forkCount>
-                            <reuseForks>false</reuseForks>
-                            <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>
-
                             <argLine>
                                 -javaagent:${com.browserstack:browserstack-java-sdk:jar}
                             </argLine>

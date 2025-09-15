@@ -1,11 +1,11 @@
-name: DESKTOP tests via BrowserStack
+name: MOBILE tests via BrowserStack
 
 on:
   pull_request:
     branches:
       - main
   schedule:
-    - cron: '0 5 * * *'
+    - cron: '0 7 * * *'
   workflow_dispatch:
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
     name: 'Run tests on BrowserStack'
     runs-on: ubuntu-latest
     env:
-      BROWSERSTACK_CONFIG_FILE: browserstack-desktop.yml
+      BROWSERSTACK_CONFIG_FILE: browserstack-mobile.yml
 
     steps:
       - name: Git clone
@@ -25,11 +25,11 @@ jobs:
 #          printf '%s' "${{ secrets.BROWSERSTACK_YML }}" > browserstack-desktop.yml
       
 
-      - name: Write browserstack-desktop.yml from secret
+      - name: Write browserstack-mobile.yml from secret
         env:
-          CONFIG_BS: ${{ secrets.BROWSERSTACK_DESKTOP }}
+          CONFIG_BS: ${{ secrets.BROWSERSTACK_MOBILE }}
         run: |
-          echo "$CONFIG_BS" > browserstack-desktop.yml
+          echo "$CONFIG_BS" > browserstack-mobile.yml
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -41,7 +41,7 @@ jobs:
         run: mvn -B -q -DskipTests package
 
       - name: Run Desktop suite on BrowserStack
-        run: mvn -B test -Pdesktop-test
+        run: mvn -B test -Pmobile-test
 
       - name: Attach screenshots
         if: failure()

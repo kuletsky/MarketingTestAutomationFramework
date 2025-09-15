@@ -19,22 +19,23 @@ jobs:
       - name: Git clone
         uses: actions/checkout@v4
 
+#      - name: Write browserstack.yml from secret
+#        run: |
+#          # Write the exact secret contents to a file (no extra newline)
+#          printf '%s' "${{ secrets.BROWSERSTACK_YML }}" > browserstack-desktop.yml
+      
+
       - name: Write browserstack.yml from secret
+        env:
+          CONFIG_BS: ${{ secrets.BROWSERSTACK_YML }}
         run: |
-          # Write the exact secret contents to a file (no extra newline)
-          printf '%s' "${{ secrets.BROWSERSTACK_YML }}" > browserstack-desktop.yml
+          echo "$CONFIG_BS" > browserstack-desktop.yml
 
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: 'corretto'
           java-version: '21'
-
-#      - name: Set up BrowserStack env
-#        uses: browserstack/github-actions/setup-env@master
-#        with:
-#          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
-#          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
 
       - name: Install dependencies
         run: mvn -B -q -DskipTests package

@@ -94,12 +94,15 @@ public class StageFinancialProfessionalsMobileTest extends BaseTest{
         List<String> expectedOpenMenu = Arrays.asList(
                 "Markets",
                 "Retirement products",
+                "Integrated workplace solutions",
                 "Participant experience",
                 "Fiduciary advice solutions",
                 "Retirement income solutions",
                 "Stock plan services",
                 "Empower benefit consulting services",
-                "Nonqualified plans"
+                "Nonqualified plans",
+                "Defined benefits plans",
+                "Consumer-directed health"
         );
         List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
                 .closeCookieBanner()

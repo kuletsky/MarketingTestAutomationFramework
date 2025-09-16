@@ -142,13 +142,13 @@ public class BasePage {
             wait10UntilClickable(button).click();
             Thread.sleep(2000);
 
-            new WebDriverWait(getDriver(), Duration.ofSeconds(10))
+            new WebDriverWait(getDriver(), Duration.ofSeconds(30))
                     .until(d -> "complete".equals(
                             ((JavascriptExecutor)d).executeScript("return document.readyState")
                     ));
 
         } catch (TimeoutException | InterruptedException e) {
-            System.out.println("Timeout after 10s — stopping page load.");
+            System.out.println("Timeout after 30s — stopping page load.");
             ((JavascriptExecutor) getDriver()).executeScript("window.stop();");
         } finally {
 //            try {

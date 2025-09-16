@@ -2,6 +2,7 @@ package com.empower;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -11,9 +12,14 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     @SuppressWarnings("unchecked")
     public void setUp() throws Exception {
-        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        driver.manage().window().setSize(new org.openqa.selenium.Dimension(1920, 1080));
+        ChromeOptions options = new ChromeOptions();
+
+        String dimension = System.getProperty("set.dimension");
+        if ("desktop".equals(dimension)) {
+            options.addArguments("start-maximized");
+        }
+
+        driver = new ChromeDriver(options);
         driver.get("https://empwrretiremtstg.prod.acquia-sites.com");
     }
 

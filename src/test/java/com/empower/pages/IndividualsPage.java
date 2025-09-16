@@ -52,7 +52,7 @@ public class IndividualsPage extends BasePage{
     @FindBy(xpath = "//button[text()='Products & Solutions']")
     private WebElement productsSolutionsMenu;
 
-    @FindBy(xpath = "//div[@id='solutions-dropdown'] //li[@class='relative']")
+    @FindBy(css = "#solutions-dropdown li.relative > a, #solutions-dropdown li.relative > button")
     private List<WebElement> productsSolutionsLinks;
 
     @FindBy(xpath = "//div[@class='opacity-100 col-start-1 row-start-1 content-center transition-opacity'] //p[text()='Products & solutions']")

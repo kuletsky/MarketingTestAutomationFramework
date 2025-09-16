@@ -86,7 +86,7 @@ public class FinancialProfessionalsPage extends BasePage{
 
 
     public FinancialProfessionalsLoginPage clickLoginButton() {
-        wait10UntilClickable(loginButton).click();
+        safeClick(loginButton);
         return new FinancialProfessionalsLoginPage(getDriver());
     }
 

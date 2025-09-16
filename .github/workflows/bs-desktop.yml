@@ -19,12 +19,6 @@ jobs:
       - name: Git clone
         uses: actions/checkout@v4
 
-#      - name: Write browserstack.yml from secret
-#        run: |
-#          # Write the exact secret contents to a file (no extra newline)
-#          printf '%s' "${{ secrets.BROWSERSTACK_YML }}" > browserstack-desktop.yml
-      
-
       - name: Write browserstack-desktop.yml from secret
         env:
           CONFIG_BS: ${{ secrets.BROWSERSTACK_DESKTOP }}
@@ -41,7 +35,7 @@ jobs:
         run: mvn -B -q -DskipTests package
 
       - name: Run Desktop suite on BrowserStack
-        run: mvn -B test -Pdesktop-test
+        run: mvn clean test -Pdesktop-test -Dset.resolution=desktop
 
       - name: Attach screenshots
         if: failure()

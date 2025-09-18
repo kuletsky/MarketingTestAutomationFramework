@@ -7,7 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
-    public WebDriver driver;
+    private WebDriver driver;
 
     @BeforeMethod(alwaysRun = true)
     @SuppressWarnings("unchecked")
@@ -28,7 +28,7 @@ public class BaseTest {
         driver.quit();
     }
 
-    WebDriver getDriver() {
+    public WebDriver getDriver() {
         return driver;
     }
 }

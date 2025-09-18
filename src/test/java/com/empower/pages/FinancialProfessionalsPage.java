@@ -176,7 +176,7 @@ public class FinancialProfessionalsPage extends BasePage{
         return wait10UntilVisibleAll(hamburgerOpenMenuSolutionsLinks)
                 .stream()
                 .map(WebElement::getText)
-                .map(String::trim)
+                .map(text -> text.replaceAll("[\\u200B-\\u200D\\uFEFF]", "").trim())
                 .toList();
     }
 

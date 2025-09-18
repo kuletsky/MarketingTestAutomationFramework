@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Desktop Suite" parallel="methods" thread-count="5">
-    <test name="Desktop tests">
+<suite name="Mobile Suite" parallel="methods" thread-count="5">
+    <test name="Mobile tests">
         <groups>
             <run>
                 <include name="mobile"/>

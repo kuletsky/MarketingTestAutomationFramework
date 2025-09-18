@@ -1,9 +1,9 @@
 name: MOBILE tests via BrowserStack
 
 on:
-  pull_request:
-    branches:
-      - main
+#  pull_request:
+#    branches:
+#      - main
   schedule:
     - cron: '0 4 * * *'
   workflow_dispatch:

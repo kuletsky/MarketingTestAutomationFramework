@@ -85,7 +85,6 @@
 
                     <argLine>
                         -javaagent:${com.browserstack:browserstack-java-sdk:jar}
-                        ${surefire.commonArgs}
                     </argLine>
 
                 </configuration>

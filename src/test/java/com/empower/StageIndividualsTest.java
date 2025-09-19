@@ -80,7 +80,7 @@ public class StageIndividualsTest extends BaseTest{
         Assert.assertTrue(page.isNewUrl("https://empwrretiremtstg.prod.acquia-sites.com/"));
     }
 
-    @Test(groups = {"desktop", "tablet"})
+    @Test(groups = {"desktop"})
     public void testScrollingHeaderDown() {
         BasePage basePage = new IndividualsPage(getDriver())
                 .closeCookieBanner()
@@ -89,7 +89,7 @@ public class StageIndividualsTest extends BaseTest{
         Assert.assertTrue(basePage.isHeaderShrink());
     }
 
-    @Test(groups = {"desktop", "tablet"})
+    @Test(groups = {"desktop"})
     public void testScrollingHeaderDownThenUp() {
         BasePage basePage = new IndividualsPage(getDriver())
                 .closeCookieBanner()

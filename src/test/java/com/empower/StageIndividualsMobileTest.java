@@ -135,7 +135,7 @@ public class StageIndividualsMobileTest extends BaseTest {
         Assert.assertTrue(page.isNewUrl("onboarding-v2"));
     }
 
-    @Test(groups = {"mobile"})
+    @Test(groups = {"mobile", "tablet"})
     public void testMobileScrollingHeaderDown() {
         BasePage basePage = new IndividualsPage(getDriver())
                 .closeCookieBanner()
@@ -144,7 +144,7 @@ public class StageIndividualsMobileTest extends BaseTest {
         Assert.assertTrue(basePage.isMobileHeaderShrink());
     }
 
-    @Test(groups = {"mobile"})
+    @Test(groups = {"mobile", "tablet"})
     public void testMobileScrollingHeaderDownThenUp() {
         BasePage basePage = new IndividualsPage(getDriver())
                 .closeCookieBanner()

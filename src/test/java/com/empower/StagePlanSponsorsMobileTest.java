@@ -202,7 +202,7 @@ public class StagePlanSponsorsMobileTest extends BaseTest{
         Assert.assertEquals(actualOpenMenuLinks, expectedOpenMenu);
     }
 
-    @Test(groups = {"mobile"})
+    @Test(groups = {"mobile", "tablet"})
     public void testMobileScrollingHeaderDown() {
         BasePage basePage = new IndividualsPage(getDriver())
                 .closeCookieBanner()
@@ -215,7 +215,7 @@ public class StagePlanSponsorsMobileTest extends BaseTest{
         Assert.assertTrue(basePage.isMobileHeaderShrink());
     }
 
-    @Test(groups = {"mobile"})
+    @Test(groups = {"mobile", "tablet"})
     public void testMobileScrollingHeaderDownThenUp() {
         BasePage basePage = new IndividualsPage(getDriver())
                 .closeCookieBanner()
@@ -228,30 +228,31 @@ public class StagePlanSponsorsMobileTest extends BaseTest{
         Assert.assertTrue(basePage.isMobileHeaderExpand());
     }
 
-    @Test(groups = {"tablet"})
-    public void testScrollingHeaderDown() {
-        BasePage basePage = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
-                .scrollToBottom();
-
-        Assert.assertTrue(basePage.isHeaderShrink());
-    }
-
-    @Test(groups = {"tablet"})
-    public void testScrollingHeaderDownThenUp() {
-        BasePage basePage = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
-                .scrollToBottom()
-                .scrollToUp();
-
-        Assert.assertTrue(basePage.isHeaderExpand());
-    }
+//    @Test(groups = {"tablet"})
+//    public void testScrollingHeaderDown() {
+//        BasePage basePage = new IndividualsPage(getDriver())
+//                .closeCookieBanner()
+//                .getMobileHeader()
+//                .clickHamburgerMenuIndividuals()
+//                .clickPlanSponsorsMenu()
+//                .closeCookieBanner()
+//                .scrollToBottom();
+//
+//        Assert.assertTrue(basePage.isMobileHeaderExpand());
+//    }
+//
+//    @Test(groups = {"tablet"})
+//    public void testScrollingHeaderDownThenUp() {
+//        BasePage basePage = new IndividualsPage(getDriver())
+//                .closeCookieBanner()
+//                .getMobileHeader()
+//                .clickHamburgerMenuIndividuals()
+//                .clickPlanSponsorsMenu()
+//                .scrollToBottom()
+//                .scrollToUp();
+//
+//        Assert.assertTrue(basePage.isHeaderExpand());
+//    }
 
     @Test(groups = {"mobile", "tablet"})
     public void testMobilePlanSponsorsMenuFunctionality() {

@@ -101,7 +101,7 @@ public class StageFinancialProfessionalsMobileTest extends BaseTest{
                 "Stock plan services",
                 "Empower benefit consulting services",
                 "Nonqualified plans",
-                "Defined benefits plans",
+                "Defined benefit plans",
                 "Consumer-directed health"
         );
         List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
@@ -182,5 +182,31 @@ public class StageFinancialProfessionalsMobileTest extends BaseTest{
                 .getHamburgerWhyEmpowerOpenMenuLinks();
 
         Assert.assertEquals(actualOpenMenuLinks, expectedOpenMenu);
+    }
+
+    @Test(groups = {"mobile", "tablet"})
+    public void testMobileScrollingHeaderDown() {
+        BasePage basePage = new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickFinancialProfessionalsMenu()
+                .closeCookieBanner()
+                .scrollToBottom();
+
+        Assert.assertTrue(basePage.isMobileHeaderShrink());
+    }
+
+    @Test(groups = {"mobile", "tablet"})
+    public void testMobileScrollingHeaderDownThenUp() {
+        BasePage basePage = new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickFinancialProfessionalsMenu()
+                .scrollToBottom()
+                .scrollToUp();
+
+        Assert.assertTrue(basePage.isMobileHeaderExpand());
     }
 }

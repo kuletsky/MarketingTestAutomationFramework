@@ -131,10 +131,10 @@ public class IndividualsPage extends BasePage{
 
 
     //    @Step("Click Login button")
-    public IndividualsLoginPage clickLoginButton() {
+    public LoginV1Page clickLoginButton() {
 //        wait10UntilClickable(loginButton).click();
         safeClick(loginButton);
-        return new IndividualsLoginPage(getDriver());
+        return new LoginV1Page(getDriver());
     }
 
 //    @Step("Get heading text")

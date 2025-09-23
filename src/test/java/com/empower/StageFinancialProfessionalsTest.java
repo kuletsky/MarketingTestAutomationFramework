@@ -1,9 +1,6 @@
 package com.empower;
 
-import com.empower.pages.BasePage;
-import com.empower.pages.FinancialProfessionalsLoginPage;
-import com.empower.pages.FinancialProfessionalsPage;
-import com.empower.pages.IndividualsPage;
+import com.empower.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -35,6 +32,22 @@ public class StageFinancialProfessionalsTest extends BaseTest{
         Assert.assertTrue(page.getHeadingText().contains("The information"));
         Assert.assertTrue(page.isNewUrl("financial-professionals-login"));
     }
+
+//    @Test(groups = {"desktop"})
+//    public void testPartnerLoginButton() {
+//        new IndividualsPage(getDriver())
+//                .getHeader()
+//                .clickFinancialProfessionalsMenu()
+//                .clickLoginButton()
+//                .clickIAgreePopup();
+//
+//        PartnerPage page = new LoginV1Page(getDriver())
+//                        .clickPartnerLoginButton();
+//
+//        Assert.assertTrue(page.isNewUrl("plan.empower-retirement.com"));
+////        Assert.assertEquals(page.getHeadingText(),"Partner");
+//    }
+
 
     @Test(groups = {"desktop"})
     public void testFinancialProfessionalsMenuFunctionality() {

@@ -13,9 +13,18 @@ public class FinancialProfessionalsLoginPage extends BasePage{
     @FindBy(css = ".fp-ps-modal-content h4")
     private WebElement popupText;
 
+    @FindBy(css = ".swal2-confirm")
+    private WebElement IAgreeButton;
+
 //    @Step("Get heading of Financial Professionals login Page")
     public String getHeadingText() {
         return wait10UntilVisible(popupText).getText();
+    }
+
+    public FinancialProfessionalsLoginPage clickIAgreePopup() {
+        safeClick(IAgreeButton);
+
+        return new FinancialProfessionalsLoginPage(getDriver());
     }
 
 }

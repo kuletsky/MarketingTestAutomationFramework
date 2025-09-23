@@ -33,7 +33,7 @@ public class StageIndividualsTest extends BaseTest{
 
     @Test(groups = {"desktop", "mobile", "tablet"})
     public void testLoginButton() {
-        IndividualsLoginPage page = new IndividualsPage(getDriver())
+        LoginV1Page page = new IndividualsPage(getDriver())
                 .clickLoginButton();
 
         Assert.assertEquals(page.getHeadingText(),

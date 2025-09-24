@@ -140,7 +140,7 @@ public class BasePage {
         try {
 //            getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
             wait10UntilClickable(button).click();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
 
             new WebDriverWait(getDriver(), Duration.ofSeconds(30))
                     .until(d -> "complete".equals(

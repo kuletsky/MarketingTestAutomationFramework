@@ -11,13 +11,13 @@ public class HeaderComponent extends BasePage{
     }
 
 
-    @FindBy(xpath = "//a[text()='Financial Professionals']")
+    @FindBy(css = "[aria-label='Contextual Navigation'] [href='/financial-professionals']")
     private WebElement financialProfessionalsMenu;
 
-    @FindBy(xpath = "//a[text()='Plan Sponsors']")
+    @FindBy(css = "[aria-label='Contextual Navigation'] [href='/plan-sponsors']")
     private WebElement planSponsorsMenu;
 
-    @FindBy(xpath = "//a[text()='Individuals']")
+    @FindBy(xpath = "[aria-label='Contextual Navigation'] [href='/home']")
     private WebElement individualsMenu;
 
 

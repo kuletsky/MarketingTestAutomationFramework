@@ -33,7 +33,7 @@ public class StageIndividualsTest extends BaseTest{
 
     @Test(groups = {"desktop", "mobile", "tablet"})
     public void testLoginButton() {
-        LoginV1Page page = new IndividualsPage(getDriver())
+        IndividualsLoginV1Page page = new IndividualsPage(getDriver())
                 .clickLoginButton();
 
         Assert.assertEquals(page.getHeadingText(),
@@ -174,8 +174,7 @@ public class StageIndividualsTest extends BaseTest{
                 .closeCookieBanner()
                 .clickCTAButtonOpenAccount1();
 
-        Assert.assertEquals(page.getHeadingOfPopup(),
-                "Please confirm the type of account you want to open");
+        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
         Assert.assertTrue(page.isNewUrl("onboarding-v2"));
     }
 
@@ -196,8 +195,7 @@ public class StageIndividualsTest extends BaseTest{
                 .closeCookieBanner()
                 .clickCTAButtonOpenAccount2();
 
-        Assert.assertEquals(page.getHeadingOfPopup(),
-                "Please confirm the type of account you want to open");
+        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
         Assert.assertTrue(page.isNewUrl("onboarding-v2"));
     }
 
@@ -218,8 +216,7 @@ public class StageIndividualsTest extends BaseTest{
                 .closeCookieBanner()
                 .clickCTAButtonConnectMyAccounts1();
 
-        Assert.assertEquals(page.getHeadingOfPopup(),
-                "Please confirm the type of account you want to open");
+        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
         Assert.assertTrue(page.isNewUrl("onboarding-v2"));
     }
 
@@ -229,8 +226,7 @@ public class StageIndividualsTest extends BaseTest{
                 .closeCookieBanner()
                 .clickCTAButtonTakeMeThere();
 
-        Assert.assertEquals(page.getHeadingText(),
-                "Your helping hand to invest well");
+        Assert.assertEquals(page.getHeadingText(), "Your helping hand to invest well");
         Assert.assertTrue(page.isNewUrl("products-solutions"));
     }
 
@@ -240,8 +236,7 @@ public class StageIndividualsTest extends BaseTest{
                 .closeCookieBanner()
                 .clickCTAButtonExploreTheTools();
 
-        Assert.assertEquals(page.getHeadingText(),
-                "Financial freedom starts here");
+        Assert.assertEquals(page.getHeadingText(), "Financial freedom starts here");
         Assert.assertTrue(page.isNewUrl("tools"));
     }
 
@@ -251,8 +246,7 @@ public class StageIndividualsTest extends BaseTest{
                 .closeCookieBanner()
                 .clickCTAButtonStartRollover();
 
-        Assert.assertEquals(page.getHeadingText(),
-                "Retire on your terms");
+        Assert.assertEquals(page.getHeadingText(), "Retire on your terms");
         Assert.assertTrue(page.isNewUrl("iras"));
     }
 
@@ -273,21 +267,38 @@ public class StageIndividualsTest extends BaseTest{
                 .closeCookieBanner()
                 .clickCTAButtonConnectMyAccounts2();
 
-        Assert.assertEquals(page.getHeadingOfPopup(),
-                "Please confirm the type of account you want to open");
+        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
         Assert.assertTrue(page.isNewUrl("onboarding-v2"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
     public void testCTAButtonLearnMore() {
-        String headingText = new IndividualsPage(getDriver())
+        IndividualsPage page = new IndividualsPage(getDriver())
                 .closeCookieBanner()
-                .clickCTAButtonLearnMore()
-                .getHeadingTextOfSecurityPage();
+                .clickCTAButtonLearnMore();
 
-        Assert.assertEquals(headingText,
-                "Cybersecurity you can count on");
-        Assert.assertTrue(getDriver().getCurrentUrl().contains("cybersecurity"));
+        Assert.assertEquals(page.getHeadingTextOfSecurityPage(),"Cybersecurity you can count on");
+        Assert.assertTrue(page.isNewUrl("cybersecurity"));
+    }
+
+    @Test(groups = {"desktop", "mobile", "tablet"})
+    public void testCTAButtonGetStarted() {
+        IndividualsPage page = new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .clickCTAButtonGetStarted();
+
+//        Assert.assertEquals(page.getHeadingTextOfPersonalStrategy(), "Cybersecurity you can count on");
+        Assert.assertTrue(page.isNewUrl("signup/personal-strategy"));
+    }
+
+    @Test(groups = {"desktop", "mobile", "tablet"})
+    public void testCTAButtonAboutPersonalStrategy() {
+        IndividualsPage page = new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .clickCTAButtonAboutPersonalStrategy();
+
+        Assert.assertEquals(page.getHeadingTextAboutPersonalStrategy(), "Portfolio management & financial planning for life");
+        Assert.assertTrue(page.isNewUrl("products-solutions/personal-strategy"));
     }
 
 }

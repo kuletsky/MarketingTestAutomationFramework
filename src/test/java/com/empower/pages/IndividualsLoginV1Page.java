@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginV1Page extends BasePage{
+public class IndividualsLoginV1Page extends BasePage{
 
-    public LoginV1Page(WebDriver driver) {
+    public IndividualsLoginV1Page(WebDriver driver) {
         super(driver);
     }
 

@@ -118,8 +118,20 @@ public class IndividualsPage extends BasePage{
     @FindBy(xpath = "//span[text()='Learn more']")
     private WebElement CTAButtonLearnMore;
 
+    @FindBy(xpath = "//span[text()='Get started']")
+    private WebElement CTAButtonGetStarted;
+
+    @FindBy(xpath = "//span[text()='About Personal Strategy']")
+    private WebElement CTAButtonAboutPersonalStrategy;
+
     @FindBy(css = "h1")
     private WebElement headingSecurityPage;
+
+    @FindBy(css = "h4 .clearfix span span")
+    private WebElement headingPersonalStrategy;
+
+    @FindBy(css = "h1")
+    private WebElement headingAboutPersonalStrategy;
 
     @FindBy(css = "[aria-label='Plan Sponsors']")
     private WebElement planSponsorsMenu;
@@ -131,10 +143,10 @@ public class IndividualsPage extends BasePage{
 
 
     //    @Step("Click Login button")
-    public LoginV1Page clickLoginButton() {
+    public IndividualsLoginV1Page clickLoginButton() {
 //        wait10UntilClickable(loginButton).click();
         safeClick(loginButton);
-        return new LoginV1Page(getDriver());
+        return new IndividualsLoginV1Page(getDriver());
     }
 
 //    @Step("Get heading text")
@@ -375,9 +387,33 @@ public class IndividualsPage extends BasePage{
         return this;
     }
 
+    public IndividualsPage clickCTAButtonGetStarted() {
+        safeClick(CTAButtonGetStarted);
+
+        return this;
+    }
+
+    public IndividualsPage clickCTAButtonAboutPersonalStrategy() {
+        safeClick(CTAButtonAboutPersonalStrategy);
+
+        return this;
+    }
+
 //    @Step("Get heading of Security page")
     public String getHeadingTextOfSecurityPage() {
         return wait10UntilVisible(headingSecurityPage)
+                .getText()
+                .trim();
+    }
+
+    public String getHeadingTextOfPersonalStrategy() {
+        return wait10UntilVisible(headingPersonalStrategy)
+                .getText()
+                .trim();
+    }
+
+    public String getHeadingTextAboutPersonalStrategy() {
+        return wait10UntilVisible(headingAboutPersonalStrategy)
                 .getText()
                 .trim();
     }

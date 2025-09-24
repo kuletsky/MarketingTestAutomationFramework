@@ -22,9 +22,7 @@ public class SchedulePage extends BasePage{
         return wait10UntilVisible(headingPage).getText().trim();
     }
 
-//    @Step("Close Leaving Empower Popup")
     public SchedulePage clickContinueButton() {
-//        wait10UntilClickable(continueButton).click();
         safeClick(continueButton);
         return this;
     }

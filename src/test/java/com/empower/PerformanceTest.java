@@ -8,8 +8,6 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.testng.Assert.assertTrue;
-
 public class PerformanceTest extends BaseTest {
 //    private static final String URL = "https://www.empower.com";
 

@@ -1,7 +1,6 @@
 package com.empower;
 
 import com.empower.pages.FinancialProfessionalsLoginPage;
-import com.empower.pages.FinancialProfessionalsPage;
 import com.empower.pages.IndividualsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;

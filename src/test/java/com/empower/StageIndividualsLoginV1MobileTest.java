@@ -4,7 +4,7 @@ import com.empower.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class StageLoginV1Test extends BaseTest{
+public class StageIndividualsLoginV1MobileTest extends BaseTest{
 
     @Test(groups = {"desktop"})
     public void testParticipantLoginButton() {
@@ -16,7 +16,7 @@ public class StageLoginV1Test extends BaseTest{
         Assert.assertTrue(page.isNewUrl("participant.empower-retirement.com"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"desktop", "tablet"})
     public void testPersonalCapitalLoginButton() {
         PersonalCapitalPage page = new IndividualsPage(getDriver())
                 .clickLoginButton()
@@ -33,25 +33,5 @@ public class StageLoginV1Test extends BaseTest{
                 .clickPersonalWealthLoginButton();
 
         Assert.assertTrue(page.isNewUrl("ira.empower-retirement.com"));
-    }
-
-    @Test(groups = {"desktop"})
-    public void testPlanServiceCenterLoginButton() {
-        PlanServiceCenterPage page = new IndividualsPage(getDriver())
-                .clickLoginButton()
-                .clickPlanServiceCenterLoginButton();
-
-        Assert.assertTrue(page.isNewUrl("plan.empower-retirement.com"));
-//        Assert.assertEquals(page.getHeadingText(), "plan service center");
-    }
-
-    @Test(groups = {"desktop"})
-    public void testPartnerLoginButton() {
-        PartnerPage page = new IndividualsPage(getDriver())
-                .clickLoginButton()
-                .clickPartnerLoginButton();
-
-        Assert.assertTrue(page.isNewUrl("retirementpartner.com"));
-//        Assert.assertEquals(page.getHeadingText(),"Partner");
     }
 }

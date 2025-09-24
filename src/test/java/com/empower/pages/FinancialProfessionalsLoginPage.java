@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class FinancialProfessionalsLoginPage extends BasePage{
+public class FinancialProfessionalsLoginPage extends BasePage {
 
     public FinancialProfessionalsLoginPage(WebDriver driver) {
         super(driver);
@@ -16,7 +16,20 @@ public class FinancialProfessionalsLoginPage extends BasePage{
     @FindBy(css = ".swal2-confirm")
     private WebElement IAgreeButton;
 
-//    @Step("Get heading of Financial Professionals login Page")
+    @FindBy(css = ".card-1 [type='button-v2']")
+    private WebElement loginButtonFP;
+
+    @FindBy(css = ".card-2 [type='button-v2']")
+    private WebElement registerNowButtonFP;
+
+    @FindBy(css = ".card-3 [type='button-v2']")
+    private WebElement registerRixtremaButton;
+
+    @FindBy(xpath = "//*[text()='Continue']")
+    private WebElement continueButton;
+
+
+    //    @Step("Get heading of Financial Professionals login Page")
     public String getHeadingText() {
         return wait10UntilVisible(popupText).getText();
     }
@@ -27,4 +40,28 @@ public class FinancialProfessionalsLoginPage extends BasePage{
         return new FinancialProfessionalsLoginPage(getDriver());
     }
 
+    public FinancialProfessionalsLoginPage clickFinancialProfessionalsLoginButton() {
+        safeClick(loginButtonFP);
+
+        return new FinancialProfessionalsLoginPage(getDriver());
+    }
+
+    public FinancialProfessionalsLoginPage clickFinancialProfessionalsRegisterNowButton() {
+        safeClick(registerNowButtonFP);
+
+        return new FinancialProfessionalsLoginPage(getDriver());
+    }
+
+    public FinancialProfessionalsLoginPage clickContinuePopup() {
+        safeClick(continueButton);
+
+        return new FinancialProfessionalsLoginPage(getDriver());
+    }
+
+    public FinancialProfessionalsLoginPage clickFinancialProfessionalsRegisterRixtremaButton() {
+        safeClick(registerRixtremaButton);
+
+        return new FinancialProfessionalsLoginPage(getDriver());
+    }
 }
+

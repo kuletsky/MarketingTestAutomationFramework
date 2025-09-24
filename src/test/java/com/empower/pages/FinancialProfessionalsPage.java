@@ -14,7 +14,7 @@ public class FinancialProfessionalsPage extends BasePage{
         super(driver);
     }
 
-    @FindBy(xpath = "//header//span[text()='Login']")
+    @FindBy(css = "li a[href='/financial-professionals-login']")
     private WebElement loginButton;
 
     @FindBy(css = "h1")
@@ -87,6 +87,7 @@ public class FinancialProfessionalsPage extends BasePage{
 
     public FinancialProfessionalsLoginPage clickLoginButton() {
         safeClick(loginButton);
+
         return new FinancialProfessionalsLoginPage(getDriver());
     }
 

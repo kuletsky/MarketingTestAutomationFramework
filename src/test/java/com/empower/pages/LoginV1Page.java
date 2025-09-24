@@ -28,7 +28,6 @@ public class LoginV1Page extends BasePage{
     @FindBy(css = "[aria-label='Log in as a financial professional']")
     private WebElement partnerButton;
 
-
     public String getHeadingText() {
         return ByWait10UntilVisible(headingText).getText().trim();
     }
@@ -56,6 +55,7 @@ public class LoginV1Page extends BasePage{
 
         return new PlanServiceCenterPage(getDriver());
     }
+
 
     public PartnerPage clickPartnerLoginButton() {
         safeClick(partnerButton);

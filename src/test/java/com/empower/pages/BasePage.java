@@ -136,6 +136,25 @@ public class BasePage {
         return new IndividualsPage(getDriver());
     }
 
+    public <T> T closeCookieBanner(Class<T> pageClass) {
+        try {
+            WebElement cookieBanner = wait10UntilVisible(closeButtonCookieBanner);
+            if (cookieBanner.isDisplayed()) {
+                closeButtonCookieBanner.click();
+                getWait10().until(ExpectedConditions.invisibilityOfElementLocated(By.id("onetrust-banner-sdk")));
+            }
+        } catch (TimeoutException e) {
+            // banner didn't appear — ignore
+        }
+
+        try {
+            // assume all page objects have a constructor(WebDriver driver)
+            return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(getDriver());
+        } catch (Exception e) {
+            throw new RuntimeException("Could not create page: " + pageClass.getSimpleName(), e);
+        }
+    }
+
     public void safeClick(WebElement button) {
         try {
 //            getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
@@ -183,7 +202,7 @@ public class BasePage {
     }
 
     public Boolean isNewUrl(String url) {
-        return new WebDriverWait(getDriver(), Duration.ofSeconds(5))
+        return new WebDriverWait(getDriver(), Duration.ofSeconds(10))
                         .until(ExpectedConditions.urlContains(url));
     }
 

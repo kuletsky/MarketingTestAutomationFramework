@@ -13,7 +13,7 @@ public class StageIndividualsLoginV1Test extends BaseTest{
                 .clickParticipantLoginButton();
 
 //        Assert.assertEquals(page.getHeadingText(), "Your Retirement Plan");
-        Assert.assertTrue(page.isNewUrl("participant.com"));
+        Assert.assertTrue(page.isNewUrl("/participant"));
     }
 
     @Test(groups = {"desktop", "tablet", "mobile"})

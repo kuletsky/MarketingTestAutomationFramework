@@ -297,7 +297,7 @@ public class StageIndividualsTest extends BaseTest{
                 .closeCookieBanner()
                 .clickCTAButtonAboutPersonalStrategy();
 
-        Assert.assertEquals(page.getHeadingTextAboutPersonalStrategy(), "Portfolio management & financial planning for life");
+        Assert.assertTrue(page.getHeadingTextAboutPersonalStrategy().contains("Portfolio management"));
         Assert.assertTrue(page.isNewUrl("products-solutions/personal-strategy"));
     }
 

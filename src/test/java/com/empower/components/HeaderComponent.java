@@ -21,7 +21,7 @@ public class HeaderComponent extends BasePage {
     @FindBy(css = "[aria-label='Contextual Navigation'] [href='/plan-sponsors']")
     private WebElement planSponsorsMenu;
 
-    @FindBy(xpath = "[aria-label='Contextual Navigation'] [href='/home']")
+    @FindBy(css = "[aria-label='Contextual Navigation'] [href='/home']")
     private WebElement individualsMenu;
 
 

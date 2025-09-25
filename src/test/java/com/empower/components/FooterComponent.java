@@ -1,5 +1,7 @@
-package com.empower.pages;
+package com.empower.components;
 
+import com.empower.pages.BasePage;
+import com.empower.pages.IndividualsPage;
 import com.empower.utils.WindowHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import java.time.Duration;
 import java.util.List;
 
-public class FooterComponent extends BasePage{
+public class FooterComponent extends BasePage {
 
     public FooterComponent(WebDriver driver) {
         super(driver);

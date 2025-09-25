@@ -1,10 +1,14 @@
-package com.empower.pages;
+package com.empower.components;
 
+import com.empower.pages.BasePage;
+import com.empower.pages.FinancialProfessionalsPage;
+import com.empower.pages.IndividualsPage;
+import com.empower.pages.PlanSponsorsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HeaderComponent extends BasePage{
+public class HeaderComponent extends BasePage {
 
     public HeaderComponent(WebDriver driver) {
         super(driver);

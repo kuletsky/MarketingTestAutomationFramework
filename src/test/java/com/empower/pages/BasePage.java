@@ -1,5 +1,8 @@
 package com.empower.pages;
 
+import com.empower.components.FooterComponent;
+import com.empower.components.HamburgerComponent;
+import com.empower.components.HeaderComponent;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.Set;
 
 public class BasePage {
     private final WebDriver driver;

@@ -1,7 +1,7 @@
 package com.empower;
 
 import com.empower.pages.BasePage;
-import com.empower.pages.FooterComponent;
+import com.empower.components.FooterComponent;
 import com.empower.pages.IndividualsPage;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;

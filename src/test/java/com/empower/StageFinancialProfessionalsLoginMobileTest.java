@@ -35,7 +35,7 @@ public class StageFinancialProfessionalsLoginMobileTest extends BaseTest {
                 .clickFinancialProfessionalsRegisterNowButton()
                 .clickContinuePopup();
 
-        Assert.assertTrue(page.isNewUrl("plan.retirementpartner.com"));
+        Assert.assertTrue(page.isNewUrl("/partnerlink"));
     }
 
     @Test(groups = {"mobile", "tablet"})

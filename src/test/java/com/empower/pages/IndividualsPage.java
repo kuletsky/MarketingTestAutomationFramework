@@ -52,6 +52,15 @@ public class IndividualsPage extends BasePage{
     @FindBy(xpath = "//button[text()='Products & Solutions']")
     private WebElement productsSolutionsMenu;
 
+    @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='View All']")
+    private WebElement viewAllLink;
+
+    @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='High-yield cash account']")
+    private WebElement cashAccountLink;
+
+    @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='Rollover']")
+    private WebElement rolloverLink;
+
     @FindBy(css = "#solutions-dropdown li.relative > a, #solutions-dropdown li.relative > button")
     private List<WebElement> productsSolutionsLinks;
 
@@ -233,7 +242,26 @@ public class IndividualsPage extends BasePage{
         return this;
     }
 
-//    @Step("Get all links of hamburger Open Products&Solutions menu")
+    public IndividualsPage clickViewAllLink() {
+        safeClick(viewAllLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickCashAccountLink() {
+        safeClick(cashAccountLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickRolloverLink() {
+        safeClick(rolloverLink);
+
+        return this;
+    }
+
+
+    //    @Step("Get all links of hamburger Open Products&Solutions menu")
     public List<String> getProductsSolutionsLinks() {
         return wait10UntilVisibleAll(productsSolutionsLinks)
                 .stream()

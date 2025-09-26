@@ -1,0 +1,31 @@
+version: 2
+
+snapshot:
+  # Desktop responsive widths; mobile devices will ignore these (they use real device viewports)
+  widths: [1920]
+  min-height: 1080
+
+#  scope: "main"
+
+  # Freeze motion & hide transient UI (Lottie/video/cookie banners/toasts)
+  percy-css: |
+    *,*::before,*::after { animation: none !important; transition: none !important; }
+    lottie-player, .lottie, [data-lottie], video { visibility: hidden !important; }
+    #onetrust-banner-sdk, .ot-sdk-container, [aria-label*="cookie"] { display: none !important; }
+    .toast, .snackbar { display: none !important; }
+
+  # Percy on Automate extras:
+  # (See docs: ignore/consider regions and freeze-animated-image options)
+  # Example: ignore a dynamic news/teaser section if it’s noisy
+  # ignore-regions:
+  #   ignore-region-selectors: [".section-news", ".teasers", "time", "[data-dynamic]"]
+
+  # Enable full-page for long pages when needed
+  # Note: mobile/desktop height has limits; split very long pages into sections if required.
+  full-Page: true
+
+discovery:
+  # Increase if you see late-loading images/cards cause diffs
+  network-idle-timeout: 150
+#  request-headers:
+#    Authorization:"Basic ZW1wb3dlci1zdGFnaW5nOjNtcDV0NGdlMjQ="

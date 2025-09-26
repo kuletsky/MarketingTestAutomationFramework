@@ -1,5 +1,6 @@
 package com.empower.pages;
 
+import io.percy.selenium.Percy;
 import com.empower.components.FooterComponent;
 import com.empower.components.HamburgerComponent;
 import com.empower.components.HeaderComponent;
@@ -10,7 +11,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class BasePage {
     private final WebDriver driver;
@@ -331,5 +334,53 @@ public class BasePage {
                 .map(WebElement::getText)
                 .map(String::trim)
                 .toList();
+    }
+
+    public void takePercyFullPageScreenshot(WebDriver driver, String name) {
+//        PercySDK.screenshot(driver, name);
+
+        // Wait for DOM to settle (simple example)
+        new WebDriverWait(driver, Duration.ofSeconds(8))
+                .until(d -> ((JavascriptExecutor)d).executeScript("return document.readyState==='complete'").equals(true));
+
+
+        Percy percy = new Percy(driver);
+        Map<String, Object> options = new HashMap<>();
+
+        options.put("widths", 1920);
+        options.put("minHeight", 1080);
+        options.put("fullPage", true);
+        options.put("percyCSS",
+                "*,*::before,*::after{animation:none!important;transition:none!important}" +
+                        " lottie-player,.lottie,[data-lottie],video{visibility:hidden!important}" +
+                        " #onetrust-banner-sdk,.ot-sdk-container,[aria-label*='cookie']{display:none!important}" +
+                        " .toast,.snackbar{display:none!important}"
+        );
+
+        percy.screenshot(name, options);
+    }
+
+    public void takePercyShortPageScreenshot(WebDriver driver, String name) {
+//        PercySDK.screenshot(driver, name);
+
+        // Wait for DOM to settle (simple example)
+        new WebDriverWait(driver, Duration.ofSeconds(8))
+                .until(d -> ((JavascriptExecutor)d).executeScript("return document.readyState==='complete'").equals(true));
+
+
+        Percy percy = new Percy(driver);
+        Map<String, Object> options = new HashMap<>();
+
+        options.put("widths", 1920);
+        options.put("minHeight", 1080);
+//        options.put("fullPage", true);
+        options.put("percyCSS",
+                "*,*::before,*::after{animation:none!important;transition:none!important}" +
+                        " lottie-player,.lottie,[data-lottie],video{visibility:hidden!important}" +
+                        " #onetrust-banner-sdk,.ot-sdk-container,[aria-label*='cookie']{display:none!important}" +
+                        " .toast,.snackbar{display:none!important}"
+        );
+
+        percy.screenshot(name, options);
     }
 }

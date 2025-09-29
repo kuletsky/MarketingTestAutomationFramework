@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PerformanceTest extends BaseTest {
-//    private static final String URL = "https://www.empower.com";
 
     @Test
     public void testDesktopPerformanceHomePage() {
@@ -22,7 +21,8 @@ public class PerformanceTest extends BaseTest {
             for (int i = 0; i < runs; i++) {
                 LhMetrics m = PerformanceHelper.getLighthouseResult(
                         performanceDriver,
-                        "https://www.empower.com",
+//                        "https://www.empower.com",
+                        "https://empwrretiremtstg.prod.acquia-sites.com",
                         "desktop",
                         1920, 1080, 1,
                         40, 50,     // perf, best-practices thresholds
@@ -52,7 +52,9 @@ public class PerformanceTest extends BaseTest {
             for (int i = 0; i < runs; i++) {
                 LhMetrics m = PerformanceHelper.getLighthouseResult(
                         performanceDriver,
-                        "https://www.empower.com/login-v1",
+//                        "https://www.empower.com/login-v1",
+                        "https://empwrretiremtstg.prod.acquia-sites.com/login-v1",
+
                         "desktop",
                         1920, 1080, 1,
                         40, 50,     // perf, best-practices thresholds
@@ -82,7 +84,8 @@ public class PerformanceTest extends BaseTest {
             for (int i = 0; i < runs; i++) {
                 LhMetrics m = PerformanceHelper.getLighthouseResult(
                         performanceDriver,
-                        "https://www.empower.com/the-currency",
+//                        "https://www.empower.com/the-currency",
+                        "https://empwrretiremtstg.prod.acquia-sites.com/the-currency",
                         "desktop",
                         1920, 1080, 1,
                         40, 50,     // perf, best-practices thresholds
@@ -112,7 +115,8 @@ public class PerformanceTest extends BaseTest {
             for (int i = 0; i < runs; i++) {
                 LhMetrics m = PerformanceHelper.getLighthouseResult(
                         performanceDriver,
-                        "https://www.empower.com",
+//                        "https://www.empower.com",
+                        "https://empwrretiremtstg.prod.acquia-sites.com",
                         "mobile",
                         375, 812, 1,
                         40, 50,     // perf, best-practices thresholds
@@ -142,7 +146,8 @@ public class PerformanceTest extends BaseTest {
             for (int i = 0; i < runs; i++) {
                 LhMetrics m = PerformanceHelper.getLighthouseResult(
                         performanceDriver,
-                        "https://www.empower.com/login-v1",
+//                        "https://www.empower.com/login-v1",
+                        "https://empwrretiremtstg.prod.acquia-sites.com/login-v1",
                         "mobile",
                         372, 812, 1,
                         40, 50,     // perf, best-practices thresholds
@@ -172,7 +177,8 @@ public class PerformanceTest extends BaseTest {
             for (int i = 0; i < runs; i++) {
                 LhMetrics m = PerformanceHelper.getLighthouseResult(
                         performanceDriver,
-                        "https://www.empower.com/the-currency",
+//                        "https://www.empower.com/the-currency",
+                        "https://empwrretiremtstg.prod.acquia-sites.com/the-currency",
                         "mobile",
                         372, 812, 1,
                         40, 50,     // perf, best-practices thresholds

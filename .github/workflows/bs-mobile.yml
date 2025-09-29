@@ -36,10 +36,3 @@ jobs:
 
       - name: Run Desktop suite on BrowserStack
         run: mvn -B test -Pmobile-test
-
-      - name: Attach screenshots
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: desktop
-          path: ${{ github.workspace }}/screenshots/mobile

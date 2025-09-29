@@ -53,7 +53,13 @@ public class IndividualsPage extends BasePage{
     private WebElement productsSolutionsMenu;
 
     @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='View All']")
-    private WebElement viewAllLink;
+    private WebElement viewAllLinkPS;
+
+    @FindBy(css = "nav[aria-label='Tools Secondary'] [aria-label='View All']")
+    private WebElement toolsViewAllLink;
+
+    @FindBy(css = "nav[aria-label='Tools Secondary'] [aria-label='Retirement Planner']")
+    private WebElement toolsRetirementPlannerLink;
 
     @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='High-yield cash account']")
     private WebElement cashAccountLink;
@@ -243,7 +249,19 @@ public class IndividualsPage extends BasePage{
     }
 
     public IndividualsPage clickViewAllLink() {
-        safeClick(viewAllLink);
+        safeClick(viewAllLinkPS);
+
+        return this;
+    }
+
+    public IndividualsPage clickToolsViewAllLink() {
+        safeClick(toolsViewAllLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickToolsRetirementPlanner() {
+        safeClick(toolsRetirementPlannerLink);
 
         return this;
     }

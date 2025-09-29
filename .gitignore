@@ -20,6 +20,8 @@ browserstack.yml
 browserstack-desktop.yml
 browserstack-mobile.yml
 browserstack-tablet.yml
+browserstack-visual-mobile.yml
+browserstack-visual-desktop.yml
 
 # Allure results and report directories
 allure-results/

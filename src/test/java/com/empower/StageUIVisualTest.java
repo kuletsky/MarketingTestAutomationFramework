@@ -6,10 +6,11 @@ import org.testng.annotations.Test;
 
 public class StageUIVisualTest extends BaseTest {
 
-    @Test(groups = {"desktop-visual"})
+    @Test(groups = {"desktop-visual", "mobile-visual"})
     public void testUIIndividuals() {
         new IndividualsPage(getDriver())
 //                .closeCookieBanner()
+                .pauseHeroCarousel()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals page");
 
 //        PercySDK.screenshot(getDriver(), "Home – default");
@@ -21,6 +22,7 @@ public class StageUIVisualTest extends BaseTest {
                 .getHeader()
                 .clickPlanSponsorsMenu()
 //                .closeCookieBanner()
+                .pauseHeroCarousel()
                 .takePercyFullPageScreenshot(getDriver(), "Plan Sponsors page");
     }
 
@@ -30,6 +32,7 @@ public class StageUIVisualTest extends BaseTest {
                 .getHeader()
                 .clickFinancialProfessionalsMenu()
 //                .closeCookieBanner()
+                .pauseHeroCarousel()
                 .takePercyFullPageScreenshot(getDriver(), "Financial Professionals page");
     }
 
@@ -68,18 +71,50 @@ public class StageUIVisualTest extends BaseTest {
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Login page");
     }
 
-
-
-
-
-
-
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsOpenAccount() {
+        new IndividualsPage(getDriver())
+                .clickOpenAccountHeaderButton()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page");
+    }
 
     @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsMenuProductsSolutions() {
+    public void testUIIndividualsOpenAccountCreatePersonalDashboard() {
         new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .clickProductsSolutionsOpenMenu()
-                .takePercyShortPageScreenshot(getDriver(), "Menu Products Solutions");
+                .clickOpenAccountHeaderButton()
+                .clickCreatePersonalDashBoardButton()
+                .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsCTAGetStarted() {
+        new IndividualsPage(getDriver())
+                .clickCTAButtonGetStarted()
+                .takePercyFullPageScreenshot(getDriver(), "CTA Get started");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsToolsViewAll() {
+        new IndividualsPage(getDriver())
+                .clickToolsOpenMenu()
+                .clickToolsViewAllLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools View All");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsToolsRetirementPlanner() {
+        new IndividualsPage(getDriver())
+                .clickToolsOpenMenu()
+                .clickToolsRetirementPlanner()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools Retirement plan");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsFinancialProfessionalsLogin() {
+        new IndividualsPage(getDriver())
+                .getHeader()
+                .clickFinancialProfessionalsMenu()
+                .clickLoginButton()
+                .takePercyFullPageScreenshot(getDriver(), "Financial Professionals Login page");
     }
 }

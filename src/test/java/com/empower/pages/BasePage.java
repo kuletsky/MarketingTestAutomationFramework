@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -73,6 +74,9 @@ public class BasePage {
     @FindBy(css = ".onetrust-close-btn-handler.onetrust-close-btn-ui")
     private WebElement closeButtonCookieBanner;
 
+    @FindBy(css = "[alt='Pause animations']")
+    private WebElement heroCarousel;
+
     @FindBy(css = "h2.h-10")
     private WebElement hamburgerHeadingText;
 
@@ -116,7 +120,14 @@ public class BasePage {
         return new HeaderComponent(getDriver());
     }
 
-//    @Step("Close cookie banner")
+
+    public IndividualsPage pauseHeroCarousel() {
+        safeClick(heroCarousel);
+
+        return new IndividualsPage(getDriver());
+    }
+
+    //    @Step("Close cookie banner")
     public IndividualsPage closeCookieBanner() {
 //        Utils.log("4a. Close cookie banner");
 
@@ -340,14 +351,14 @@ public class BasePage {
 //        PercySDK.screenshot(driver, name);
 
         // Wait for DOM to settle (simple example)
-        new WebDriverWait(driver, Duration.ofSeconds(8))
+        new WebDriverWait(driver, Duration.ofSeconds(30))
                 .until(d -> ((JavascriptExecutor)d).executeScript("return document.readyState==='complete'").equals(true));
 
 
         Percy percy = new Percy(driver);
         Map<String, Object> options = new HashMap<>();
 
-        options.put("widths", 1920);
+        options.put("widths", Arrays.asList(1920));
         options.put("minHeight", 1080);
         options.put("fullPage", true);
         options.put("percyCSS",
@@ -371,7 +382,7 @@ public class BasePage {
         Percy percy = new Percy(driver);
         Map<String, Object> options = new HashMap<>();
 
-        options.put("widths", 1920);
+        options.put("widths", Arrays.asList(1920));
         options.put("minHeight", 1080);
 //        options.put("fullPage", true);
         options.put("percyCSS",

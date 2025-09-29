@@ -1,11 +1,11 @@
-name: TABLET tests via BrowserStack
+name: VISUAL MOBILE tests via BrowserStack
 
 on:
 #  pull_request:
 #    branches:
 #      - main
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 1 * * *'
   workflow_dispatch:
 
 jobs:
@@ -13,17 +13,17 @@ jobs:
     name: 'Run tests on BrowserStack'
     runs-on: ubuntu-latest
     env:
-      BROWSERSTACK_CONFIG_FILE: browserstack-tablet.yml
+      BROWSERSTACK_CONFIG_FILE: browserstack-visual-desktop.yml
 
     steps:
       - name: Git clone
         uses: actions/checkout@v4
 
-      - name: Write browserstack-tablet.yml from secret
+      - name: Write browserstack-visual-desktop.yml from secret
         env:
-          CONFIG_BS: ${{ secrets.BROWSERSTACK_TABLET }}
+          CONFIG_BS: ${{ secrets.BROWSERSTACK_VISUAL_DESKTOP }}
         run: |
-          echo "$CONFIG_BS" > browserstack-tablet.yml
+          echo "$CONFIG_BS" > browserstack-visual-desktop.yml
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -35,4 +35,4 @@ jobs:
         run: mvn -B -q -DskipTests package
 
       - name: Run Desktop suite on BrowserStack
-        run: mvn -B test -Ptablet-test
+        run: mvn -B test -Pdesktop-visual-test

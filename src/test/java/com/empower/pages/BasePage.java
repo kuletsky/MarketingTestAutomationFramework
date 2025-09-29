@@ -74,7 +74,7 @@ public class BasePage {
     @FindBy(css = ".onetrust-close-btn-handler.onetrust-close-btn-ui")
     private WebElement closeButtonCookieBanner;
 
-    @FindBy(css = "[alt='Pause animations']")
+    @FindBy(css = "button[data-emp-carousel='playpause']")
     private WebElement heroCarousel;
 
     @FindBy(css = "h2.h-10")

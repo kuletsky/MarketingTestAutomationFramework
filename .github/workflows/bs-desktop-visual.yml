@@ -1,4 +1,4 @@
-name: VISUAL MOBILE tests via BrowserStack
+name: VISUAL DESKTOP tests via BrowserStack
 
 on:
 #  pull_request:

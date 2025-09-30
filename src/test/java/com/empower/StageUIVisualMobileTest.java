@@ -26,9 +26,9 @@ public class StageUIVisualMobileTest extends BaseTest {
     @Test(groups = {"mobile-visual"})
     public void testUIPFinancialProfessionals() {
         new IndividualsPage(getDriver())
+                .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .closeCookieBanner()
                 .clickFinancialProfessionalsMenu()
                 .takePercyFullPageScreenshot(getDriver(), "Financial Professionals page");
     }
@@ -132,5 +132,16 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerLearnOpenMenu()
                 .clickHamburgerLearnTheCurrency()
                 .takePercyFullPageScreenshot(getDriver(), "The Currency page");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsLearnPressCenter() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickWhyEmpowerOpenMenu()
+                .clickHamburgerWhyEmpowerPressCenter()
+                .takePercyFullPageScreenshot(getDriver(), "Press Center page");
     }
 }

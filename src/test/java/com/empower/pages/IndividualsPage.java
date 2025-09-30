@@ -82,6 +82,9 @@ public class IndividualsPage extends BasePage{
     @FindBy(css = "#dropdown-mobile-2 [aria-label='The Currency']")
     private WebElement hamburgerLearnTheCurrency;
 
+    @FindBy(css = "#dropdown-mobile-3 [aria-label='Press Center']")
+    private WebElement hamburgerLearnPressCenter;
+
     @FindBy(css = "nav[aria-label='Why Empower'] [aria-label='Press Center']")
     private WebElement whyEmpowerPressCenter;
 
@@ -330,6 +333,12 @@ public class IndividualsPage extends BasePage{
 
     public IndividualsPage clickHamburgerLearnTheCurrency() {
         safeClick(hamburgerLearnTheCurrency);
+
+        return this;
+    }
+
+    public IndividualsPage clickHamburgerWhyEmpowerPressCenter() {
+        safeClick(hamburgerLearnPressCenter);
 
         return this;
     }

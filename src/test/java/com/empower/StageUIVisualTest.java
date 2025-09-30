@@ -79,6 +79,7 @@ public class StageUIVisualTest extends BaseTest {
     @Test(groups = {"desktop-visual"})
     public void testUIIndividualsCTAGetStarted() {
         new IndividualsPage(getDriver())
+                .closeCookieBanner()
                 .clickCTAButtonGetStarted()
                 .takePercyFullPageScreenshot(getDriver(), "CTA Get started");
     }

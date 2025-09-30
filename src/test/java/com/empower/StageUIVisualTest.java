@@ -107,4 +107,29 @@ public class StageUIVisualTest extends BaseTest {
                 .clickLoginButton()
                 .takePercyFullPageScreenshot(getDriver(), "Financial Professionals Login page");
     }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsLearnInvestmentInsights() {
+        new IndividualsPage(getDriver())
+                .clickLearnOpenMenu()
+                .clickLearnInvestmentInsights()
+                .takePercyFullPageScreenshot(getDriver(), "Investment Insights page");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsLearnTheCurrency() {
+        new IndividualsPage(getDriver())
+                .clickLearnOpenMenu()
+                .clickLearnTheCurrency()
+                .takePercyFullPageScreenshot(getDriver(), "The Currency page");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsWhyEmpowerPressCenter() {
+        new IndividualsPage(getDriver())
+                .clickWhyEmpowerOpenMenu()
+                .clickWhyEmpowerPressCenter()
+                .takePercyFullPageScreenshot(getDriver(), "Press Center page");
+    }
+
 }

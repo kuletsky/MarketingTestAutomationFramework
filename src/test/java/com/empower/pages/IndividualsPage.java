@@ -61,6 +61,15 @@ public class IndividualsPage extends BasePage{
     @FindBy(css = "nav[aria-label='Tools Secondary'] [aria-label='Retirement Planner']")
     private WebElement toolsRetirementPlannerLink;
 
+    @FindBy(css = "nav[aria-label='Learn Secondary'] [aria-label='Investment Insights']")
+    private WebElement learnInvestmentInsights;
+
+    @FindBy(css = "nav[aria-label='Learn Secondary'] [aria-label='The Currency']")
+    private WebElement learnTheCurrency;
+
+    @FindBy(css = "nav[aria-label='Why Empower'] [aria-label='Press Center']")
+    private WebElement whyEmpowerPressCenter;
+
     @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='High-yield cash account']")
     private WebElement cashAccountLink;
 
@@ -262,6 +271,24 @@ public class IndividualsPage extends BasePage{
 
     public IndividualsPage clickToolsRetirementPlanner() {
         safeClick(toolsRetirementPlannerLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickLearnInvestmentInsights() {
+        safeClick(learnInvestmentInsights);
+
+        return this;
+    }
+
+    public IndividualsPage clickLearnTheCurrency() {
+        safeClick(learnTheCurrency);
+
+        return this;
+    }
+
+    public IndividualsPage clickWhyEmpowerPressCenter() {
+        safeClick(whyEmpowerPressCenter);
 
         return this;
     }

@@ -18,6 +18,7 @@ public class StageUIVisualMobileTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
+                .closeCookieBanner()
                 .clickPlanSponsorsMenu()
                 .takePercyFullPageScreenshot(getDriver(), "Plan Sponsors page");
     }
@@ -27,36 +28,40 @@ public class StageUIVisualMobileTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
+                .closeCookieBanner()
                 .clickFinancialProfessionalsMenu()
                 .takePercyFullPageScreenshot(getDriver(), "Financial Professionals page");
     }
 
-//    @Test(groups = {"desktop-visual"})
-//    public void testUIIndividualsViewAll() {
-//        new IndividualsPage(getDriver())
-////                .closeCookieBanner()
-//                .clickProductsSolutionsOpenMenu()
-//                .clickViewAllLink()
-//                .takePercyFullPageScreenshot(getDriver(), "Individuals View All");
-//    }
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsViewAll() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickProductsSolutionsOpenMenu()
+                .clickViewAllLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals View All");
+    }
 
-//    @Test(groups = {"desktop-visual"})
-//    public void testUIIndividualsCashAccount() {
-//        new IndividualsPage(getDriver())
-////                .closeCookieBanner()
-//                .clickProductsSolutionsOpenMenu()
-//                .clickCashAccountLink()
-//                .takePercyFullPageScreenshot(getDriver(), "Individuals High-yield cash account");
-//    }
-//
-//    @Test(groups = {"desktop-visual"})
-//    public void testUIIndividualsRollover() {
-//        new IndividualsPage(getDriver())
-////                .closeCookieBanner()
-//                .clickProductsSolutionsOpenMenu()
-//                .clickRolloverLink()
-//                .takePercyFullPageScreenshot(getDriver(), "Individuals Rollover");
-//    }
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsCashAccount() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickProductsSolutionsOpenMenu()
+                .clickCashAccountLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals High-yield cash account");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsRollover() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickProductsSolutionsOpenMenu()
+                .clickRolloverLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Rollover");
+    }
 
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsOpenAccount() {
@@ -76,25 +81,32 @@ public class StageUIVisualMobileTest extends BaseTest {
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsCTAGetStarted() {
         new IndividualsPage(getDriver())
+                .closeCookieBanner()
                 .clickCTAButtonGetStarted()
                 .takePercyFullPageScreenshot(getDriver(), "CTA Get started");
     }
 
-//    @Test(groups = {"desktop-visual"})
-//    public void testUIIndividualsToolsViewAll() {
-//        new IndividualsPage(getDriver())
-//                .clickToolsOpenMenu()
-//                .clickToolsViewAllLink()
-//                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools View All");
-//    }
-//
-//    @Test(groups = {"desktop-visual"})
-//    public void testUIIndividualsToolsRetirementPlanner() {
-//        new IndividualsPage(getDriver())
-//                .clickToolsOpenMenu()
-//                .clickToolsRetirementPlanner()
-//                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools Retirement plan");
-//    }
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsToolsViewAll() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickToolsOpenMenu()
+                .clickToolsViewAllLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools View All");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsToolsRetirementPlanner() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickToolsOpenMenu()
+                .clickToolsRetirementPlanner()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools Retirement plan");
+    }
 
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsFinancialProfessionalsLogin() {
@@ -104,4 +116,27 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickLoginButton()
                 .takePercyFullPageScreenshot(getDriver(), "Financial Professionals Login page");
     }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsLearnInvestmentInsights() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickLearnOpenMenu()
+                .clickLearnInvestmentInsights()
+                .takePercyFullPageScreenshot(getDriver(), "Investment Insights page");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsLearnTheCurrency() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickLearnOpenMenu()
+                .clickLearnTheCurrency()
+                .takePercyFullPageScreenshot(getDriver(), "The Currency page");
+    }
+
 }

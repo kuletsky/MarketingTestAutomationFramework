@@ -7,13 +7,18 @@ import org.testng.annotations.Test;
 public class StageUIVisualMobileTest extends BaseTest {
 
     @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsLogin() {
+        new IndividualsPage(getDriver())
+                .clickLoginButton()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Login page");
+    }
+
+    @Test(groups = {"mobile-visual"})
     public void testUIPlanSponsors() {
         new IndividualsPage(getDriver())
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
                 .clickPlanSponsorsMenu()
-//                .closeCookieBanner()
-                .pauseHeroCarousel()
                 .takePercyFullPageScreenshot(getDriver(), "Plan Sponsors page");
     }
 
@@ -23,8 +28,6 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
                 .clickFinancialProfessionalsMenu()
-//                .closeCookieBanner()
-                .pauseHeroCarousel()
                 .takePercyFullPageScreenshot(getDriver(), "Financial Professionals page");
     }
 
@@ -54,14 +57,6 @@ public class StageUIVisualMobileTest extends BaseTest {
 //                .clickRolloverLink()
 //                .takePercyFullPageScreenshot(getDriver(), "Individuals Rollover");
 //    }
-
-    @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsLogin() {
-        new IndividualsPage(getDriver())
-//                .closeCookieBanner()
-                .clickLoginButton()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Login page");
-    }
 
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsOpenAccount() {

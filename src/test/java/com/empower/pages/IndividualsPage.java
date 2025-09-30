@@ -55,17 +55,32 @@ public class IndividualsPage extends BasePage{
     @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='View All']")
     private WebElement viewAllLinkPS;
 
+    @FindBy(css = "#dropdown-mobile-0 [aria-label='View All']")
+    private WebElement hamburgerViewAllLinkPS;
+
     @FindBy(css = "nav[aria-label='Tools Secondary'] [aria-label='View All']")
     private WebElement toolsViewAllLink;
+
+    @FindBy(css = "#dropdown-mobile-1 [aria-label='View All']")
+    private WebElement hamburgerToolsViewAllLink;
 
     @FindBy(css = "nav[aria-label='Tools Secondary'] [aria-label='Retirement Planner']")
     private WebElement toolsRetirementPlannerLink;
 
+    @FindBy(css = "#dropdown-mobile-1 [aria-label='Retirement Planner']")
+    private WebElement hamburgerToolsRetirementPlannerLink;
+
     @FindBy(css = "nav[aria-label='Learn Secondary'] [aria-label='Investment Insights']")
     private WebElement learnInvestmentInsights;
 
+    @FindBy(css = "#dropdown-mobile-2 [aria-label='Investment Insights']")
+    private WebElement hamburgerLearnInvestmentInsights;
+
     @FindBy(css = "nav[aria-label='Learn Secondary'] [aria-label='The Currency']")
     private WebElement learnTheCurrency;
+
+    @FindBy(css = "#dropdown-mobile-2 [aria-label='The Currency']")
+    private WebElement hamburgerLearnTheCurrency;
 
     @FindBy(css = "nav[aria-label='Why Empower'] [aria-label='Press Center']")
     private WebElement whyEmpowerPressCenter;
@@ -73,8 +88,14 @@ public class IndividualsPage extends BasePage{
     @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='High-yield cash account']")
     private WebElement cashAccountLink;
 
+    @FindBy(css = "#dropdown-mobile-0 [aria-label='High-yield cash account']")
+    private WebElement hamburgerCashAccountLink;
+
     @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='Rollover']")
     private WebElement rolloverLink;
+
+    @FindBy(css = "#dropdown-mobile-0 [aria-label='Rollover']")
+    private WebElement hamburgerRolloverLink;
 
     @FindBy(css = "#solutions-dropdown li.relative > a, #solutions-dropdown li.relative > button")
     private List<WebElement> productsSolutionsLinks;
@@ -263,8 +284,20 @@ public class IndividualsPage extends BasePage{
         return this;
     }
 
+    public IndividualsPage clickHamburgerViewAll() {
+        safeClick(hamburgerViewAllLinkPS);
+
+        return this;
+    }
+
     public IndividualsPage clickToolsViewAllLink() {
         safeClick(toolsViewAllLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickHamburgerToolsViewAllLink() {
+        safeClick(hamburgerToolsViewAllLink);
 
         return this;
     }
@@ -275,14 +308,32 @@ public class IndividualsPage extends BasePage{
         return this;
     }
 
+    public IndividualsPage clickHamburgerToolsRetirementPlanner() {
+        safeClick(hamburgerToolsRetirementPlannerLink);
+
+        return this;
+    }
+
     public IndividualsPage clickLearnInvestmentInsights() {
         safeClick(learnInvestmentInsights);
 
         return this;
     }
 
+    public IndividualsPage clickHamburgerLearnInvestmentInsights() {
+        safeClick(hamburgerLearnInvestmentInsights);
+
+        return this;
+    }
+
     public IndividualsPage clickLearnTheCurrency() {
         safeClick(learnTheCurrency);
+
+        return this;
+    }
+
+    public IndividualsPage clickHamburgerLearnTheCurrency() {
+        safeClick(hamburgerLearnTheCurrency);
 
         return this;
     }
@@ -299,8 +350,20 @@ public class IndividualsPage extends BasePage{
         return this;
     }
 
+    public IndividualsPage clickHamburgerCashAccountLink() {
+        safeClick(hamburgerCashAccountLink);
+
+        return this;
+    }
+
     public IndividualsPage clickRolloverLink() {
         safeClick(rolloverLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickHamburgerRolloverLink() {
+        safeClick(hamburgerRolloverLink);
 
         return this;
     }

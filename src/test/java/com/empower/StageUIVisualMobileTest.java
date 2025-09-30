@@ -36,30 +36,34 @@ public class StageUIVisualMobileTest extends BaseTest {
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsViewAll() {
         new IndividualsPage(getDriver())
+                .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickProductsSolutionsOpenMenu()
-                .clickViewAllLink()
+                .clickHamburgerProductsSolutionsOpenMenu()
+                .clickHamburgerViewAll()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals View All");
     }
 
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsCashAccount() {
         new IndividualsPage(getDriver())
+                .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickProductsSolutionsOpenMenu()
-                .clickCashAccountLink()
+                .clickHamburgerProductsSolutionsOpenMenu()
+                .clickHamburgerCashAccountLink()
+
                 .takePercyFullPageScreenshot(getDriver(), "Individuals High-yield cash account");
     }
 
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsRollover() {
         new IndividualsPage(getDriver())
+                .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickProductsSolutionsOpenMenu()
-                .clickRolloverLink()
+                .clickHamburgerProductsSolutionsOpenMenu()
+                .clickHamburgerRolloverLink()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Rollover");
     }
 
@@ -92,8 +96,8 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickToolsOpenMenu()
-                .clickToolsViewAllLink()
+                .clickHamburgerToolsOpenMenu()
+                .clickHamburgerToolsViewAllLink()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Tools View All");
     }
 
@@ -103,8 +107,8 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickToolsOpenMenu()
-                .clickToolsRetirementPlanner()
+                .clickHamburgerToolsOpenMenu()
+                .clickHamburgerToolsRetirementPlanner()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Tools Retirement plan");
     }
 
@@ -123,8 +127,8 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickLearnOpenMenu()
-                .clickLearnInvestmentInsights()
+                .clickHamburgerLearnOpenMenu()
+                .clickHamburgerLearnInvestmentInsights()
                 .takePercyFullPageScreenshot(getDriver(), "Investment Insights page");
     }
 
@@ -134,9 +138,8 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickLearnOpenMenu()
-                .clickLearnTheCurrency()
+                .clickHamburgerLearnOpenMenu()
+                .clickHamburgerLearnTheCurrency()
                 .takePercyFullPageScreenshot(getDriver(), "The Currency page");
     }
-
 }

@@ -49,7 +49,7 @@ public class IndividualsPage extends BasePage{
     @FindBy(xpath = "(//div[@data-drupal-block-name='final_cta'] //span[text()='Connect my accounts'])[1]")
     private WebElement mobileCTAButtonConnectMyAccounts2;
 
-    @FindBy(xpath = "//button[text()='Products & Solutions']")
+    @FindBy(css = "[aria-label='Products & Solutions']")
     private WebElement productsSolutionsMenu;
 
     @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='View All']")
@@ -103,7 +103,7 @@ public class IndividualsPage extends BasePage{
     @FindBy(xpath = "//div[@class='opacity-100 col-start-1 row-start-1 content-center transition-opacity'] //p[text()='Products & solutions']")
     private WebElement headingPSMenu;
 
-    @FindBy(xpath = "//button[text()='Tools']")
+    @FindBy(css = "[aria-label='Tools']")
     private WebElement toolsMenu;
 
     @FindBy(xpath = "//div[@id='tools-dropdown'] //li[@class='relative']")
@@ -112,7 +112,7 @@ public class IndividualsPage extends BasePage{
     @FindBy(xpath = "//div[@class='opacity-100 col-start-1 row-start-1 content-center transition-opacity'] //p[text()='Financial tools']")
     private WebElement headingToolsMenu;
 
-    @FindBy(xpath = "//button[text()='Learn']")
+    @FindBy(css = "[aria-label='Learn']")
     private WebElement learnMenu;
 
     @FindBy(xpath = "//div[@id='learn-dropdown'] //li[@class='relative']")
@@ -121,7 +121,7 @@ public class IndividualsPage extends BasePage{
     @FindBy(xpath = "//div[@class='opacity-100 col-start-1 row-start-1 content-center transition-opacity'] //p[contains(text(),'The Currency')]")
     private WebElement headingLearnMenu;
 
-    @FindBy(xpath = "//button[text()='Why Empower']")
+    @FindBy(css = "[aria-label='Why Empower']")
     private WebElement empowerMenu;
 
     @FindBy(xpath = "//div[@id='why-empower-dropdown'] //li[@class='relative']")
@@ -185,11 +185,7 @@ public class IndividualsPage extends BasePage{
     private WebElement financialProfessionalsMenu;
 
 
-
-
-    //    @Step("Click Login button")
     public IndividualsLoginV1Page clickLoginButton() {
-//        wait10UntilClickable(loginButton).click();
         safeClick(loginButton);
         return new IndividualsLoginV1Page(getDriver());
     }
@@ -273,7 +269,7 @@ public class IndividualsPage extends BasePage{
 
 //    @Step("Click Product & Solutions menu")
     public IndividualsPage clickProductsSolutionsOpenMenu() {
-        wait10UntilVisible(productsSolutionsMenu).click();
+        safeClick(productsSolutionsMenu);
 
         return this;
     }
@@ -385,7 +381,7 @@ public class IndividualsPage extends BasePage{
 
 //    @Step("Click Tools menu")
     public IndividualsPage clickToolsOpenMenu() {
-        wait10UntilVisible(toolsMenu).click();
+        safeClick(toolsMenu);
 
         return this;
     }
@@ -406,7 +402,7 @@ public class IndividualsPage extends BasePage{
 
 //    @Step("Click Learn menu")
     public IndividualsPage clickLearnOpenMenu() {
-        wait10UntilVisible(learnMenu).click();
+        safeClick(learnMenu);
 
         return this;
     }

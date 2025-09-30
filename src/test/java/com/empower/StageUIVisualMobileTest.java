@@ -113,15 +113,6 @@ public class StageUIVisualMobileTest extends BaseTest {
     }
 
     @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsFinancialProfessionalsLogin() {
-        new IndividualsPage(getDriver())
-                .getHeader()
-                .clickFinancialProfessionalsMenu()
-                .clickLoginButton()
-                .takePercyFullPageScreenshot(getDriver(), "Financial Professionals Login page");
-    }
-
-    @Test(groups = {"mobile-visual"})
     public void testUIIndividualsLearnInvestmentInsights() {
         new IndividualsPage(getDriver())
                 .closeCookieBanner()

@@ -140,7 +140,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickWhyEmpowerOpenMenu()
+                .clickHamburgerWhyEmpowerOpenMenu()
                 .clickHamburgerWhyEmpowerPressCenter()
                 .takePercyFullPageScreenshot(getDriver(), "Press Center page");
     }

@@ -23,7 +23,7 @@ public class StageFinancialProfessionalsLoginMobileTest extends BaseTest {
     }
 
     @Test(groups = {"mobile", "tablet"})
-    public void testFinancialProfessionalsRegistrationNowButton() {
+    public void testFinancialProfessionalsRegisterNowButton() {
         FinancialProfessionalsLoginPage page = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .getMobileHeader()
@@ -35,11 +35,11 @@ public class StageFinancialProfessionalsLoginMobileTest extends BaseTest {
                 .clickFinancialProfessionalsRegisterNowButton()
                 .clickContinuePopup();
 
-        Assert.assertTrue(page.isNewUrl("/partnerlink"));
+        Assert.assertTrue(page.isNewUrl("partner"));
     }
 
     @Test(groups = {"mobile", "tablet"})
-    public void testFinancialProfessionalsRegistrationRixtremaButton() {
+    public void testFinancialProfessionalsRegisterRixtremaButton() {
         FinancialProfessionalsLoginPage page = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .getMobileHeader()

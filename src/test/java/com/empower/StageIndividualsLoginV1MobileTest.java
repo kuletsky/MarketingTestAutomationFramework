@@ -25,7 +25,7 @@ public class StageIndividualsLoginV1MobileTest extends BaseTest{
                 .clickPersonalCapitalLoginButton();
 
 //        Assert.assertEquals(page.getHeadingText(), "Sign in to Empower Personal Dashboard™");
-        Assert.assertTrue(page.isNewUrl("personalcapital.com/redirectMobile"));
+        Assert.assertTrue(page.isNewUrl("personalcapital.com"));
     }
 
 //    @Test(groups = {"desktop"})

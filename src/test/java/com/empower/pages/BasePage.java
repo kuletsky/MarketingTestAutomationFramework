@@ -209,11 +209,7 @@ public class BasePage {
             System.out.println("Timeout after 10s — stopping page load.");
             ((JavascriptExecutor) getDriver()).executeScript("window.stop();");
         } finally {
-//            try {
-//                getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
-//            } catch (Exception ex) {
-//                System.out.println("Failed to reset page load timeout.");
-//            }
+
         }
     }
 

@@ -10,7 +10,11 @@ public class StageOnBoardingTest extends BaseTest {
 //        new IndividualsPage(getDriver())
 //                .clickOpenAccountHeaderButton()
 //                .clickCreatePersonalDashBoardButton()
-//                .fillForm("testName", "testSurname", "test@mail.com", "password1234")
+//                .fillForm(
+//                        "testName",
+//                        "testSurname",
+//                        "test@mail.com",
+//                        "password1234")
 //                .clickNextButton();
 //    }
 }

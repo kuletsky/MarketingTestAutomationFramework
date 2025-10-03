@@ -31,7 +31,7 @@ public class StageUIVisualTest extends BaseTest {
     }
 
     @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsViewAll() {
+    public void testUIIndividualsSolutionsViewAll() {
         new IndividualsPage(getDriver())
                 .clickProductsSolutionsOpenMenu()
                 .clickViewAllLink()
@@ -39,7 +39,7 @@ public class StageUIVisualTest extends BaseTest {
     }
 
     @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsCashAccount() {
+    public void testUIIndividualsSolutionsCashAccount() {
         new IndividualsPage(getDriver())
                 .clickProductsSolutionsOpenMenu()
                 .clickCashAccountLink()
@@ -47,11 +47,36 @@ public class StageUIVisualTest extends BaseTest {
     }
 
     @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsRollover() {
+    public void testUIIndividualsSolutionsRollover() {
         new IndividualsPage(getDriver())
                 .clickProductsSolutionsOpenMenu()
                 .clickRolloverLink()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Rollover");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsSolutionsPrivateClient() {
+        new IndividualsPage(getDriver())
+                .clickProductsSolutionsOpenMenu()
+                .clickWealthManagementLink()
+                .clickPrivetClientLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Private Client");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsToolsViewAll() {
+        new IndividualsPage(getDriver())
+                .clickToolsOpenMenu()
+                .clickToolsViewAllLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools View All");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsToolsRetirementPlanner() {
+        new IndividualsPage(getDriver())
+                .clickToolsOpenMenu()
+                .clickToolsRetirementPlanner()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools Retirement plan");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -82,22 +107,6 @@ public class StageUIVisualTest extends BaseTest {
                 .closeCookieBanner()
                 .clickCTAButtonGetStarted()
                 .takePercyFullPageScreenshot(getDriver(), "CTA Get started");
-    }
-
-    @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsToolsViewAll() {
-        new IndividualsPage(getDriver())
-                .clickToolsOpenMenu()
-                .clickToolsViewAllLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools View All");
-    }
-
-    @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsToolsRetirementPlanner() {
-        new IndividualsPage(getDriver())
-                .clickToolsOpenMenu()
-                .clickToolsRetirementPlanner()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools Retirement plan");
     }
 
     @Test(groups = {"desktop-visual"})

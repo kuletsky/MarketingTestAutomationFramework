@@ -97,6 +97,13 @@ public class IndividualsPage extends BasePage{
     @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='Rollover']")
     private WebElement rolloverLink;
 
+    @FindBy(css = "#dropdown-desktop-0-1 [aria-label='Private Client']")
+    private WebElement privetClientLink;
+
+    @FindBy(css = "[aria-controls='dropdown-desktop-0-1']")
+    private WebElement wealthManagementLink;
+
+
     @FindBy(css = "#dropdown-mobile-0 [aria-label='Rollover']")
     private WebElement hamburgerRolloverLink;
 
@@ -363,6 +370,18 @@ public class IndividualsPage extends BasePage{
 
     public IndividualsPage clickRolloverLink() {
         safeClick(rolloverLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickPrivetClientLink() {
+        safeClick(privetClientLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickWealthManagementLink() {
+        safeClick(wealthManagementLink);
 
         return this;
     }

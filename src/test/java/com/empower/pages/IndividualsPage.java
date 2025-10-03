@@ -25,6 +25,15 @@ public class IndividualsPage extends BasePage{
     @FindBy(css = "[aria-controls='dropdown-mobile-0']")
     private WebElement hamburgerProductsSolutionsMenu;
 
+    @FindBy(css = "[data-once='nav-main-secondary-caret-mobile-click dropdownToggle']")
+    private WebElement hamburgerWealthManagementLink;
+
+    @FindBy(css = "#dropdown-mobile-0-1 [aria-label='Private Client']")
+    private WebElement hamburgerPrivateClientLink;
+
+    @FindBy(css = "#dropdown-mobile-0-1 [aria-label='Personal Strategy']")
+    private WebElement hamburgerPersonalStrategyLink;
+
     @FindBy(css = "#dropdown-mobile-0 .mobile-nav-secondary-menu")
     private List<WebElement> hamburgerOpenMenuPSLinks;
 
@@ -79,14 +88,23 @@ public class IndividualsPage extends BasePage{
     @FindBy(css = "nav[aria-label='Learn Secondary'] [aria-label='The Currency']")
     private WebElement learnTheCurrency;
 
+    @FindBy(css = "#markets-dropdown [aria-label='Government']")
+    private WebElement marketGovernmentLink;
+
     @FindBy(css = "#dropdown-mobile-2 [aria-label='The Currency']")
     private WebElement hamburgerLearnTheCurrency;
 
     @FindBy(css = "#dropdown-mobile-3 [aria-label='Press Center']")
     private WebElement hamburgerLearnPressCenter;
 
-    @FindBy(css = "nav[aria-label='Why Empower'] [aria-label='Press Center']")
+    @FindBy(css = "#dropdown-mobile-3 [aria-label='Cybersecurity']")
+    private WebElement hamburgerLearnCybersecurityLink;
+
+    @FindBy(css = "nav[aria-label='Why Empower Secondary'] [aria-label='Press Center']")
     private WebElement whyEmpowerPressCenter;
+
+    @FindBy(css = "nav[aria-label='Why Empower Secondary'] [aria-label='Cybersecurity']")
+    private WebElement whyEmpowerCybersecurityLink;
 
     @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='High-yield cash account']")
     private WebElement cashAccountLink;
@@ -100,12 +118,26 @@ public class IndividualsPage extends BasePage{
     @FindBy(css = "#dropdown-desktop-0-1 [aria-label='Private Client']")
     private WebElement privetClientLink;
 
+    @FindBy(css = "#dropdown-desktop-0-1 [aria-label='Personal Strategy']")
+    private WebElement personalStrategyLink;
+
+    @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='IRAs']")
+    private WebElement iraLink;
+
+    @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='Investment accounts']")
+    private WebElement investmentAccountLink;
+
     @FindBy(css = "[aria-controls='dropdown-desktop-0-1']")
     private WebElement wealthManagementLink;
 
-
     @FindBy(css = "#dropdown-mobile-0 [aria-label='Rollover']")
     private WebElement hamburgerRolloverLink;
+
+    @FindBy(css = "#dropdown-mobile-0 [aria-label='IRAs']")
+    private WebElement hamburgerIRAsLink;
+
+    @FindBy(css = "#dropdown-mobile-0 [aria-label='Investment accounts']")
+    private WebElement hamburgerInvestmentAccountsLink;
 
     @FindBy(css = "#solutions-dropdown li.relative > a, #solutions-dropdown li.relative > button")
     private List<WebElement> productsSolutionsLinks;
@@ -194,6 +226,9 @@ public class IndividualsPage extends BasePage{
     @FindBy(css = "[aria-label='Financial Professionals']")
     private WebElement financialProfessionalsMenu;
 
+    @FindBy(css = "[aria-label='Markets']")
+    private WebElement marketMenu;
+
 
     public IndividualsLoginV1Page clickLoginButton() {
         safeClick(loginButton);
@@ -206,8 +241,26 @@ public class IndividualsPage extends BasePage{
     }
 
 //    @Step("Click Product & Solutions menu")
-    public IndividualsPage clickHamburgerProductsSolutionsOpenMenu() {
+    public IndividualsPage clickHamburgerProductsSolutionsLink() {
         wait10UntilVisible(hamburgerProductsSolutionsMenu).click();
+
+        return this;
+    }
+
+    public IndividualsPage clickHamburgerWealthManagementLink() {
+        wait10UntilVisible(hamburgerWealthManagementLink).click();
+
+        return this;
+    }
+
+    public IndividualsPage clickHamburgerPrivateClientLink() {
+        wait10UntilVisible(hamburgerPrivateClientLink).click();
+
+        return this;
+    }
+
+    public IndividualsPage clickHamburgerPersonalStrategyLink() {
+        wait10UntilVisible(hamburgerPersonalStrategyLink).click();
 
         return this;
     }
@@ -350,8 +403,20 @@ public class IndividualsPage extends BasePage{
         return this;
     }
 
+    public IndividualsPage clickHamburgerWhyEmpowerCybersecurityLink() {
+        safeClick(hamburgerLearnCybersecurityLink);
+
+        return this;
+    }
+
     public IndividualsPage clickWhyEmpowerPressCenter() {
         safeClick(whyEmpowerPressCenter);
+
+        return this;
+    }
+
+    public IndividualsPage clickWhyEmpowerCybersecurityLink() {
+        safeClick(whyEmpowerCybersecurityLink);
 
         return this;
     }
@@ -380,6 +445,24 @@ public class IndividualsPage extends BasePage{
         return this;
     }
 
+    public IndividualsPage clickPersonalStrategyLink() {
+        safeClick(personalStrategyLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickIRAsLink() {
+        safeClick(iraLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickInvestmentAccountsLink() {
+        safeClick(investmentAccountLink);
+
+        return this;
+    }
+
     public IndividualsPage clickWealthManagementLink() {
         safeClick(wealthManagementLink);
 
@@ -388,6 +471,18 @@ public class IndividualsPage extends BasePage{
 
     public IndividualsPage clickHamburgerRolloverLink() {
         safeClick(hamburgerRolloverLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickHamburgerIRAsLink() {
+        safeClick(hamburgerIRAsLink);
+
+        return this;
+    }
+
+    public IndividualsPage clickHamburgerInvestmentAccountsLink() {
+        safeClick(hamburgerInvestmentAccountsLink);
 
         return this;
     }

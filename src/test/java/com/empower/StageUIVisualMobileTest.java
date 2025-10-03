@@ -39,7 +39,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickHamburgerProductsSolutionsOpenMenu()
+                .clickHamburgerProductsSolutionsLink()
                 .clickHamburgerViewAll()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals View All");
     }
@@ -50,7 +50,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickHamburgerProductsSolutionsOpenMenu()
+                .clickHamburgerProductsSolutionsLink()
                 .clickHamburgerCashAccountLink()
 
                 .takePercyFullPageScreenshot(getDriver(), "Individuals High-yield cash account");
@@ -62,9 +62,55 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickHamburgerProductsSolutionsOpenMenu()
+                .clickHamburgerProductsSolutionsLink()
                 .clickHamburgerRolloverLink()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Rollover");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsPrivateClient() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickHamburgerProductsSolutionsLink()
+                .clickHamburgerWealthManagementLink()
+                .clickHamburgerPrivateClientLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Private Client");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsPersonalStrategy() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickHamburgerProductsSolutionsLink()
+                .clickHamburgerWealthManagementLink()
+                .clickHamburgerPersonalStrategyLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Personal Strategy");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsIRAs() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickHamburgerProductsSolutionsLink()
+                .clickHamburgerIRAsLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals IRAs");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsInvestmentAccounts() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickHamburgerProductsSolutionsLink()
+                .clickHamburgerInvestmentAccountsLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -143,5 +189,16 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerWhyEmpowerOpenMenu()
                 .clickHamburgerWhyEmpowerPressCenter()
                 .takePercyFullPageScreenshot(getDriver(), "Press Center page");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsLearnCybersecurity() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickHamburgerWhyEmpowerOpenMenu()
+                .clickHamburgerWhyEmpowerCybersecurityLink()
+                .takePercyFullPageScreenshot(getDriver(), "Cybersecurity page");
     }
 }

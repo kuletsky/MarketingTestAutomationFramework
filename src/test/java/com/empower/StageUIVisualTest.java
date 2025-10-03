@@ -64,6 +64,31 @@ public class StageUIVisualTest extends BaseTest {
     }
 
     @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsSolutionsPersonalStrategy() {
+        new IndividualsPage(getDriver())
+                .clickProductsSolutionsOpenMenu()
+                .clickWealthManagementLink()
+                .clickPersonalStrategyLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Personal Strategy");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsSolutionsIRAs() {
+        new IndividualsPage(getDriver())
+                .clickProductsSolutionsOpenMenu()
+                .clickIRAsLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals IRAs");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsSolutionsInvestmentAccounts() {
+        new IndividualsPage(getDriver())
+                .clickProductsSolutionsOpenMenu()
+                .clickInvestmentAccountsLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts");
+    }
+
+    @Test(groups = {"desktop-visual"})
     public void testUIIndividualsToolsViewAll() {
         new IndividualsPage(getDriver())
                 .clickToolsOpenMenu()
@@ -141,5 +166,34 @@ public class StageUIVisualTest extends BaseTest {
                 .clickWhyEmpowerPressCenter()
                 .takePercyFullPageScreenshot(getDriver(), "Press Center page");
     }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsWhyEmpowerCybersecurity() {
+        new IndividualsPage(getDriver())
+                .clickWhyEmpowerOpenMenu()
+                .clickWhyEmpowerCybersecurityLink()
+                .takePercyFullPageScreenshot(getDriver(), "Cybersecurity page");
+    }
+/// //////////////////////////////////////////////////////////////////////////////////////////////////
+    @Test(groups = {"desktop-visual"})
+    public void testUIPlanSponsorsMarketsGovernment() {
+        new IndividualsPage(getDriver())
+                .getHeader()
+                .clickPlanSponsorsMenu()
+                .clickMarketsOpenMenu()
+                .clickMarketGovernmentLink()
+                .takePercyFullPageScreenshot(getDriver(), "Government page");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIPlanSponsorsMarketsTaftHartley() {
+        new IndividualsPage(getDriver())
+                .getHeader()
+                .clickPlanSponsorsMenu()
+                .clickMarketsOpenMenu()
+                .clickMarketTaftHartleyLink()
+                .takePercyFullPageScreenshot(getDriver(), "Taft-Hartley page");
+    }
+
 
 }

@@ -18,8 +18,14 @@ public class PlanSponsorsPage extends BasePage{
     @FindBy(css = "h1")
     private WebElement headingText;
 
-    @FindBy(xpath = "//button[text()='Markets']")
+    @FindBy(css = "#block-empulsify-2025-primary-nav [aria-label='Markets']")
     private WebElement marketsMenu;
+
+    @FindBy(css = "#markets-dropdown [aria-label='Government']")
+    private WebElement governmentLink;
+
+    @FindBy(css = "#markets-dropdown [href*='/taft-hartley-plans']")
+    private WebElement taftHartleyLink;
 
     @FindBy(xpath = "//div[@id='markets-dropdown'] //li[@class='relative']")
     private List<WebElement> marketsLinks;
@@ -95,7 +101,8 @@ public class PlanSponsorsPage extends BasePage{
     @FindBy(css = "#dropdown-mobile-4 .mobile-nav-secondary-menu")
     private List<WebElement> hamburgerOpenMenuWhyEmpowerLinks;
 
-
+    @FindBy(css = "#dropdown-mobile-4 .mobile-nav-secondary-menu")
+    private List<WebElement> marketOpenMenu;
 
 
 
@@ -112,6 +119,16 @@ public class PlanSponsorsPage extends BasePage{
 
     public PlanSponsorsPage clickMarketsOpenMenu() {
         wait10UntilClickable(marketsMenu).click();
+        return this;
+    }
+
+    public PlanSponsorsPage clickMarketGovernmentLink() {
+        wait10UntilClickable(governmentLink).click();
+        return this;
+    }
+
+    public PlanSponsorsPage clickMarketTaftHartleyLink() {
+        wait10UntilClickable(taftHartleyLink).click();
         return this;
     }
 
@@ -269,6 +286,5 @@ public class PlanSponsorsPage extends BasePage{
                 .map(String::trim)
                 .toList();
     }
-
 
 }

@@ -63,7 +63,7 @@ public class StageIndividualsMobileTest extends BaseTest {
         List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickHamburgerProductsSolutionsOpenMenu()
+                .clickHamburgerProductsSolutionsLink()
                 .getHamburgerProductsSolutionsOpenMenuLinks();
 
         Assert.assertEquals(actualOpenMenuLinks, expectedOpenMenu);

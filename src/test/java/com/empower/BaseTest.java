@@ -21,7 +21,8 @@ public class BaseTest {
 
 //        driver = new ChromeDriver(options);
         driver = new ChromeDriver();
-        driver.get("https://empwrretiremtstg.prod.acquia-sites.com");
+//        driver.get("https://empwrretiremtstg.prod.acquia-sites.com");
+        driver.get("https://empower.com");
     }
 
     @AfterMethod(alwaysRun = true)

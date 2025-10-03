@@ -22,13 +22,13 @@ public class OnBoardingPage extends BasePage{
     @FindBy(css = "[aria-label='Last name']")
     private WebElement lname;
 
-    @FindBy(css = "title='Email'")
+    @FindBy(css = "[title='Email']")
     private WebElement eMail;
 
-    @FindBy(css = "name='passwd'")
+    @FindBy(css = "[name='passwd']")
     private WebElement psw;
 
-    @FindBy(css = "type='submit'")
+    @FindBy(css = "[type='submit']")
     private WebElement nextButton;
 
 
@@ -44,9 +44,9 @@ public class OnBoardingPage extends BasePage{
         return this;
     }
 
-    public OnBoardingPage fillForm(String name, String surname, String email, String password) {
+    public OnBoardingPage fillForm(String name, String lastname, String email, String password) {
         wait10UntilVisible(fname).sendKeys(name);
-        wait10UntilVisible(lname).sendKeys(surname);
+        wait10UntilVisible(lname).sendKeys(lastname);
         wait10UntilVisible(eMail).sendKeys(email);
         wait10UntilVisible(psw).sendKeys(password);
 

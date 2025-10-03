@@ -95,7 +95,7 @@ public class BasePage {
     @FindBy(css = ".stacked-logo")
     private WebElement empowerLogo;
 
-    @FindBy(xpath = "//header//span[text()='Open an account']")
+    @FindBy(css = "[data-once='nav-main-login-register-link click-primary-button empulsify-button-ripple']")
     private WebElement openAccountHeaderButton;
 
     @FindBy(css = "li a[data-once='nav-main-contextual-link-click']")
@@ -200,7 +200,7 @@ public class BasePage {
             ByWait10UntilClickable(locator).click();
             Thread.sleep(3000);
 
-            new WebDriverWait(getDriver(), Duration.ofSeconds(10))
+            new WebDriverWait(getDriver(), Duration.ofSeconds(30))
                     .until(d -> "complete".equals(
                             ((JavascriptExecutor)d).executeScript("return document.readyState")
                     ));
@@ -321,8 +321,8 @@ public class BasePage {
 
 //    @Step("Click Open account button on the header")
     public OnBoardingPage clickOpenAccountHeaderButton() {
-//        wait10UntilClickable(openAccountHeaderButton).click();
-        safeClick(openAccountHeaderButton);
+        wait10UntilClickable(openAccountHeaderButton).click();
+//        safeClick(openAccountHeaderButton);
         return new OnBoardingPage(getDriver());
     }
 

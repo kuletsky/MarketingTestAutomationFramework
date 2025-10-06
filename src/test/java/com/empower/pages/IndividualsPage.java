@@ -332,7 +332,7 @@ public class IndividualsPage extends BasePage{
 
 //    @Step("Click Product & Solutions menu")
     public IndividualsPage clickProductsSolutionsOpenMenu() {
-        safeClick(productsSolutionsMenu);
+        wait10UntilClickable(productsSolutionsMenu).click();
 
         return this;
     }
@@ -362,7 +362,7 @@ public class IndividualsPage extends BasePage{
     }
 
     public IndividualsPage clickToolsRetirementPlanner() {
-        safeClick(toolsRetirementPlannerLink);
+        wait10UntilClickable(toolsRetirementPlannerLink).click();
 
         return this;
     }
@@ -374,7 +374,7 @@ public class IndividualsPage extends BasePage{
     }
 
     public IndividualsPage clickLearnInvestmentInsights() {
-        safeClick(learnInvestmentInsights);
+        wait10UntilClickable(learnInvestmentInsights).click();
 
         return this;
     }
@@ -410,7 +410,7 @@ public class IndividualsPage extends BasePage{
     }
 
     public IndividualsPage clickWhyEmpowerPressCenter() {
-        safeClick(whyEmpowerPressCenter);
+        wait10UntilClickable(whyEmpowerPressCenter).click();
 
         return this;
     }
@@ -422,7 +422,7 @@ public class IndividualsPage extends BasePage{
     }
 
     public IndividualsPage clickCashAccountLink() {
-        safeClick(cashAccountLink);
+        wait10UntilClickable(cashAccountLink).click();
 
         return this;
     }
@@ -504,7 +504,7 @@ public class IndividualsPage extends BasePage{
 
 //    @Step("Click Tools menu")
     public IndividualsPage clickToolsOpenMenu() {
-        safeClick(toolsMenu);
+        wait10UntilClickable(toolsMenu).click();
 
         return this;
     }
@@ -525,7 +525,7 @@ public class IndividualsPage extends BasePage{
 
 //    @Step("Click Learn menu")
     public IndividualsPage clickLearnOpenMenu() {
-        safeClick(learnMenu);
+        wait10UntilClickable(learnMenu).click();
 
         return this;
     }

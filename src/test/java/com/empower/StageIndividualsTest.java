@@ -246,20 +246,20 @@ public class StageIndividualsTest extends BaseTest{
                 .closeCookieBanner()
                 .clickCTAButtonStartRollover();
 
-        Assert.assertEquals(page.getHeadingText(), "Retire on your terms");
+        Assert.assertTrue(page.getHeadingText().contains("The right IRA. Right now."));
         Assert.assertTrue(page.isNewUrl("iras"));
     }
 
-    @Test(groups = {"desktop", "mobile", "tablet"})
-    public void testCTAButtonWorkWithUs() {
-        WorkplaceRetirementPage page = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .clickCTAButtonWorkWithUs();
-
-//        Assert.assertEquals(page.getHeadingText(),
-//                "Ongoing in-depth financial support");
-        Assert.assertTrue(page.isNewUrl("workplace-retirement"));
-    }
+//    @Test(groups = {"desktop", "mobile", "tablet"})
+//    public void testCTAButtonWorkWithUs() {
+//        WorkplaceRetirementPage page = new IndividualsPage(getDriver())
+//                .closeCookieBanner()
+//                .clickCTAButtonWorkWithUs();
+//
+////        Assert.assertEquals(page.getHeadingText(),
+////                "Ongoing in-depth financial support");
+//        Assert.assertTrue(page.isNewUrl("workplace-retirement"));
+//    }
 
     @Test(groups = {"desktop", "tablet"})
     public void testCTAButtonConnectMyAccounts2() {

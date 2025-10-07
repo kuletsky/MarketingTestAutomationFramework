@@ -69,7 +69,11 @@ public class PlanSponsorsPage extends BasePage{
     @FindBy(xpath = "//div[@class='opacity-100 col-start-1 row-start-1 content-center transition-opacity'] //p[text()='Why Empower']")
     private WebElement headingEmpowerMenu;
 
+    @FindBy(css = "#dropdown-mobile-0 [data-menu-index='5']")
+    private WebElement hamburgerMarketTaftHartleyLink;
 
+    @FindBy(css = "#dropdown-mobile-0 [data-menu-index='3']")
+    private WebElement hamburgerMarketGovernmentLink;
 
     @FindBy(css = "[aria-controls='dropdown-mobile-0']")
     private WebElement hamburgerMarketsMenu;
@@ -285,6 +289,18 @@ public class PlanSponsorsPage extends BasePage{
                 .map(WebElement::getText)
                 .map(String::trim)
                 .toList();
+    }
+
+    public PlanSponsorsPage clickHamburgerMarketTaftHartleyLink() {
+        wait10UntilClickable(hamburgerMarketTaftHartleyLink).click();
+
+        return this;
+    }
+
+    public PlanSponsorsPage clickHamburgerMarketGovernmentLink() {
+        wait10UntilClickable(hamburgerMarketGovernmentLink).click();
+
+        return this;
     }
 
 }

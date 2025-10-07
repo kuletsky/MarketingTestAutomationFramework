@@ -68,52 +68,6 @@ public class StageUIVisualMobileTest extends BaseTest {
     }
 
     @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsPrivateClient() {
-        new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickHamburgerProductsSolutionsLink()
-                .clickHamburgerWealthManagementLink()
-                .clickHamburgerPrivateClientLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Private Client");
-    }
-
-    @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsPersonalStrategy() {
-        new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickHamburgerProductsSolutionsLink()
-                .clickHamburgerWealthManagementLink()
-                .clickHamburgerPersonalStrategyLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Personal Strategy");
-    }
-
-    @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsIRAs() {
-        new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickHamburgerProductsSolutionsLink()
-                .clickHamburgerIRAsLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals IRAs");
-    }
-
-    @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsInvestmentAccounts() {
-        new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickHamburgerProductsSolutionsLink()
-                .clickHamburgerInvestmentAccountsLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts");
-    }
-
-    @Test(groups = {"mobile-visual"})
     public void testUIIndividualsOpenAccount() {
         new IndividualsPage(getDriver())
                 .clickOpenAccountHeaderButton()
@@ -192,7 +146,7 @@ public class StageUIVisualMobileTest extends BaseTest {
     }
 
     @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsLearnCybersecurity() {
+    public void testUIIndividualsWhyEmpowerCybersecurity() {
         new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .getMobileHeader()
@@ -200,5 +154,77 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerWhyEmpowerOpenMenu()
                 .clickHamburgerWhyEmpowerCybersecurityLink()
                 .takePercyFullPageScreenshot(getDriver(), "Cybersecurity page");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsPrivateClient() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickHamburgerProductsSolutionsLink()
+                .clickHamburgerWealthManagementLink()
+                .clickHamburgerPrivateClientLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Private Client");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsSolutionsPersonalStrategy() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickHamburgerProductsSolutionsLink()
+                .clickHamburgerWealthManagementLink()
+                .clickHamburgerPersonalStrategyLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Personal Strategy");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsSolutionsIRAs() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickHamburgerProductsSolutionsLink()
+                .clickHamburgerIRAsLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals IRAs");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsSolutionsInvestmentAccounts() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickHamburgerProductsSolutionsLink()
+                .clickHamburgerInvestmentAccountsLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIPlanSponsorsMarketsTaftHartley() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .closeCookieBanner()
+                .clickPlanSponsorsMenu()
+                .clickHamburgerMarketsOpenMenu()
+                .clickHamburgerMarketTaftHartleyLink()
+                .takePercyFullPageScreenshot(getDriver(), "Taft-Hartley page");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIPlanSponsorsMarketsGovernment() {
+        new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .closeCookieBanner()
+                .clickPlanSponsorsMenu()
+                .clickHamburgerMarketsOpenMenu()
+                .clickHamburgerMarketGovernmentLink()
+                .takePercyFullPageScreenshot(getDriver(), "Government page");
     }
 }

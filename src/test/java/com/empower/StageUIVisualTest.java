@@ -64,31 +64,6 @@ public class StageUIVisualTest extends BaseTest {
     }
 
     @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsSolutionsPersonalStrategy() {
-        new IndividualsPage(getDriver())
-                .clickProductsSolutionsOpenMenu()
-                .clickWealthManagementLink()
-                .clickPersonalStrategyLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Personal Strategy");
-    }
-
-    @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsSolutionsIRAs() {
-        new IndividualsPage(getDriver())
-                .clickProductsSolutionsOpenMenu()
-                .clickIRAsLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals IRAs");
-    }
-
-    @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsSolutionsInvestmentAccounts() {
-        new IndividualsPage(getDriver())
-                .clickProductsSolutionsOpenMenu()
-                .clickInvestmentAccountsLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts");
-    }
-
-    @Test(groups = {"desktop-visual"})
     public void testUIIndividualsToolsViewAll() {
         new IndividualsPage(getDriver())
                 .clickToolsOpenMenu()
@@ -195,5 +170,29 @@ public class StageUIVisualTest extends BaseTest {
                 .takePercyFullPageScreenshot(getDriver(), "Taft-Hartley page");
     }
 
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsSolutionsPersonalStrategy() {
+        new IndividualsPage(getDriver())
+                .clickProductsSolutionsOpenMenu()
+                .clickWealthManagementLink()
+                .clickPersonalStrategyLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Personal Strategy");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsSolutionsIRAs() {
+        new IndividualsPage(getDriver())
+                .clickProductsSolutionsOpenMenu()
+                .clickIRAsLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals IRAs");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsSolutionsInvestmentAccounts() {
+        new IndividualsPage(getDriver())
+                .clickProductsSolutionsOpenMenu()
+                .clickInvestmentAccountsLink()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts");
+    }
 
 }

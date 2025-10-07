@@ -10,7 +10,7 @@ public class IrasPage extends BasePage{
         super(driver);
     }
 
-    @FindBy(css = "h1 p")
+    @FindBy(css = "h1")
     private WebElement headingPage;
 
 //    @Step("Get text of Heading")

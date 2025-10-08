@@ -210,6 +210,8 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .closeCookieBanner()
                 .clickPlanSponsorsMenu()
+                .getMobileHeader()
+                .clickHamburgerMenuPlanSponsors()
                 .clickHamburgerMarketsOpenMenu()
                 .clickHamburgerMarketTaftHartleyLink()
                 .takePercyFullPageScreenshot(getDriver(), "Taft-Hartley page");
@@ -223,6 +225,8 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .closeCookieBanner()
                 .clickPlanSponsorsMenu()
+                .getMobileHeader()
+                .clickHamburgerMenuPlanSponsors()
                 .clickHamburgerMarketsOpenMenu()
                 .clickHamburgerMarketGovernmentLink()
                 .takePercyFullPageScreenshot(getDriver(), "Government page");

@@ -343,7 +343,7 @@ public class BasePage {
                 .toList();
     }
 
-    public void takePercyFullPageScreenshot(WebDriver driver, String name) {
+    public void takePercyFullPageScreenshot(WebDriver driver, String name, String testCaseName) {
 //        PercySDK.screenshot(driver, name);
 
         // Wait for DOM to settle (simple example)
@@ -354,6 +354,7 @@ public class BasePage {
         Percy percy = new Percy(driver);
         Map<String, Object> options = new HashMap<>();
 
+        options.put("testCase", testCaseName);
         options.put("widths", Arrays.asList(1920));
         options.put("minHeight", 1080);
         options.put("fullPage", true);

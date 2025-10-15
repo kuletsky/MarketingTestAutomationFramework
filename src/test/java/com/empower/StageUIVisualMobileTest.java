@@ -7,10 +7,18 @@ import org.testng.annotations.Test;
 public class StageUIVisualMobileTest extends BaseTest {
 
     @Test(groups = {"mobile-visual"})
+    public void testUIIndividuals() {
+        new IndividualsPage(getDriver())
+                .takePercyFullPageScreenshot(getDriver(), "Individuals page", "Mobile");
+
+//        PercySDK.screenshot(getDriver(), "Home – default");
+    }
+
+    @Test(groups = {"mobile-visual"})
     public void testUIIndividualsLogin() {
         new IndividualsPage(getDriver())
                 .clickLoginButton()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Login page");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Login page", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -20,7 +28,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .closeCookieBanner()
                 .clickPlanSponsorsMenu()
-                .takePercyFullPageScreenshot(getDriver(), "Plan Sponsors page");
+                .takePercyFullPageScreenshot(getDriver(), "Plan Sponsors page", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -30,7 +38,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
                 .clickFinancialProfessionalsMenu()
-                .takePercyFullPageScreenshot(getDriver(), "Financial Professionals page");
+                .takePercyFullPageScreenshot(getDriver(), "Financial Professionals page", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -41,7 +49,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .clickHamburgerProductsSolutionsLink()
                 .clickHamburgerViewAll()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals View All");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals View All", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -53,7 +61,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerProductsSolutionsLink()
                 .clickHamburgerCashAccountLink()
 
-                .takePercyFullPageScreenshot(getDriver(), "Individuals High-yield cash account");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals High-yield cash account", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -64,14 +72,14 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .clickHamburgerProductsSolutionsLink()
                 .clickHamburgerRolloverLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Rollover");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Rollover", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsOpenAccount() {
         new IndividualsPage(getDriver())
                 .clickOpenAccountHeaderButton()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -79,7 +87,7 @@ public class StageUIVisualMobileTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickOpenAccountHeaderButton()
                 .clickCreatePersonalDashBoardButton()
-                .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard");
+                .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -87,7 +95,7 @@ public class StageUIVisualMobileTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .clickCTAButtonGetStarted()
-                .takePercyFullPageScreenshot(getDriver(), "CTA Get started");
+                .takePercyFullPageScreenshot(getDriver(), "CTA Get started", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -98,7 +106,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .clickHamburgerToolsOpenMenu()
                 .clickHamburgerToolsViewAllLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools View All");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools View All", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -109,7 +117,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .clickHamburgerToolsOpenMenu()
                 .clickHamburgerToolsRetirementPlanner()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools Retirement plan");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools Retirement plan", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -120,7 +128,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .clickHamburgerLearnOpenMenu()
                 .clickHamburgerLearnInvestmentInsights()
-                .takePercyFullPageScreenshot(getDriver(), "Investment Insights page");
+                .takePercyFullPageScreenshot(getDriver(), "Investment Insights page", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -131,7 +139,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .clickHamburgerLearnOpenMenu()
                 .clickHamburgerLearnTheCurrency()
-                .takePercyFullPageScreenshot(getDriver(), "The Currency page");
+                .takePercyFullPageScreenshot(getDriver(), "The Currency page", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -142,7 +150,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .clickHamburgerWhyEmpowerOpenMenu()
                 .clickHamburgerWhyEmpowerPressCenter()
-                .takePercyFullPageScreenshot(getDriver(), "Press Center page");
+                .takePercyFullPageScreenshot(getDriver(), "Press Center page", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -153,7 +161,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .clickHamburgerWhyEmpowerOpenMenu()
                 .clickHamburgerWhyEmpowerCybersecurityLink()
-                .takePercyFullPageScreenshot(getDriver(), "Cybersecurity page");
+                .takePercyFullPageScreenshot(getDriver(), "Cybersecurity page", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -165,7 +173,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerProductsSolutionsLink()
                 .clickHamburgerWealthManagementLink()
                 .clickHamburgerPrivateClientLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Private Client");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Private Client", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -177,7 +185,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerProductsSolutionsLink()
                 .clickHamburgerWealthManagementLink()
                 .clickHamburgerPersonalStrategyLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Personal Strategy");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Personal Strategy", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -188,7 +196,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .clickHamburgerProductsSolutionsLink()
                 .clickHamburgerIRAsLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals IRAs");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals IRAs", "Mobile");
     }
 
     @Test(groups = {"mobile-visual"})
@@ -199,7 +207,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuIndividuals()
                 .clickHamburgerProductsSolutionsLink()
                 .clickHamburgerInvestmentAccountsLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts", "Mobile");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -214,7 +222,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuPlanSponsors()
                 .clickHamburgerMarketsOpenMenu()
                 .clickHamburgerMarketTaftHartleyLink()
-                .takePercyFullPageScreenshot(getDriver(), "Taft-Hartley page");
+                .takePercyFullPageScreenshot(getDriver(), "Taft-Hartley page", "Mobile");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -229,6 +237,6 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .clickHamburgerMenuPlanSponsors()
                 .clickHamburgerMarketsOpenMenu()
                 .clickHamburgerMarketGovernmentLink()
-                .takePercyFullPageScreenshot(getDriver(), "Government page");
+                .takePercyFullPageScreenshot(getDriver(), "Government page", "Mobile");
     }
 }

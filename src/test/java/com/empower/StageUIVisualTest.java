@@ -6,10 +6,10 @@ import org.testng.annotations.Test;
 
 public class StageUIVisualTest extends BaseTest {
 
-    @Test(groups = {"desktop-visual", "mobile-visual"})
+    @Test(groups = {"desktop-visual"})
     public void testUIIndividuals() {
         new IndividualsPage(getDriver())
-                .takePercyFullPageScreenshot(getDriver(), "Individuals page");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals page", "Desktop");
 
 //        PercySDK.screenshot(getDriver(), "Home – default");
     }
@@ -19,7 +19,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .getHeader()
                 .clickPlanSponsorsMenu()
-                .takePercyFullPageScreenshot(getDriver(), "Plan Sponsors page");
+                .takePercyFullPageScreenshot(getDriver(), "Plan Sponsors page","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -27,7 +27,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .getHeader()
                 .clickFinancialProfessionalsMenu()
-                .takePercyFullPageScreenshot(getDriver(), "Financial Professionals page");
+                .takePercyFullPageScreenshot(getDriver(), "Financial Professionals page","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -35,7 +35,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickProductsSolutionsOpenMenu()
                 .clickViewAllLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals View All");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals View All","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -43,7 +43,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickProductsSolutionsOpenMenu()
                 .clickCashAccountLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals High-yield cash account");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals High-yield cash account","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -51,7 +51,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickProductsSolutionsOpenMenu()
                 .clickRolloverLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Rollover");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Rollover","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -60,7 +60,7 @@ public class StageUIVisualTest extends BaseTest {
                 .clickProductsSolutionsOpenMenu()
                 .clickWealthManagementLink()
                 .clickPrivetClientLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Private Client");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Private Client","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -68,7 +68,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickToolsOpenMenu()
                 .clickToolsViewAllLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools View All");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools View All","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -76,21 +76,21 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickToolsOpenMenu()
                 .clickToolsRetirementPlanner()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools Retirement plan");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Tools Retirement plan","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
     public void testUIIndividualsLogin() {
         new IndividualsPage(getDriver())
                 .clickLoginButton()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Login page");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Login page","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
     public void testUIIndividualsOpenAccount() {
         new IndividualsPage(getDriver())
                 .clickOpenAccountHeaderButton()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -98,7 +98,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickOpenAccountHeaderButton()
                 .clickCreatePersonalDashBoardButton()
-                .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard");
+                .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -106,7 +106,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .clickCTAButtonGetStarted()
-                .takePercyFullPageScreenshot(getDriver(), "CTA Get started");
+                .takePercyFullPageScreenshot(getDriver(), "CTA Get started","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -115,7 +115,7 @@ public class StageUIVisualTest extends BaseTest {
                 .getHeader()
                 .clickFinancialProfessionalsMenu()
                 .clickLoginButton()
-                .takePercyFullPageScreenshot(getDriver(), "Financial Professionals Login page");
+                .takePercyFullPageScreenshot(getDriver(), "Financial Professionals Login page","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -123,7 +123,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickLearnOpenMenu()
                 .clickLearnInvestmentInsights()
-                .takePercyFullPageScreenshot(getDriver(), "Investment Insights page");
+                .takePercyFullPageScreenshot(getDriver(), "Investment Insights page","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -131,7 +131,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickLearnOpenMenu()
                 .clickLearnTheCurrency()
-                .takePercyFullPageScreenshot(getDriver(), "The Currency page");
+                .takePercyFullPageScreenshot(getDriver(), "The Currency page","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -139,7 +139,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickWhyEmpowerOpenMenu()
                 .clickWhyEmpowerPressCenter()
-                .takePercyFullPageScreenshot(getDriver(), "Press Center page");
+                .takePercyFullPageScreenshot(getDriver(), "Press Center page","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -147,7 +147,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickWhyEmpowerOpenMenu()
                 .clickWhyEmpowerCybersecurityLink()
-                .takePercyFullPageScreenshot(getDriver(), "Cybersecurity page");
+                .takePercyFullPageScreenshot(getDriver(), "Cybersecurity page","Desktop");
     }
 /// //////////////////////////////////////////////////////////////////////////////////////////////////
     @Test(groups = {"desktop-visual"})
@@ -157,7 +157,7 @@ public class StageUIVisualTest extends BaseTest {
                 .clickPlanSponsorsMenu()
                 .clickMarketsOpenMenu()
                 .clickMarketGovernmentLink()
-                .takePercyFullPageScreenshot(getDriver(), "Government page");
+                .takePercyFullPageScreenshot(getDriver(), "Government page","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -167,7 +167,7 @@ public class StageUIVisualTest extends BaseTest {
                 .clickPlanSponsorsMenu()
                 .clickMarketsOpenMenu()
                 .clickMarketTaftHartleyLink()
-                .takePercyFullPageScreenshot(getDriver(), "Taft-Hartley page");
+                .takePercyFullPageScreenshot(getDriver(), "Taft-Hartley page","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -176,7 +176,7 @@ public class StageUIVisualTest extends BaseTest {
                 .clickProductsSolutionsOpenMenu()
                 .clickWealthManagementLink()
                 .clickPersonalStrategyLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Personal Strategy");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Personal Strategy","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -184,7 +184,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickProductsSolutionsOpenMenu()
                 .clickIRAsLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals IRAs");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals IRAs","Desktop");
     }
 
     @Test(groups = {"desktop-visual"})
@@ -192,7 +192,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .clickProductsSolutionsOpenMenu()
                 .clickInvestmentAccountsLink()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts");
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts","Desktop");
     }
 
 }

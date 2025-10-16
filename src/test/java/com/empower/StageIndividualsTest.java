@@ -1,6 +1,7 @@
 package com.empower;
 
 import com.empower.pages.*;
+import com.empower.pages.base.BasePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

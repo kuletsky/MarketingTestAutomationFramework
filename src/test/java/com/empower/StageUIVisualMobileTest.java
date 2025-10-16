@@ -210,7 +210,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts", "Mobile");
     }
 
-    @Test(groups = {"desktop-visual"})
+    @Test(groups = {"mobile-visual"})
     public void testUIPlanSponsorsMarketsTaftHartley() {
         new IndividualsPage(getDriver())
                 .closeCookieBanner()
@@ -225,7 +225,7 @@ public class StageUIVisualMobileTest extends BaseTest {
                 .takePercyFullPageScreenshot(getDriver(), "Taft-Hartley page", "Mobile");
     }
 
-    @Test(groups = {"desktop-visual"})
+    @Test(groups = {"mobile-visual"})
     public void testUIPlanSponsorsMarketsGovernment() {
         new IndividualsPage(getDriver())
                 .closeCookieBanner()

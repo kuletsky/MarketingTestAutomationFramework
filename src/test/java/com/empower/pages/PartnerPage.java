@@ -1,10 +1,11 @@
 package com.empower.pages;
 
+import com.empower.pages.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PartnerPage extends BasePage{
+public class PartnerPage extends BasePage {
 
     public PartnerPage(WebDriver driver) {
         super(driver);

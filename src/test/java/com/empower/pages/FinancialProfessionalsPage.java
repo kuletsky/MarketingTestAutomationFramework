@@ -1,5 +1,6 @@
 package com.empower.pages;
 
+import com.empower.pages.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class FinancialProfessionalsPage extends BasePage{
+public class FinancialProfessionalsPage extends BasePage {
 
     public FinancialProfessionalsPage(WebDriver driver) {
         super(driver);

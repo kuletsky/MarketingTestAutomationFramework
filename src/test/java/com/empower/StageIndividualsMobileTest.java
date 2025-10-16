@@ -1,6 +1,6 @@
 package com.empower;
 
-import com.empower.pages.BasePage;
+import com.empower.pages.base.BasePage;
 import com.empower.pages.IndividualsPage;
 import com.empower.pages.OnBoardingPage;
 import org.testng.Assert;

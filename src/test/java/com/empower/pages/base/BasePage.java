@@ -306,7 +306,8 @@ public class BasePage extends BaseModel{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(d -> ((JavascriptExecutor)d).executeScript("return document.readyState==='complete'").equals(true));
 
-
+        scrollToBottom();
+        scrollToUp();
         // 2) Wait for an animation element to exist, then seek & pause to a deterministic frame
 //        new WebDriverWait(driver, Duration.ofSeconds(60)).until(d ->
 //                (Boolean) ((JavascriptExecutor) d).executeScript(
@@ -339,7 +340,6 @@ public class BasePage extends BaseModel{
                         " #onetrust-banner-sdk,.ot-sdk-container,[aria-label*='cookie']{display:none!important}" +
                         " .toast,.snackbar{display:none!important}"
         );
-
 
         try {
             wait.pollingEvery(Duration.ofMillis(250));

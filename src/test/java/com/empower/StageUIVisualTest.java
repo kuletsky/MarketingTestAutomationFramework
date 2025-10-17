@@ -7,6 +7,41 @@ import org.testng.annotations.Test;
 public class StageUIVisualTest extends BaseTest {
 
     @Test(groups = {"desktop-visual"})
+    public void testTP1() {
+        new IndividualsPage(getDriver())
+                .gotoURL("https://empwrretiremtstg.prod.acquia-sites.com/empulsify/test-all-components-light-them")
+                .takePercyFullPageScreenshot(getDriver(),"TP1","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testTP2() {
+        new IndividualsPage(getDriver())
+                .gotoURL("https://empwrretiremtstg.prod.acquia-sites.com/empulsify/tools-carousel-multi-card-container-bento-circle-cards-thought-leadership-light-theme")
+                .takePercyFullPageScreenshot(getDriver(),"TP2","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testTP3() {
+        new IndividualsPage(getDriver())
+                .gotoURL("https://empwrretiremtstg.prod.acquia-sites.com/empulsify/hero-carousel-fw-hero-carousel-scrolling-value-prop-accordion-light-theme")
+                .takePercyFullPageScreenshot(getDriver(),"TP3","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testTP4() {
+        new IndividualsPage(getDriver())
+                .gotoURL("https://empwrretiremtstg.prod.acquia-sites.com/empulsify/testimonial-comparison-table-video-component-badge-final-cta")
+                .takePercyFullPageScreenshot(getDriver(),"TP4","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testTP5() {
+        new IndividualsPage(getDriver())
+                .gotoURL("https://empwrretiremtstg.prod.acquia-sites.com/empulsify/tp5-components-dark-theme")
+                .takePercyFullPageScreenshot(getDriver(),"TP5","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
     public void testUIIndividuals() {
         new IndividualsPage(getDriver())
                 .takePercyFullPageScreenshot(getDriver(), "Individuals page", "Desktop");
@@ -194,5 +229,4 @@ public class StageUIVisualTest extends BaseTest {
                 .clickInvestmentAccountsLink()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Investment accounts","Desktop");
     }
-
 }

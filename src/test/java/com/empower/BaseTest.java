@@ -1,5 +1,6 @@
 package com.empower;
 
+import com.empower.pages.IndividualsPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -37,5 +38,9 @@ public class BaseTest {
 
     public WebDriver getDriver() {
         return driver;
+    }
+
+    public void takeScreenshot() {
+        new IndividualsPage(getDriver()).takePercyFullPageScreenshot(getDriver(),"", "");
     }
 }

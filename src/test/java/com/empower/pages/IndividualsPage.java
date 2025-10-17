@@ -5,7 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class IndividualsPage extends BasePage {
@@ -686,6 +689,14 @@ public class IndividualsPage extends BasePage {
         safeClick(financialProfessionalsMenu);
 
         return new FinancialProfessionalsPage(getDriver());
+    }
+
+    public IndividualsPage gotoURL(String link) {
+//        String oldUrl = getDriver().getCurrentUrl();
+        getDriver().get(link);
+        new WebDriverWait(getDriver(), Duration.ofSeconds(60)).until(ExpectedConditions.urlToBe(link));
+
+        return this;
     }
 
 }

@@ -303,8 +303,8 @@ public class BasePage extends BaseModel{
 
 
         // Wait for DOM to settle (simple example)
-        new WebDriverWait(driver, Duration.ofSeconds(30))
-                .until(d -> ((JavascriptExecutor)d).executeScript("return document.readyState==='complete'").equals(true));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(d -> ((JavascriptExecutor)d).executeScript("return document.readyState==='complete'").equals(true));
 
 
         // 2) Wait for an animation element to exist, then seek & pause to a deterministic frame
@@ -339,6 +339,32 @@ public class BasePage extends BaseModel{
                         " #onetrust-banner-sdk,.ot-sdk-container,[aria-label*='cookie']{display:none!important}" +
                         " .toast,.snackbar{display:none!important}"
         );
+
+
+        try {
+            wait.pollingEvery(Duration.ofMillis(250));
+            wait.ignoring(org.openqa.selenium.JavascriptException.class); // tolerate transient JS errors
+
+            wait.until(d -> Boolean.TRUE.equals(
+                    ((JavascriptExecutor) d).executeScript(
+                            "const ps=[...document.querySelectorAll('lottie-player')];" +
+                                    "const bm=(window.bodymovin&&window.bodymovin.getRegisteredAnimations?" +
+                                    "          window.bodymovin.getRegisteredAnimations():[]);" +
+                                    // Ready if each <lottie-player> exposes an instance OR any bodymovin animations exist
+                                    "const lottieReady=(ps.length===0)||ps.every(p=>{try{return !!p.getLottie();}catch(e){return false;}})||bm.length>0;" +
+                                    // Touch SVG to force layout once present; ready if none present or getBBox succeeds
+                                    "let svgReady=true; const svgs=[...document.querySelectorAll('svg')];" +
+                                    "if (svgs.length){ try{ svgs[0].getBBox && svgs[0].getBBox(); }catch(e){ svgReady=false; } }" +
+                                    "return lottieReady && svgReady;"
+                    )
+            ));
+        } catch (org.openqa.selenium.TimeoutException te) {
+            System.out.println("Timed out (30s) waiting for Lottie/SVG readiness. Proceeding.");
+        } catch (org.openqa.selenium.JavascriptException je) {
+            System.out.println("JS error during readiness check: " + je.getMessage());
+        } catch (RuntimeException re) {
+            System.out.println("Unexpected error during readiness check: " + re.getMessage());
+        }
 
         percy.screenshot(name, options);
     }

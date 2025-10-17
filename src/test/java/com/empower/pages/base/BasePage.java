@@ -297,57 +297,36 @@ public class BasePage extends BaseModel{
     }
 
     public void takePercyFullPageScreenshot(WebDriver driver, String name, String testCaseName) {
-//        PercySDK.screenshot(driver, name);
+
+        // Ensure Selenium won't timeout our async JS earlier than our own deadline
+//        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(70));
+
 
         // Wait for DOM to settle (simple example)
         new WebDriverWait(driver, Duration.ofSeconds(30))
                 .until(d -> ((JavascriptExecutor)d).executeScript("return document.readyState==='complete'").equals(true));
-////        try {
-////            Thread.sleep(120000);
-////        } catch (InterruptedException e) {
-////            throw new RuntimeException(e);
-////        }
-//
-//        Percy percy = new Percy(driver);
-//        Map<String, Object> options = new HashMap<>();
-//
-//        options.put("testCase", testCaseName);
-//        options.put("widths", Arrays.asList(1920));
-//        options.put("minHeight", 1080);
-//        options.put("fullPage", true);
-//        options.put("percyCSS",
-//                "*,*::before,*::after{animation:none!important;transition:none!important}" +
-//                        " lottie-player,.lottie,[data-lottie],video{visibility:hidden!important}" +
-//                        " #onetrust-banner-sdk,.ot-sdk-container,[aria-label*='cookie']{display:none!important}" +
-//                        " .toast,.snackbar{display:none!important}"
-//        );
 
-
-        // 1) Nudge lazy content (some Lottie/SVGs load on visibility)
-//        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        // tiny settle
-//        try { Thread.sleep(200); } catch (InterruptedException ignored) {}
 
         // 2) Wait for an animation element to exist, then seek & pause to a deterministic frame
-        new WebDriverWait(driver, Duration.ofSeconds(60)).until(d ->
-                (Boolean) ((JavascriptExecutor) d).executeScript(
-                        "return !!document.querySelector('lottie-player,[data-lottie],svg');"));
+//        new WebDriverWait(driver, Duration.ofSeconds(60)).until(d ->
+//                (Boolean) ((JavascriptExecutor) d).executeScript(
+//                        "return !!document.querySelector('lottie-player,[data-lottie],svg');"));
 
-        ((JavascriptExecutor) driver).executeScript(
-                // Lottie web component
-                "document.querySelectorAll('lottie-player').forEach(p=>{try{p.seek(120);p.pause();}catch(e){}});" +
-                        // Lottie via bodymovin
-                        "if(window.bodymovin && window.bodymovin.getRegisteredAnimations){" +
-                        "  window.bodymovin.getRegisteredAnimations().forEach(a=>{try{a.goToAndStop(120,true);}catch(e){}});" +
-                        "}" +
-                        // Inline SVG: force layout so first frame is painted
-                        "var s=document.querySelector('svg'); if(s && s.getBBox){ try{s.getBBox();}catch(e){} }"
-        );
+//        ((JavascriptExecutor) driver).executeScript(
+//                // Lottie web component
+//                "document.querySelectorAll('lottie-player').forEach(p=>{try{p.seek(120);p.pause();}catch(e){}});" +
+//                        // Lottie via bodymovin
+//                        "if(window.bodymovin && window.bodymovin.getRegisteredAnimations){" +
+//                        "  window.bodymovin.getRegisteredAnimations().forEach(a=>{try{a.goToAndStop(120,true);}catch(e){}});" +
+//                        "}" +
+//                        // Inline SVG: force layout so first frame is painted
+//                        "var s=document.querySelector('svg'); if(s && s.getBBox){ try{s.getBBox();}catch(e){} }"
+//        );
 
         // 3) Percy options (do NOT hide lottie/video)
         Percy percy = new Percy(driver);
         Map<String, Object> options = new HashMap<>();
-        options.put("testCase", testCaseName);
+//        options.put("testCase", testCaseName);
         options.put("fullPage", true);                 // stitch full page (split if page is extremely tall)
         options.put("widths", java.util.Arrays.asList(1920)); // desktop only; ignored on real devices
         options.put("minHeight", 1080);
@@ -356,74 +335,12 @@ public class BasePage extends BaseModel{
                 "*,*::before,*::after{animation:none!important;transition:none!important}" +
                         // keep lottie visible:
                         " lottie-player,[data-lottie-player]{visibility:visible!important}" +
-                        // Hide only truly transient overlays/banners (adjust selectors if needed)
+                        // hide noisy UI only:
                         " #onetrust-banner-sdk,.ot-sdk-container,[aria-label*='cookie']{display:none!important}" +
                         " .toast,.snackbar{display:none!important}"
         );
 
         percy.screenshot(name, options);
-
-
-//        new WebDriverWait(driver, Duration.ofSeconds(30))
-//                .until(d -> ((JavascriptExecutor) d)
-//                        .executeScript("return document.readyState==='complete'").equals(true));
-//
-//        // 1) Scroll to nudge lazy content
-//        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-//
-//        // 2) Async wait: ensure a first frame is painted, then pause animations
-//        ((JavascriptExecutor) driver).executeAsyncScript(
-//                "const done = arguments[arguments.length-1];" +
-//                        "(async () => {" +
-//                        "  const deadline = Date.now() + 60000; /* 60s hard limit */" +
-//                        "  const sleep = (ms)=>new Promise(r=>setTimeout(r,ms));" +
-//                        "  const q = (sel)=>Array.from(document.querySelectorAll(sel));" +
-//                        "  // Wait until any animation host exists" +
-//                        "  while (Date.now() < deadline) {" +
-//                        "    if (q('lottie-player,[data-lottie],svg,object[type=\"image/svg+xml\"]').length) break;" +
-//                        "    await sleep(100);" +
-//                        "  }" +
-//                        "  // Lottie via <lottie-player>" +
-//                        "  q('lottie-player').forEach(p => { try { p.seek(120); p.pause(); } catch(e){} });" +
-//                        "  // Lottie via bodymovin" +
-//                        "  try {" +
-//                        "    if (window.bodymovin && window.bodymovin.getRegisteredAnimations) {" +
-//                        "      const anims = window.bodymovin.getRegisteredAnimations();" +
-//                        "      anims.forEach(a => { try { a.goToAndStop(120, true); } catch(e){} });" +
-//                        "    }" +
-//                        "  } catch(e) {}" +
-//                        "  // <object type=svg> – wait for inner doc" +
-//                        "  for (const obj of q('object[type=\"image/svg+xml\"]')) {" +
-//                        "    try {" +
-//                        "      const doc = obj.contentDocument;" +
-//                        "      if (!doc) continue;" +
-//                        "      // Wait for the embedded SVG to be ready" +
-//                        "      let tries = 0; while (tries++ < 50 && (!doc.documentElement || doc.readyState!=='complete')) await sleep(100);" +
-//                        "    } catch(e) {}" +
-//                        "  }" +
-//                        "  // Inline <svg> – ensure it’s laid out at least one frame" +
-//                        "  const svgel = document.querySelector('svg');" +
-//                        "  if (svgel && svgel.getBBox) { try { svgel.getBBox(); } catch(e){} }" +
-//                        "  // Small paint settle" +
-//                        "  await sleep(200);" +
-//                        "  done(true);" +
-//                        "})().catch(e => done(false));"
-//        );
-//
-//        // 3) Percy snapshot (don’t hide lottie/video)
-//        Percy percy = new Percy(driver);
-//        Map<String, Object> options = new HashMap<>();
-//        options.put("testCase", testCaseName);
-//        options.put("fullPage", true);
-//        options.put("widths", java.util.Arrays.asList(1920)); // desktop only; ignored on real devices
-//        options.put("minHeight", 1080);
-//        options.put("percyCSS",
-//                "*,*::before,*::after{animation:none!important;transition:none!important}" +
-//                        " #onetrust-banner-sdk,.ot-sdk-container,[aria-label*='cookie']{display:none!important}" +
-//                        " .toast,.snackbar{display:none!important}"
-//        );
-//
-//        percy.screenshot(name, options);
     }
 
     public void takePercyShortPageScreenshot(WebDriver driver, String name) {

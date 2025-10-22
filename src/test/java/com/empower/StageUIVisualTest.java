@@ -52,7 +52,7 @@ public class StageUIVisualTest extends BaseTest {
     @Test(groups = {"desktop-visual"})
     public void testUIPlanSponsors() {
         new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .takePercyFullPageScreenshot(getDriver(), "Plan Sponsors page","Desktop");
     }
@@ -60,7 +60,7 @@ public class StageUIVisualTest extends BaseTest {
     @Test(groups = {"desktop-visual"})
     public void testUIPFinancialProfessionals() {
         new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .takePercyFullPageScreenshot(getDriver(), "Financial Professionals page","Desktop");
     }
@@ -124,6 +124,7 @@ public class StageUIVisualTest extends BaseTest {
     @Test(groups = {"desktop-visual"})
     public void testUIIndividualsOpenAccount() {
         new IndividualsPage(getDriver())
+                .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page","Desktop");
     }
@@ -131,6 +132,7 @@ public class StageUIVisualTest extends BaseTest {
     @Test(groups = {"desktop-visual"})
     public void testUIIndividualsOpenAccountCreatePersonalDashboard() {
         new IndividualsPage(getDriver())
+                .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
                 .clickCreatePersonalDashBoardButton()
                 .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard","Desktop");
@@ -147,7 +149,7 @@ public class StageUIVisualTest extends BaseTest {
     @Test(groups = {"desktop-visual"})
     public void testUIIndividualsFinancialProfessionalsLogin() {
         new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .clickLoginButton()
                 .takePercyFullPageScreenshot(getDriver(), "Financial Professionals Login page","Desktop");
@@ -188,7 +190,7 @@ public class StageUIVisualTest extends BaseTest {
     @Test(groups = {"desktop-visual"})
     public void testUIPlanSponsorsMarketsGovernment() {
         new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .clickMarketsOpenMenu()
                 .clickMarketGovernmentLink()
@@ -198,7 +200,7 @@ public class StageUIVisualTest extends BaseTest {
     @Test(groups = {"desktop-visual"})
     public void testUIPlanSponsorsMarketsTaftHartley() {
         new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .clickMarketsOpenMenu()
                 .clickMarketTaftHartleyLink()

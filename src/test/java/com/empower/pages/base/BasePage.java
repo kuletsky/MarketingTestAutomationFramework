@@ -1,11 +1,10 @@
 package com.empower.pages.base;
 
 import com.empower.pages.IndividualsPage;
-import com.empower.pages.OnBoardingPage;
 import io.percy.selenium.Percy;
 import com.empower.components.FooterComponent;
-import com.empower.components.HamburgerComponent;
-import com.empower.components.HeaderComponent;
+import com.empower.components.MobileHeaderComponent;
+import com.empower.components.DesktopHeaderComponent;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -48,8 +47,8 @@ public class BasePage extends BaseModel{
     @FindBy(css = ".stacked-logo")
     private WebElement empowerLogo;
 
-    @FindBy(css = "[data-once='nav-main-login-register-link click-primary-button empulsify-button-ripple']")
-    private WebElement openAccountHeaderButton;
+//    @FindBy(css = "[data-once='nav-main-login-register-link click-primary-button empulsify-button-ripple']")
+//    private WebElement openAccountHeaderButton;
 
     @FindBy(css = "li a[data-once='nav-main-contextual-link-click']")
     private List<WebElement> contextualMenuLinks;
@@ -59,8 +58,8 @@ public class BasePage extends BaseModel{
 
 
 //    @Step("Get mobile header")
-    public HamburgerComponent getMobileHeader() {
-        return new HamburgerComponent(getDriver());
+    public MobileHeaderComponent getMobileHeader() {
+        return new MobileHeaderComponent(getDriver());
     }
 
 //    @Step("Navigate to footer")
@@ -69,8 +68,8 @@ public class BasePage extends BaseModel{
     }
 
 //    @Step("Navigate to menu")
-    public HeaderComponent getHeader() {
-        return new HeaderComponent(getDriver());
+    public DesktopHeaderComponent getDesktopHeader() {
+        return new DesktopHeaderComponent(getDriver());
     }
 
 
@@ -272,12 +271,12 @@ public class BasePage extends BaseModel{
         return new IndividualsPage(getDriver());
     }
 
-//    @Step("Click Open account button on the header")
-    public OnBoardingPage clickOpenAccountHeaderButton() {
-        wait10UntilClickable(openAccountHeaderButton).click();
-//        safeClick(openAccountHeaderButton);
-        return new OnBoardingPage(getDriver());
-    }
+////    @Step("Click Open account button on the header")
+//    public OnBoardingPage clickOpenAccountHeaderButton() {
+//        wait10UntilClickable(openAccountHeaderButton).click();
+////        safeClick(openAccountHeaderButton);
+//        return new OnBoardingPage(getDriver());
+//    }
 
 //    @Step("Get all links of Contextual menu")
     public List<String> getContextualMenuLinks() {

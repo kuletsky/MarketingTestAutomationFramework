@@ -8,9 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HamburgerComponent extends BasePage {
+public class MobileHeaderComponent extends BasePage {
 
-    public HamburgerComponent(WebDriver driver) {
+    public MobileHeaderComponent(WebDriver driver) {
         super(driver);
     }
 

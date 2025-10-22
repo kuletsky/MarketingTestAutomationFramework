@@ -15,9 +15,9 @@ public class StagePlanSponsorsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testEmpowerLogo() {
         String actualHeading = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
-                .getHeader()
+                .getDesktopHeader()
                 .clickEmpowerLogo()
                 .getHeadingText();
 
@@ -28,7 +28,7 @@ public class StagePlanSponsorsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testLoginButton() {
         PlanServiceCenterPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .clickLoginButton();
 
@@ -44,7 +44,7 @@ public class StagePlanSponsorsTest extends BaseTest{
                 "Financial Professionals"
         );
         List<String> contextualMenuLinks = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .getContextualMenuLinks();
 
@@ -61,7 +61,7 @@ public class StagePlanSponsorsTest extends BaseTest{
                 "Why Empower"
         );
         List<String> primaryMenuLinks = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .getPrimaryMenuLinks();
 
@@ -71,7 +71,7 @@ public class StagePlanSponsorsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testPlanSponsorsFunctionality() {
         PlanSponsorsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu();
 
         Assert.assertEquals(page.getHeadingText(), "Trusted leader. Proven innovator.");
@@ -81,7 +81,7 @@ public class StagePlanSponsorsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testScrollingHeaderDown() {
         BasePage basePage = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .scrollToBottom();
 
@@ -92,7 +92,7 @@ public class StagePlanSponsorsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testScrollingHeaderDownThenUp() {
         BasePage basePage = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .scrollToBottom()
                 .scrollToUp();
@@ -112,7 +112,7 @@ public class StagePlanSponsorsTest extends BaseTest{
         );
 
         PlanSponsorsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .clickMarketsOpenMenu();
 
@@ -135,7 +135,7 @@ public class StagePlanSponsorsTest extends BaseTest{
         );
 
         PlanSponsorsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .clickSolutionsOpenMenu();
 
@@ -151,7 +151,7 @@ public class StagePlanSponsorsTest extends BaseTest{
         );
 
         PlanSponsorsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .clickExperienceOpenMenu();
 
@@ -167,7 +167,7 @@ public class StagePlanSponsorsTest extends BaseTest{
         );
 
         PlanSponsorsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .clickLearnOpenMenu();
 
@@ -185,7 +185,7 @@ public class StagePlanSponsorsTest extends BaseTest{
         );
 
         PlanSponsorsPage page = new PlanSponsorsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
                 .clickWhyEmpowerOpenMenu();
 

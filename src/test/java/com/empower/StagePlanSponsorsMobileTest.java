@@ -228,32 +228,6 @@ public class StagePlanSponsorsMobileTest extends BaseTest{
         Assert.assertTrue(basePage.isMobileHeaderExpand());
     }
 
-//    @Test(groups = {"tablet"})
-//    public void testScrollingHeaderDown() {
-//        BasePage basePage = new IndividualsPage(getDriver())
-//                .closeCookieBanner()
-//                .getMobileHeader()
-//                .clickHamburgerMenuIndividuals()
-//                .clickPlanSponsorsMenu()
-//                .closeCookieBanner()
-//                .scrollToBottom();
-//
-//        Assert.assertTrue(basePage.isMobileHeaderExpand());
-//    }
-//
-//    @Test(groups = {"tablet"})
-//    public void testScrollingHeaderDownThenUp() {
-//        BasePage basePage = new IndividualsPage(getDriver())
-//                .closeCookieBanner()
-//                .getMobileHeader()
-//                .clickHamburgerMenuIndividuals()
-//                .clickPlanSponsorsMenu()
-//                .scrollToBottom()
-//                .scrollToUp();
-//
-//        Assert.assertTrue(basePage.isHeaderExpand());
-//    }
-
     @Test(groups = {"mobile", "tablet"})
     public void testMobilePlanSponsorsMenuFunctionality() {
         PlanSponsorsPage page = new IndividualsPage(getDriver())
@@ -265,29 +239,6 @@ public class StagePlanSponsorsMobileTest extends BaseTest{
         Assert.assertEquals(page.getHeadingText(), "Trusted leader. Proven innovator.");
         Assert.assertTrue(page.isNewUrl("/plan-sponsors"));
     }
-
-    @Test(groups = {"mobile", "tablet"})
-    public void testMobilePlanSponsorMenuHeading() {
-        String menuHeadingText = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
-                .getMobileHeader()
-                .clickHamburgerMenuPlanSponsors()
-                .getHamburgerHeadingText();
-
-        Assert.assertEquals(menuHeadingText, "Plan Sponsors");
-    }
-
-
-
-
-
-
-
-
-
 
 
 }

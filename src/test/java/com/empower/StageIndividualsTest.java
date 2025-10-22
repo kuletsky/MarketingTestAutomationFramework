@@ -13,7 +13,7 @@ public class StageIndividualsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testEmpowerLogo() {
         IndividualsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .clickEmpowerLogo();
 
@@ -24,7 +24,7 @@ public class StageIndividualsTest extends BaseTest{
     @Test(groups = {"desktop", "mobile", "tablet"})
     public void testOpenAccountHeaderButton() {
         OnBoardingPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickOpenAccountHeaderButton();
 
         Assert.assertEquals(page.getHeadingOfPopup(),
@@ -72,9 +72,9 @@ public class StageIndividualsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testIndividualsMenuFunctionality() {
         IndividualsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickPlanSponsorsMenu()
-                .getHeader()
+                .getDesktopHeader()
                 .clickIndividualsMenu();
 
         Assert.assertEquals(page.getHeadingText(), "Invest well. Live a little.™");

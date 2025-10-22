@@ -113,6 +113,7 @@ public class StageUIVisualMobileTest extends BaseTest {
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsOpenAccount() {
         new IndividualsPage(getDriver())
+                .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page", "Mobile");
     }
@@ -120,6 +121,7 @@ public class StageUIVisualMobileTest extends BaseTest {
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsOpenAccountCreatePersonalDashboard() {
         new IndividualsPage(getDriver())
+                .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
                 .clickCreatePersonalDashBoardButton()
                 .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard", "Mobile");

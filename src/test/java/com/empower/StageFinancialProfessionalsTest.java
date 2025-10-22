@@ -13,9 +13,9 @@ public class StageFinancialProfessionalsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testEmpowerLogo() {
         String actualHeading = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
-                .getHeader()
+                .getDesktopHeader()
                 .clickEmpowerLogo()
                 .getHeadingText();
 
@@ -26,7 +26,7 @@ public class StageFinancialProfessionalsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testLoginButton() {
         FinancialProfessionalsLoginPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .clickLoginButton();
 
@@ -53,7 +53,7 @@ public class StageFinancialProfessionalsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testFinancialProfessionalsMenuFunctionality() {
         FinancialProfessionalsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu();
 
         Assert.assertEquals(page.getHeadingText(), "Solutions, support, success");
@@ -63,7 +63,7 @@ public class StageFinancialProfessionalsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testScrollingHeaderDown() {
         BasePage basePage = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .scrollToBottom();
 
@@ -73,7 +73,7 @@ public class StageFinancialProfessionalsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testScrollingHeaderDownThenUp() {
         BasePage basePage = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .scrollToBottom()
                 .scrollToUp();
@@ -90,7 +90,7 @@ public class StageFinancialProfessionalsTest extends BaseTest{
                 "Why Empower"
         );
         List<String> primaryMenuLinks = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .getPrimaryMenuLinks();
 
@@ -105,7 +105,7 @@ public class StageFinancialProfessionalsTest extends BaseTest{
                 "Financial Professionals"
         );
         List<String> contextualMenuLinks = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .getContextualMenuLinks();
 
@@ -128,7 +128,7 @@ public class StageFinancialProfessionalsTest extends BaseTest{
                 "Consumer-directed health"
         );
         FinancialProfessionalsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .clickSolutionsOpenMenu();
 
@@ -150,7 +150,7 @@ public class StageFinancialProfessionalsTest extends BaseTest{
                 "Events"
         );
         FinancialProfessionalsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .clickResourcesOpenMenu();
 
@@ -167,7 +167,7 @@ public class StageFinancialProfessionalsTest extends BaseTest{
         );
 
         FinancialProfessionalsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .clickInsightsOpenMenu();
 
@@ -184,7 +184,7 @@ public class StageFinancialProfessionalsTest extends BaseTest{
                 "Press Center"
         );
         FinancialProfessionalsPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .clickWhyEmpowerOpenMenu();
 

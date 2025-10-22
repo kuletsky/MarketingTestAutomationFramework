@@ -10,7 +10,7 @@ public class StageFinancialProfessionalsLoginTest extends BaseTest {
     @Test(groups = {"desktop"})
     public void testFinancialProfessionalsLoginButton() {
         FinancialProfessionalsLoginPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .clickLoginButton()
                 .clickIAgreePopup()
@@ -22,7 +22,7 @@ public class StageFinancialProfessionalsLoginTest extends BaseTest {
     @Test(groups = {"desktop"})
     public void testFinancialProfessionalsRegistrationNowButton() {
         FinancialProfessionalsLoginPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .clickLoginButton()
                 .clickIAgreePopup()
@@ -36,7 +36,7 @@ public class StageFinancialProfessionalsLoginTest extends BaseTest {
     @Test(groups = {"desktop"})
     public void testFinancialProfessionalsRegistrationRixtremaButton() {
         FinancialProfessionalsLoginPage page = new IndividualsPage(getDriver())
-                .getHeader()
+                .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()
                 .clickLoginButton()
                 .clickIAgreePopup()

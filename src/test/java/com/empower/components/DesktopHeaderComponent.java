@@ -1,5 +1,6 @@
 package com.empower.components;
 
+import com.empower.pages.OnBoardingPage;
 import com.empower.pages.base.BasePage;
 import com.empower.pages.FinancialProfessionalsPage;
 import com.empower.pages.IndividualsPage;
@@ -8,9 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HeaderComponent extends BasePage {
+public class DesktopHeaderComponent extends BasePage {
 
-    public HeaderComponent(WebDriver driver) {
+    public DesktopHeaderComponent(WebDriver driver) {
         super(driver);
     }
 
@@ -24,6 +25,8 @@ public class HeaderComponent extends BasePage {
     @FindBy(css = "[aria-label='Contextual Navigation'] [href='/home']")
     private WebElement individualsMenu;
 
+    @FindBy(css = "[data-once='nav-main-login-register-link click-primary-button empulsify-button-ripple']")
+    private WebElement openAccountHeaderButton;
 
 //    @Step("Click Financial Professionals menu")
     public FinancialProfessionalsPage clickFinancialProfessionalsMenu() {
@@ -46,4 +49,10 @@ public class HeaderComponent extends BasePage {
         return new IndividualsPage(getDriver());
     }
 
+    //    @Step("Click Open account button on the header")
+    public OnBoardingPage clickOpenAccountHeaderButton() {
+        wait10UntilClickable(openAccountHeaderButton).click();
+//        safeClick(openAccountHeaderButton);
+        return new OnBoardingPage(getDriver());
+    }
 }

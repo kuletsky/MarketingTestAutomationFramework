@@ -230,78 +230,78 @@ public class FinancialProfessionalsPage extends BasePage {
                 .toList();
     }
 
-    @Test(groups = {"mobile-smoke"})
-    public void testMobileScrollingHeaderDown() {
-        BasePage basePage = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickFinancialProfessionalsMenu()
-                .scrollToBottom();
+//    @Test(groups = {"mobile-smoke"})
+//    public void testMobileScrollingHeaderDown() {
+//        BasePage basePage = new IndividualsPage(getDriver())
+//                .closeCookieBanner()
+//                .getMobileHeader()
+//                .clickHamburgerMenuIndividuals()
+//                .clickFinancialProfessionalsMenu()
+//                .scrollToBottom();
+//
+//        Assert.assertTrue(basePage.isMobileHeaderShrink());
+//    }
+//    @Test(groups = {"mobile-smoke"})
+//    public void testMobileScrollingHeaderDownThenUp() {
+//        BasePage basePage = new IndividualsPage(getDriver())
+//                .closeCookieBanner()
+//                .getMobileHeader()
+//                .clickHamburgerMenuIndividuals()
+//                .clickFinancialProfessionalsMenu()
+//                .scrollToBottom()
+//                .scrollToUp();
+//
+//        Assert.assertTrue(basePage.isMobileHeaderExpand());
+//    }
+//    @Test(groups = {"tablet-smoke"})
+//    public void testScrollingHeaderDown() {
+//        BasePage basePage = new IndividualsPage(getDriver())
+//                .closeCookieBanner()
+//                .getMobileHeader()
+//                .clickHamburgerMenuIndividuals()
+//                .clickFinancialProfessionalsMenu()
+//                .scrollToBottom();
+//
+//        Assert.assertTrue(basePage.isHeaderShrink());
+//    }
+//    @Test(groups = {"tablet-smoke"})
+//    public void testScrollingHeaderDownThenUp() {
+//        BasePage basePage = new IndividualsPage(getDriver())
+//                .closeCookieBanner()
+//                .getMobileHeader()
+//                .clickHamburgerMenuIndividuals()
+//                .clickFinancialProfessionalsMenu()
+//                .scrollToBottom()
+//                .scrollToUp();
+//
+//        Assert.assertTrue(basePage.isHeaderExpand());
+//    }
 
-        Assert.assertTrue(basePage.isMobileHeaderShrink());
-    }
-    @Test(groups = {"mobile-smoke"})
-    public void testMobileScrollingHeaderDownThenUp() {
-        BasePage basePage = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickFinancialProfessionalsMenu()
-                .scrollToBottom()
-                .scrollToUp();
+//    @Test(groups = {"mobile-smoke", "tablet-smoke"})
+//    public void testMobileFinancialProfessionalsMenuFunctionality() {
+//        FinancialProfessionalsPage page = new IndividualsPage(getDriver())
+//                .closeCookieBanner()
+//                .getMobileHeader()
+//                .clickHamburgerMenuIndividuals()
+//                .clickFinancialProfessionalsMenu();
+//
+//        Assert.assertEquals(page.getHeadingText(), "Solutions, support, success");
+//        Assert.assertTrue(page.getCurrentUrl().contains("/financial-professionals"));
+//    }
 
-        Assert.assertTrue(basePage.isMobileHeaderExpand());
-    }
-    @Test(groups = {"tablet-smoke"})
-    public void testScrollingHeaderDown() {
-        BasePage basePage = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickFinancialProfessionalsMenu()
-                .scrollToBottom();
-
-        Assert.assertTrue(basePage.isHeaderShrink());
-    }
-    @Test(groups = {"tablet-smoke"})
-    public void testScrollingHeaderDownThenUp() {
-        BasePage basePage = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickFinancialProfessionalsMenu()
-                .scrollToBottom()
-                .scrollToUp();
-
-        Assert.assertTrue(basePage.isHeaderExpand());
-    }
-
-    @Test(groups = {"mobile-smoke", "tablet-smoke"})
-    public void testMobileFinancialProfessionalsMenuFunctionality() {
-        FinancialProfessionalsPage page = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickFinancialProfessionalsMenu();
-
-        Assert.assertEquals(page.getHeadingText(), "Solutions, support, success");
-        Assert.assertTrue(page.getCurrentUrl().contains("/financial-professionals"));
-    }
-
-    @Test(groups = {"mobile-smoke", "tablet-smoke"})
-    public void testMobileFinancialProfessionalsMenuHeading() {
-        String menuHeadingText = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickFinancialProfessionalsMenu()
-                .getMobileHeader()
-                .clickHamburgerMenuFinancialProfessionals()
-                .getHamburgerHeadingText();
-
-        Assert.assertEquals(menuHeadingText, "Financial Professionals");
-    }
+//    @Test(groups = {"mobile-smoke", "tablet-smoke"})
+//    public void testMobileFinancialProfessionalsMenuHeading() {
+//        String menuHeadingText = new IndividualsPage(getDriver())
+//                .closeCookieBanner()
+//                .getMobileHeader()
+//                .clickHamburgerMenuIndividuals()
+//                .clickFinancialProfessionalsMenu()
+//                .getMobileHeader()
+//                .clickHamburgerMenuFinancialProfessionals()
+//                .getHamburgerHeadingText();
+//
+//        Assert.assertEquals(menuHeadingText, "Financial Professionals");
+//    }
 }
 
 

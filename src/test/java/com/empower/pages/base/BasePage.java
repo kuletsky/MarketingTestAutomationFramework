@@ -57,17 +57,17 @@ public class BasePage extends BaseModel{
     private List<WebElement> primaryMenuLinks;
 
 
-//    @Step("Get mobile header")
+    //    @Step("Get mobile header")
     public MobileHeaderComponent getMobileHeader() {
         return new MobileHeaderComponent(getDriver());
     }
 
-//    @Step("Navigate to footer")
+    //    @Step("Navigate to footer")
     public FooterComponent getFooter() {
         return new FooterComponent(getDriver());
     }
 
-//    @Step("Navigate to menu")
+    //    @Step("Navigate to menu")
     public DesktopHeaderComponent getDesktopHeader() {
         return new DesktopHeaderComponent(getDriver());
     }
@@ -131,7 +131,7 @@ public class BasePage extends BaseModel{
 
             new WebDriverWait(getDriver(), Duration.ofSeconds(30))
                     .until(d -> "complete".equals(
-                            ((JavascriptExecutor)d).executeScript("return document.readyState")
+                            ((JavascriptExecutor) d).executeScript("return document.readyState")
                     ));
 
         } catch (TimeoutException | InterruptedException e) {
@@ -154,7 +154,7 @@ public class BasePage extends BaseModel{
 
             new WebDriverWait(getDriver(), Duration.ofSeconds(30))
                     .until(d -> "complete".equals(
-                            ((JavascriptExecutor)d).executeScript("return document.readyState")
+                            ((JavascriptExecutor) d).executeScript("return document.readyState")
                     ));
 
         } catch (TimeoutException | InterruptedException e) {
@@ -167,19 +167,19 @@ public class BasePage extends BaseModel{
 
     public Boolean isNewUrl(String url) {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(10))
-                        .until(ExpectedConditions.urlContains(url));
+                .until(ExpectedConditions.urlContains(url));
     }
 
     public String getCurrentUrl() {
         return getDriver().getCurrentUrl();
     }
 
-//    @Step("Get heading text of Hamburger menu")
+    //    @Step("Get heading text of Hamburger menu")
     public String getHamburgerHeadingText() {
         return wait10UntilVisible(hamburgerHeadingText).getText().trim();
     }
 
-//    @Step("Get all links of hamburger Contextual menu")
+    //    @Step("Get all links of hamburger Contextual menu")
     public List<String> getHamburgerContextualMenuLinks() {
         return wait10UntilVisibleAll(hamburgerContextualMenuLinks)
                 .stream()
@@ -188,7 +188,7 @@ public class BasePage extends BaseModel{
                 .toList();
     }
 
-//    @Step("Get all links of hamburger Contextual menu")
+    //    @Step("Get all links of hamburger Contextual menu")
     public List<String> getHamburgerPrimaryMenuLinks() {
         return wait10UntilVisibleAll(hamburgerPrimaryMenuLinks)
                 .stream()
@@ -197,7 +197,7 @@ public class BasePage extends BaseModel{
                 .toList();
     }
 
-//    @Step("Scroll down to the page")
+    //    @Step("Scroll down to the page")
     public BasePage scrollToBottom() {
 
 //        new Actions(getDriver())
@@ -215,7 +215,7 @@ public class BasePage extends BaseModel{
         return this;
     }
 
-//    @Step("Scroll up to the page")
+    //    @Step("Scroll up to the page")
     public BasePage scrollToUp() {
 
 //        new Actions(getDriver())
@@ -233,7 +233,7 @@ public class BasePage extends BaseModel{
         return this;
     }
 
-//    @Step("Is mobile header shrink?")
+    //    @Step("Is mobile header shrink?")
     public boolean isMobileHeaderShrink() {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(30))
                 .until(driver -> driver.findElement(By.id("main-header-nav"))
@@ -241,7 +241,7 @@ public class BasePage extends BaseModel{
                         .contains("translateY(-100%)"));
     }
 
-//    @Step("Is mobile header expand?")
+    //    @Step("Is mobile header expand?")
     public boolean isMobileHeaderExpand() {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(30))
                 .until(driver -> driver.findElement(By.id("main-header-nav"))
@@ -249,7 +249,7 @@ public class BasePage extends BaseModel{
                         .contains("translateY(0%)"));
     }
 
-//    @Step("Is header shrink?")
+    //    @Step("Is header shrink?")
     public boolean isHeaderShrink() {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(30))
                 .until(driver -> driver.findElement(By.id("main-header-nav"))
@@ -257,14 +257,15 @@ public class BasePage extends BaseModel{
                         .contains("height: 60px"));
     }
 
-//    @Step("Is header expand?")
+    //    @Step("Is header expand?")
     public boolean isHeaderExpand() {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(30))
                 .until(driver -> driver.findElement(By.id("main-header-nav"))
                         .getAttribute("style")
                         .contains("height: 90px"));
     }
-//    @Step("Click Empower logo")
+
+    //    @Step("Click Empower logo")
     public IndividualsPage clickEmpowerLogo() {
 //        wait10UntilClickable(empowerLogo).click();
         safeClick(empowerLogo);
@@ -274,7 +275,8 @@ public class BasePage extends BaseModel{
 ////    @Step("Click Open account button on the header")
 //    public OnBoardingPage clickOpenAccountHeaderButton() {
 //        wait10UntilClickable(openAccountHeaderButton).click();
-////        safeClick(openAccountHeaderButton);
+
+    /// /        safeClick(openAccountHeaderButton);
 //        return new OnBoardingPage(getDriver());
 //    }
 
@@ -286,7 +288,7 @@ public class BasePage extends BaseModel{
                 .toList();
     }
 
-//    @Step("Get all links of Primary menu")
+    //    @Step("Get all links of Primary menu")
     public List<String> getPrimaryMenuLinks() {
         return wait10UntilVisibleAll(primaryMenuLinks)
                 .stream()
@@ -303,7 +305,7 @@ public class BasePage extends BaseModel{
 
         // Wait for DOM to settle (simple example)
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-        wait.until(d -> ((JavascriptExecutor)d).executeScript("return document.readyState==='complete'").equals(true));
+        wait.until(d -> ((JavascriptExecutor) d).executeScript("return document.readyState==='complete'").equals(true));
 
         scrollToBottom();
         scrollToUp();
@@ -373,7 +375,7 @@ public class BasePage extends BaseModel{
 
         // Wait for DOM to settle (simple example)
         new WebDriverWait(driver, Duration.ofSeconds(8))
-                .until(d -> ((JavascriptExecutor)d).executeScript("return document.readyState==='complete'").equals(true));
+                .until(d -> ((JavascriptExecutor) d).executeScript("return document.readyState==='complete'").equals(true));
 
 
         Percy percy = new Percy(driver);

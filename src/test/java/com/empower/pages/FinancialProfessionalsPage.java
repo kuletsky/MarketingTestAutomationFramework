@@ -4,8 +4,6 @@ import com.empower.pages.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -98,6 +96,7 @@ public class FinancialProfessionalsPage extends BasePage {
 
     public FinancialProfessionalsPage clickSolutionsOpenMenu() {
         wait10UntilClickable(solutionsMenu).click();
+
         return this;
     }
 
@@ -229,79 +228,6 @@ public class FinancialProfessionalsPage extends BasePage {
                 .map(String::trim)
                 .toList();
     }
-
-//    @Test(groups = {"mobile-smoke"})
-//    public void testMobileScrollingHeaderDown() {
-//        BasePage basePage = new IndividualsPage(getDriver())
-//                .closeCookieBanner()
-//                .getMobileHeader()
-//                .clickHamburgerMenuIndividuals()
-//                .clickFinancialProfessionalsMenu()
-//                .scrollToBottom();
-//
-//        Assert.assertTrue(basePage.isMobileHeaderShrink());
-//    }
-//    @Test(groups = {"mobile-smoke"})
-//    public void testMobileScrollingHeaderDownThenUp() {
-//        BasePage basePage = new IndividualsPage(getDriver())
-//                .closeCookieBanner()
-//                .getMobileHeader()
-//                .clickHamburgerMenuIndividuals()
-//                .clickFinancialProfessionalsMenu()
-//                .scrollToBottom()
-//                .scrollToUp();
-//
-//        Assert.assertTrue(basePage.isMobileHeaderExpand());
-//    }
-//    @Test(groups = {"tablet-smoke"})
-//    public void testScrollingHeaderDown() {
-//        BasePage basePage = new IndividualsPage(getDriver())
-//                .closeCookieBanner()
-//                .getMobileHeader()
-//                .clickHamburgerMenuIndividuals()
-//                .clickFinancialProfessionalsMenu()
-//                .scrollToBottom();
-//
-//        Assert.assertTrue(basePage.isHeaderShrink());
-//    }
-//    @Test(groups = {"tablet-smoke"})
-//    public void testScrollingHeaderDownThenUp() {
-//        BasePage basePage = new IndividualsPage(getDriver())
-//                .closeCookieBanner()
-//                .getMobileHeader()
-//                .clickHamburgerMenuIndividuals()
-//                .clickFinancialProfessionalsMenu()
-//                .scrollToBottom()
-//                .scrollToUp();
-//
-//        Assert.assertTrue(basePage.isHeaderExpand());
-//    }
-
-//    @Test(groups = {"mobile-smoke", "tablet-smoke"})
-//    public void testMobileFinancialProfessionalsMenuFunctionality() {
-//        FinancialProfessionalsPage page = new IndividualsPage(getDriver())
-//                .closeCookieBanner()
-//                .getMobileHeader()
-//                .clickHamburgerMenuIndividuals()
-//                .clickFinancialProfessionalsMenu();
-//
-//        Assert.assertEquals(page.getHeadingText(), "Solutions, support, success");
-//        Assert.assertTrue(page.getCurrentUrl().contains("/financial-professionals"));
-//    }
-
-//    @Test(groups = {"mobile-smoke", "tablet-smoke"})
-//    public void testMobileFinancialProfessionalsMenuHeading() {
-//        String menuHeadingText = new IndividualsPage(getDriver())
-//                .closeCookieBanner()
-//                .getMobileHeader()
-//                .clickHamburgerMenuIndividuals()
-//                .clickFinancialProfessionalsMenu()
-//                .getMobileHeader()
-//                .clickHamburgerMenuFinancialProfessionals()
-//                .getHamburgerHeadingText();
-//
-//        Assert.assertEquals(menuHeadingText, "Financial Professionals");
-//    }
 }
 
 

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class MobileHeaderComponent extends BasePage {
+public class MobileHeaderComponent extends BaseHeaderComponent {
 
     public MobileHeaderComponent(WebDriver driver) {
         super(driver);
@@ -34,5 +34,9 @@ public class MobileHeaderComponent extends BasePage {
         safeClick(hamburgerMenu);
         return new FinancialProfessionalsPage(getDriver());
     }
+
+//        public String getHamburgerHeadingText() {
+//        return wait10UntilVisible(hamburgerHeadingText).getText().trim();
+//    }
 
 }

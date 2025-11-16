@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class StageIndividualsTest extends BaseTest{
+public class StageIndividualsTest extends BaseTest {
 
     @Test(groups = {"desktop"})
     public void testEmpowerLogo() {
@@ -23,7 +23,7 @@ public class StageIndividualsTest extends BaseTest{
 
     @Test(groups = {"desktop", "mobile", "tablet"})
     public void testOpenAccountHeaderButton() {
-        OnBoardingPage page = new IndividualsPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton();
 
@@ -171,7 +171,7 @@ public class StageIndividualsTest extends BaseTest{
 
     @Test(groups = {"desktop", "mobile", "tablet"})
     public void testCTAButtonOpenAccount1() {
-        OnBoardingPage page = new IndividualsPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .clickCTAButtonOpenAccount1();
 
@@ -192,7 +192,7 @@ public class StageIndividualsTest extends BaseTest{
 
     @Test(groups = {"desktop", "mobile", "tablet"})
     public void testCTAButtonOpenAccount2() {
-        OnBoardingPage page = new IndividualsPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .clickCTAButtonOpenAccount2();
 
@@ -213,7 +213,7 @@ public class StageIndividualsTest extends BaseTest{
 
     @Test(groups = {"desktop", "mobile", "tablet"})
     public void testCTAButtonConnectMyAccounts() {
-        OnBoardingPage page = new IndividualsPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .clickCTAButtonConnectMyAccounts1();
 
@@ -264,7 +264,7 @@ public class StageIndividualsTest extends BaseTest{
 
     @Test(groups = {"desktop", "tablet"})
     public void testCTAButtonConnectMyAccounts2() {
-        OnBoardingPage page = new IndividualsPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .clickCTAButtonConnectMyAccounts2();
 

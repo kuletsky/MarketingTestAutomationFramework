@@ -22,7 +22,7 @@ public class FinancialProfessionalsPage extends BasePage {
     @FindBy(xpath = "//button[@aria-label='Solutions']")
     private WebElement solutionsMenu;
 
-    @FindBy(xpath = "//div[@id='solutions-dropdown'] //li[@class='relative']")
+    @FindBy(css = "#solutions-dropdown li.relative > a, #solutions-dropdown li.relative > button")
     private List<WebElement> solutionsLinks;
 
     @FindBy(xpath = "//div[@class='opacity-100 col-start-1 row-start-1 content-center transition-opacity'] //p[text()='Solutions']")

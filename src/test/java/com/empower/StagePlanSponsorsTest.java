@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class StagePlanSponsorsTest extends BaseTest{
+public class StagePlanSponsorsTest extends BaseTest {
 
     @Test(groups = {"desktop"})
     public void testEmpowerLogo() {

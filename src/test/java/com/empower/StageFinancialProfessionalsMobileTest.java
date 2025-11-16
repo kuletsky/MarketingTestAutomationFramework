@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class StageFinancialProfessionalsMobileTest extends BaseTest{
+public class StageFinancialProfessionalsMobileTest extends BaseTest {
 
     @Test(groups = {"mobile", "tablet"})
     public void testEmpowerLogo() {
@@ -73,6 +73,7 @@ public class StageFinancialProfessionalsMobileTest extends BaseTest{
     public void testPrimaryMenuDesktopDisplayed() {
         List<String> expectedPrimaryMenu = Arrays.asList(
                 "Solutions",
+                "Experience",
                 "Resources",
                 "Insights",
                 "Why Empower"
@@ -122,13 +123,10 @@ public class StageFinancialProfessionalsMobileTest extends BaseTest{
         List<String> expectedOpenMenu = Arrays.asList(
                 "Prospecting & proposals",
                 "Plan management",
-                "APIs",
                 "Advisor toolkit",
                 "TPA toolkit",
                 "Plan sponsor toolkit",
-                "Participant toolkit",
-                "Partner advocate",
-                "Events"
+                "Participant toolkit"
         );
         List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
                 .closeCookieBanner()
@@ -147,8 +145,9 @@ public class StageFinancialProfessionalsMobileTest extends BaseTest{
     public void testOpenMenuInsightsDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
                 "Investment Insights",
-                "Legislative & regulatory news",
-                "The Currency"
+                "The Currency",
+                "Cybersecurity",
+                "Legislative & regulatory news"
         );
         List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
                 .closeCookieBanner()

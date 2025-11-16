@@ -1,9 +1,11 @@
 package com.empower;
 
 import com.empower.pages.IndividualsPage;
+import com.empower.utils.Utils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -13,34 +15,26 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     @SuppressWarnings("unchecked")
     public void setUp() throws Exception {
-        ChromeOptions options = new ChromeOptions();
-
-//        String dimension = System.getProperty("set.dimension");
-//        if ("desktop".equals(dimension)) {
-//            options.addArguments("start-maximized");
-//        }
-
-//        driver = new ChromeDriver(options);
-
         driver = new ChromeDriver();
-
-        if ("prod".equals(System.getProperty("env"))) {
-            driver.get("https://empwrretiremt.prod.acquia-sites.com");
-        } else {
-            driver.get("https://empwrretiremtstg.prod.acquia-sites.com");
-        }
+        driver.get("https://empwrretiremtstg.prod.acquia-sites.com");
     }
 
     @AfterMethod(alwaysRun = true)
-    public void tearDown() throws Exception {
-        driver.quit();
+    public void tearDown(ITestResult testResult) throws Exception {
+        if (!testResult.isSuccess() && driver != null) {
+            Utils.takeScreenshot(
+                    driver,
+                    testResult.getTestClass().getRealClass().getSimpleName(),
+                    testResult.getName()
+            );
+        }
+
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
-    public WebDriver getDriver() {
+    public WebDriver getDriver () {
         return driver;
-    }
-
-    public void takeScreenshot() {
-        new IndividualsPage(getDriver()).takePercyFullPageScreenshot(getDriver(),"", "");
     }
 }

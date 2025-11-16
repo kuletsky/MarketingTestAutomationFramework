@@ -123,7 +123,7 @@ public class StageUIVisualMobileTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
-                .clickCreatePersonalDashBoardButton()
+                .clickPersonalCashOpenAccountButton()
                 .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard", "Mobile");
     }
 

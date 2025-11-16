@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class StageFinancialProfessionalsTest extends BaseTest{
+public class StageFinancialProfessionalsTest extends BaseTest {
 
     @Test(groups = {"desktop"})
     public void testEmpowerLogo() {
@@ -85,6 +85,7 @@ public class StageFinancialProfessionalsTest extends BaseTest{
     public void testPrimaryMenuDesktopDisplayed() {
         List<String> expectedPrimaryMenu = Arrays.asList(
                 "Solutions",
+                "Experience",
                 "Resources",
                 "Insights",
                 "Why Empower"
@@ -115,15 +116,12 @@ public class StageFinancialProfessionalsTest extends BaseTest{
     @Test(groups = {"desktop"})
     public void testOpenMenuSolutionsDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
-                "Markets",
-                "Retirement products",
+                "Defined contribution",
                 "Integrated workplace solutions",
-                "Participant experience",
                 "Fiduciary advice solutions",
                 "Retirement income solutions",
                 "Stock plan services",
                 "Empower benefit consulting services",
-                "Nonqualified plans",
                 "Defined benefit plans",
                 "Consumer-directed health"
         );
@@ -141,13 +139,10 @@ public class StageFinancialProfessionalsTest extends BaseTest{
         List<String> expectedOpenMenu = Arrays.asList(
                 "Prospecting & proposals",
                 "Plan management",
-                "APIs",
                 "Advisor toolkit",
                 "TPA toolkit",
                 "Plan sponsor toolkit",
-                "Participant toolkit",
-                "Partner advocate",
-                "Events"
+                "Participant toolkit"
         );
         FinancialProfessionalsPage page = new IndividualsPage(getDriver())
                 .getDesktopHeader()
@@ -162,10 +157,10 @@ public class StageFinancialProfessionalsTest extends BaseTest{
     public void testOpenMenuInsightsDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
                 "Investment Insights",
-                "Legislative & regulatory news",
-                "The Currency"
+                "The Currency",
+                "Cybersecurity",
+                "Legislative & regulatory news"
         );
-
         FinancialProfessionalsPage page = new IndividualsPage(getDriver())
                 .getDesktopHeader()
                 .clickFinancialProfessionalsMenu()

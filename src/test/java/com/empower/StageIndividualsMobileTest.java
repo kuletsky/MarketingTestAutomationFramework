@@ -2,7 +2,7 @@ package com.empower;
 
 import com.empower.pages.base.BasePage;
 import com.empower.pages.IndividualsPage;
-import com.empower.pages.OnBoardingPage;
+import com.empower.pages.SignupPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -126,7 +126,7 @@ public class StageIndividualsMobileTest extends BaseTest {
 
     @Test(groups = {"mobile"})
     public void testMobileCTAButtonConnectMyAccounts2() {
-        OnBoardingPage page = new IndividualsPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .clickMobileCTAButtonConnectMyAccounts2();
 

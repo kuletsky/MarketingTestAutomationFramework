@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class StagePlanSponsorsMobileTest extends BaseTest{
+public class StagePlanSponsorsMobileTest extends BaseTest {
 
     @Test(groups = {"mobile", "tablet"})
     public void testEmpowerLogo() {

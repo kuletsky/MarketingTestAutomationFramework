@@ -328,10 +328,10 @@ public class IndividualsPage extends BasePage {
     }
 
 //    @Step("Click CTA button \"Connect my accounts\" button")
-    public OnBoardingPage clickMobileCTAButtonConnectMyAccounts2() {
+    public SignupPage clickMobileCTAButtonConnectMyAccounts2() {
         safeClick(mobileCTAButtonConnectMyAccounts2);
 
-        return new OnBoardingPage(getDriver());
+        return new SignupPage(getDriver());
     }
 
 //    @Step("Click Product & Solutions menu")
@@ -570,10 +570,10 @@ public class IndividualsPage extends BasePage {
     }
 
 //    @Step("Click CTA button \"Open an account\" 1")
-    public OnBoardingPage clickCTAButtonOpenAccount1() {
+    public SignupPage clickCTAButtonOpenAccount1() {
 //        safeClick(CTAButtonOpenAccount1);
         safeClick(CTAButtonConnectMyAccounts1);
-        return new OnBoardingPage(getDriver());
+        return new SignupPage(getDriver());
     }
 
     //    @Step("Click CTA button \" Schedule to call\" 1")
@@ -584,10 +584,10 @@ public class IndividualsPage extends BasePage {
     }
 
 //    @Step("Click CTA button \"Open an account\" 2")
-    public OnBoardingPage clickCTAButtonOpenAccount2() {
+    public SignupPage clickCTAButtonOpenAccount2() {
         safeClick(CTAButtonOpenAccount2);
 
-        return new OnBoardingPage(getDriver());
+        return new SignupPage(getDriver());
     }
 
 //    @Step("Click CTA button \" Schedule to call\" 2")
@@ -598,10 +598,10 @@ public class IndividualsPage extends BasePage {
     }
 
 //    @Step("Click CTA button \"Connect my accounts\" button")
-    public OnBoardingPage clickCTAButtonConnectMyAccounts1() {
+    public SignupPage clickCTAButtonConnectMyAccounts1() {
         safeClick(CTAButtonConnectMyAccounts1);
 
-        return new OnBoardingPage(getDriver());
+        return new SignupPage(getDriver());
     }
 
 //    @Step("Click CTA button \"Take me there\" button")
@@ -633,10 +633,10 @@ public class IndividualsPage extends BasePage {
     }
 
 //    @Step("Click CTA button \"Connect my accounts\" button")
-    public OnBoardingPage clickCTAButtonConnectMyAccounts2() {
+    public SignupPage clickCTAButtonConnectMyAccounts2() {
         safeClick(CTAButtonConnectMyAccounts2);
 
-        return new OnBoardingPage(getDriver());
+        return new SignupPage(getDriver());
     }
 
 //    @Step("Click CTA button 'Learn more' button")

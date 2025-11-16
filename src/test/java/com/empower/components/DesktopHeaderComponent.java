@@ -1,7 +1,6 @@
 package com.empower.components;
 
-import com.empower.pages.OnBoardingPage;
-import com.empower.pages.base.BasePage;
+import com.empower.pages.SignupPage;
 import com.empower.pages.FinancialProfessionalsPage;
 import com.empower.pages.IndividualsPage;
 import com.empower.pages.PlanSponsorsPage;
@@ -50,9 +49,9 @@ public class DesktopHeaderComponent extends BaseHeaderComponent {
     }
 
     //    @Step("Click Open account button on the header")
-    public OnBoardingPage clickOpenAccountHeaderButton() {
+    public SignupPage clickOpenAccountHeaderButton() {
         wait10UntilClickable(openAccountHeaderButton).click();
 //        safeClick(openAccountHeaderButton);
-        return new OnBoardingPage(getDriver());
+        return new SignupPage(getDriver());
     }
 }

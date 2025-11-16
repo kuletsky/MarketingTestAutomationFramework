@@ -5,17 +5,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class OnBoardingPage extends BasePage {
+public class SignupPage extends BasePage {
 
-    public OnBoardingPage(WebDriver driver) {
+    public SignupPage(WebDriver driver) {
         super(driver);
     }
 
     @FindBy(css = ".h3-alt")
     private WebElement headingOfPopUp;
 
-    @FindBy(css = ".paragraph-content.btn-v2 [data-dismiss='modal']")
-    private WebElement personalDashboardButton;
+    @FindBy(css = "[href*='signup/cash']")
+    private WebElement personalCashButton;
 
     @FindBy(css = "[aria-label='First name']")
     private WebElement fname;
@@ -39,13 +39,13 @@ public class OnBoardingPage extends BasePage {
         return wait10UntilVisible(headingOfPopUp).getText().trim();
     }
 
-    public OnBoardingPage clickCreatePersonalDashBoardButton() {
-        safeClick(personalDashboardButton);
+    public SignupPage clickPersonalCashOpenAccountButton() {
+        safeClick(personalCashButton);
 
         return this;
     }
 
-    public OnBoardingPage fillForm(String name, String lastname, String email, String password) {
+    public SignupPage fillForm(String name, String lastname, String email, String password) {
         wait10UntilVisible(fname).sendKeys(name);
         wait10UntilVisible(lname).sendKeys(lastname);
         wait10UntilVisible(eMail).sendKeys(email);
@@ -54,7 +54,7 @@ public class OnBoardingPage extends BasePage {
         return this;
     }
 
-    public OnBoardingPage clickNextButton() {
+    public SignupPage clickNextButton() {
         safeClick(nextButton);
 
         return this;

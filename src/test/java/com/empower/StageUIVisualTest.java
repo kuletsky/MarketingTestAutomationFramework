@@ -134,7 +134,7 @@ public class StageUIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
-                .clickCreatePersonalDashBoardButton()
+                .clickPersonalCashOpenAccountButton()
                 .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard","Desktop");
     }
 

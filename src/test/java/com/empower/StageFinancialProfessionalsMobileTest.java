@@ -93,15 +93,12 @@ public class StageFinancialProfessionalsMobileTest extends BaseTest {
     @Test(groups = {"mobile", "tablet"})
     public void testOpenMenuSolutionsDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
-                "Markets",
-                "Retirement products",
+                "Defined contribution",
                 "Integrated workplace solutions",
-                "Participant experience",
                 "Fiduciary advice solutions",
                 "Retirement income solutions",
                 "Stock plan services",
                 "Empower benefit consulting services",
-                "Nonqualified plans",
                 "Defined benefit plans",
                 "Consumer-directed health"
         );
@@ -114,6 +111,28 @@ public class StageFinancialProfessionalsMobileTest extends BaseTest {
                 .clickHamburgerMenuFinancialProfessionals()
                 .clickHamburgerSolutionsOpenMenu()
                 .getHamburgerSolutionsOpenMenuLinks();
+
+        Assert.assertEquals(actualOpenMenuLinks, expectedOpenMenu);
+    }
+
+    @Test(groups = {"mobile", "tablet"})
+    public void testOpenMenuExperienceDisplayed() {
+        List<String> expectedOpenMenu = Arrays.asList(
+                "Markets",
+                "Participant experience",
+                "APIs",
+                "Partner advocate",
+                "Events"
+        );
+        List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickFinancialProfessionalsMenu()
+                .getMobileHeader()
+                .clickHamburgerMenuFinancialProfessionals()
+                .clickHamburgerExperienceOpenMenu()
+                .getHamburgerExperienceOpenMenuLinks();
 
         Assert.assertEquals(actualOpenMenuLinks, expectedOpenMenu);
     }

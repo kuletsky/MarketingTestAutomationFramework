@@ -59,25 +59,31 @@ public class FinancialProfessionalsPage extends BasePage {
     @FindBy(css = "[aria-controls='dropdown-mobile-0']")
     private WebElement hamburgerSolutionsMenu;
 
-    @FindBy(css = "#dropdown-mobile-0 .mobile-nav-secondary-menu")
+    @FindBy(css = "#dropdown-mobile-0 .mobile-nav-secondary-menu > button, #dropdown-mobile-0 .mobile-nav-secondary-menu > a")
     private List<WebElement> hamburgerOpenMenuSolutionsLinks;
 
-    @FindBy(css = "[aria-controls='dropdown-mobile-1']")
+    @FindBy(css = "[aria-controls='dropdown-mobile-2']")
     private WebElement hamburgerResourcesMenu;
 
-    @FindBy(css = "#dropdown-mobile-1 .mobile-nav-secondary-menu")
-    private List<WebElement> hamburgerOpenMenuResourcesLinks;
-
-    @FindBy(css = "[aria-controls='dropdown-mobile-2']")
-    private WebElement hamburgerInsightsMenu;
+    @FindBy(css = "[aria-controls='dropdown-mobile-1']")
+    private WebElement hamburgerExperienceMenu;
 
     @FindBy(css = "#dropdown-mobile-2 .mobile-nav-secondary-menu")
-    private List<WebElement> hamburgerOpenMenuInsightsLinks;
+    private List<WebElement> hamburgerOpenMenuResourcesLinks;
+
+    @FindBy(css = "#dropdown-mobile-1 .mobile-nav-secondary-menu")
+    private List<WebElement> hamburgerOpenMenuExperienceLinks;
 
     @FindBy(css = "[aria-controls='dropdown-mobile-3']")
-    private WebElement hamburgerWhyEmpowerMenu;
+    private WebElement hamburgerInsightsMenu;
 
     @FindBy(css = "#dropdown-mobile-3 .mobile-nav-secondary-menu")
+    private List<WebElement> hamburgerOpenMenuInsightsLinks;
+
+    @FindBy(css = "[aria-controls='dropdown-mobile-4']")
+    private WebElement hamburgerWhyEmpowerMenu;
+
+    @FindBy(css = "#dropdown-mobile-4 .mobile-nav-secondary-menu")
     private List<WebElement> hamburgerOpenMenuWhyEmpowerLinks;
 
 
@@ -188,9 +194,23 @@ public class FinancialProfessionalsPage extends BasePage {
         return this;
     }
 
+    public FinancialProfessionalsPage clickHamburgerExperienceOpenMenu() {
+        wait10UntilVisible(hamburgerExperienceMenu).click();
+
+        return this;
+    }
+
 //    @Step("Get all links of hamburger Open menu Resources")
     public List<String> getHamburgerResourcesOpenMenuLinks() {
         return wait10UntilVisibleAll(hamburgerOpenMenuResourcesLinks)
+                .stream()
+                .map(WebElement::getText)
+                .map(String::trim)
+                .toList();
+    }
+
+    public List<String> getHamburgerExperienceOpenMenuLinks() {
+        return wait10UntilVisibleAll(hamburgerOpenMenuExperienceLinks)
                 .stream()
                 .map(WebElement::getText)
                 .map(String::trim)

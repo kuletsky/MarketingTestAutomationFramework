@@ -16,6 +16,7 @@ public class BaseTest {
     @SuppressWarnings("unchecked")
     public void setUp() throws Exception {
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://empwrretiremtstg.prod.acquia-sites.com");
     }
 

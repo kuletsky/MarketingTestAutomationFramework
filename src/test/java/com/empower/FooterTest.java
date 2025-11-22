@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class StageFooterTest extends BaseTest {
+public class FooterTest extends BaseTest {
 
     @DataProvider(name = "legalMenuLinks")
     public Object[][] legalMenuLinks() {

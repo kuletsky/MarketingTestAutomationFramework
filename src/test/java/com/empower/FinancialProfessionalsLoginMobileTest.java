@@ -5,24 +5,29 @@ import com.empower.pages.IndividualsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class StageFinancialProfessionalsLoginTest extends BaseTest {
+public class FinancialProfessionalsLoginMobileTest extends BaseTest {
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"mobile", "tablet"})
     public void testFinancialProfessionalsLoginButton() {
         FinancialProfessionalsLoginPage page = new IndividualsPage(getDriver())
-                .getDesktopHeader()
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
                 .clickFinancialProfessionalsMenu()
                 .clickLoginButton()
                 .clickIAgreePopup()
+                .closeCookieBanner(FinancialProfessionalsLoginPage.class)
                 .clickFinancialProfessionalsLoginButton();
 
         Assert.assertTrue(page.isNewUrl("plan.empower-retirement.com"));
     }
 
-    @Test(groups = {"desktop"})
-    public void testFinancialProfessionalsRegistrationNowButton() {
+    @Test(groups = {"mobile", "tablet"})
+    public void testFinancialProfessionalsRegisterNowButton() {
         FinancialProfessionalsLoginPage page = new IndividualsPage(getDriver())
-                .getDesktopHeader()
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
                 .clickFinancialProfessionalsMenu()
                 .clickLoginButton()
                 .clickIAgreePopup()
@@ -30,13 +35,15 @@ public class StageFinancialProfessionalsLoginTest extends BaseTest {
                 .clickFinancialProfessionalsRegisterNowButton()
                 .clickContinuePopup();
 
-        Assert.assertTrue(page.isNewUrl("plan.retirementpartner.com"));
+        Assert.assertTrue(page.isNewUrl("partner"));
     }
 
-    @Test(groups = {"desktop"})
-    public void testFinancialProfessionalsRegistrationRixtremaButton() {
+    @Test(groups = {"mobile", "tablet"})
+    public void testFinancialProfessionalsRegisterRixtremaButton() {
         FinancialProfessionalsLoginPage page = new IndividualsPage(getDriver())
-                .getDesktopHeader()
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
                 .clickFinancialProfessionalsMenu()
                 .clickLoginButton()
                 .clickIAgreePopup()

@@ -4,7 +4,7 @@ import com.empower.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class StageIndividualsLoginV1Test extends BaseTest {
+public class IndividualsLoginV1Test extends BaseTest {
 
     @Test(groups = {"desktop"})
     public void testParticipantLoginButton() {

@@ -1,68 +1,69 @@
 package com.empower;
 
+
 import com.empower.pages.base.BasePage;
+import com.empower.pages.FinancialProfessionalsLoginPage;
+import com.empower.pages.FinancialProfessionalsPage;
 import com.empower.pages.IndividualsPage;
-import com.empower.pages.PlanServiceCenterPage;
-import com.empower.pages.PlanSponsorsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 
 import java.util.Arrays;
 import java.util.List;
 
-public class StagePlanSponsorsMobileTest extends BaseTest {
+public class FinancialProfessionalsMobileTest extends BaseTest {
 
     @Test(groups = {"mobile", "tablet"})
     public void testEmpowerLogo() {
         String actualHeading = new IndividualsPage(getDriver())
                 .getMobileHeader()
-                .clickHamburgerMenuPlanSponsors()
+                .clickHamburgerMenuFinancialProfessionals()
                 .clickEmpowerLogo()
                 .getHeadingText();
 
         Assert.assertEquals(actualHeading, "Invest well. Live a little.™");
+        Assert.assertTrue(new BasePage(getDriver()).isNewUrl("https://empwrretiremtstg.prod.acquia-sites.com/"));
     }
 
     @Test(groups = {"mobile", "tablet"})
     public void testHeadingHamburgerMenu() {
-        PlanSponsorsPage page = new IndividualsPage(getDriver())
+        FinancialProfessionalsPage page = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
+                .clickFinancialProfessionalsMenu()
                 .getMobileHeader()
-                .clickHamburgerMenuPlanSponsors();
+                .clickHamburgerMenuFinancialProfessionals();
 
-        Assert.assertEquals(page.getHamburgerHeadingText(), "Plan Sponsors");
+        Assert.assertEquals(page.getHamburgerHeadingText(), "Financial Professionals");
     }
 
     @Test(groups = {"mobile", "tablet"})
     public void testLoginButton() {
-        PlanServiceCenterPage page = new IndividualsPage(getDriver())
+        FinancialProfessionalsLoginPage page = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
+                .clickFinancialProfessionalsMenu()
                 .clickLoginButton();
 
-//        Assert.assertEquals(page.getHeadingText(), "plan service center");
-        Assert.assertTrue(page.isNewUrl("plan.empower-retirement.com/planweb"));
+        Assert.assertTrue(page.getHeadingText().contains("The information"));
+        Assert.assertTrue(page.isNewUrl("financial-professionals-login"));
     }
 
     @Test(groups = {"mobile", "tablet"})
     public void testContextualMenuDesktopDisplayed() {
         List<String> expectedContextualMenu = Arrays.asList(
                 "Individuals",
-                "Financial Professionals"
+                "Plan Sponsors"
         );
         List<String> contextualMenuLinks = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
+                .clickFinancialProfessionalsMenu()
                 .getMobileHeader()
-                .clickHamburgerMenuPlanSponsors()
+                .clickHamburgerMenuFinancialProfessionals()
                 .getHamburgerContextualMenuLinks();
 
         Assert.assertEquals(contextualMenuLinks, expectedContextualMenu);
@@ -71,69 +72,43 @@ public class StagePlanSponsorsMobileTest extends BaseTest {
     @Test(groups = {"mobile", "tablet"})
     public void testPrimaryMenuDesktopDisplayed() {
         List<String> expectedPrimaryMenu = Arrays.asList(
-                "Markets",
                 "Solutions",
                 "Experience",
-                "Learn",
+                "Resources",
+                "Insights",
                 "Why Empower"
         );
         List<String> actualPrimaryMenuLinks = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
+                .clickFinancialProfessionalsMenu()
                 .getMobileHeader()
-                .clickHamburgerMenuPlanSponsors()
+                .clickHamburgerMenuFinancialProfessionals()
                 .getHamburgerPrimaryMenuLinks();
 
         Assert.assertEquals(actualPrimaryMenuLinks, expectedPrimaryMenu);
     }
 
     @Test(groups = {"mobile", "tablet"})
-    public void testOpenMenuMarketsDisplayed() {
-        List<String> expectedOpenMenu = Arrays.asList(
-                "Small and growing businesses",
-                "Large and mega corporations",
-                "Multiple employer plans",
-                "Government",
-                "Not-for-profit",
-                "Taft-Hartley"
-        );
-
-        List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
-                .getMobileHeader()
-                .clickHamburgerMenuPlanSponsors()
-                .clickHamburgerMarketsOpenMenu()
-                .getHamburgerMarketsOpenMenuLinks();
-
-        Assert.assertEquals(actualOpenMenuLinks, expectedOpenMenu);
-    }
-
-    @Test(groups = {"mobile", "tablet"})
     public void testOpenMenuSolutionsDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
+                "Defined contribution",
                 "Integrated workplace solutions",
-                "Advisory services",
-                "Retirement solutions",
-                "Defined contribution plans",
-                "Defined benefit plans",
-                "Nonqualified plans",
-                "Empower benefit consulting services",
+                "Fiduciary advice solutions",
+                "Retirement income solutions",
                 "Stock plan services",
+                "Empower benefit consulting services",
+                "Defined benefit plans",
                 "Consumer-directed health"
         );
-
         List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
+                .clickFinancialProfessionalsMenu()
                 .getMobileHeader()
-                .clickHamburgerMenuPlanSponsors()
+                .clickHamburgerMenuFinancialProfessionals()
                 .clickHamburgerSolutionsOpenMenu()
                 .getHamburgerSolutionsOpenMenuLinks();
 
@@ -143,17 +118,19 @@ public class StagePlanSponsorsMobileTest extends BaseTest {
     @Test(groups = {"mobile", "tablet"})
     public void testOpenMenuExperienceDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
-                "Plan servicing",
-                "Participant engagement"
+                "Markets",
+                "Participant experience",
+                "APIs",
+                "Partner advocate",
+                "Events"
         );
-
         List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
+                .clickFinancialProfessionalsMenu()
                 .getMobileHeader()
-                .clickHamburgerMenuPlanSponsors()
+                .clickHamburgerMenuFinancialProfessionals()
                 .clickHamburgerExperienceOpenMenu()
                 .getHamburgerExperienceOpenMenuLinks();
 
@@ -161,21 +138,45 @@ public class StagePlanSponsorsMobileTest extends BaseTest {
     }
 
     @Test(groups = {"mobile", "tablet"})
-    public void testOpenMenuLearnDisplayed() {
+    public void testOpenMenuResourcesDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
-                "Investment Insights",
-                "The Currency"
+                "Prospecting & proposals",
+                "Plan management",
+                "Advisor toolkit",
+                "TPA toolkit",
+                "Plan sponsor toolkit",
+                "Participant toolkit"
         );
-
         List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
+                .clickFinancialProfessionalsMenu()
                 .getMobileHeader()
-                .clickHamburgerMenuPlanSponsors()
-                .clickHamburgerLearnOpenMenu()
-                .getHamburgerLearnOpenMenuLinks();
+                .clickHamburgerMenuFinancialProfessionals()
+                .clickHamburgerResourcesOpenMenu()
+                .getHamburgerResourcesOpenMenuLinks();
+
+        Assert.assertEquals(actualOpenMenuLinks, expectedOpenMenu);
+    }
+
+    @Test(groups = {"mobile", "tablet"})
+    public void testOpenMenuInsightsDisplayed() {
+        List<String> expectedOpenMenu = Arrays.asList(
+                "Investment Insights",
+                "The Currency",
+                "Cybersecurity",
+                "Legislative & regulatory news"
+        );
+        List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
+                .closeCookieBanner()
+                .getMobileHeader()
+                .clickHamburgerMenuIndividuals()
+                .clickFinancialProfessionalsMenu()
+                .getMobileHeader()
+                .clickHamburgerMenuFinancialProfessionals()
+                .clickHamburgerInsightsOpenMenu()
+                .getHamburgerInsightsOpenMenuLinks();
 
         Assert.assertEquals(actualOpenMenuLinks, expectedOpenMenu);
     }
@@ -184,18 +185,17 @@ public class StagePlanSponsorsMobileTest extends BaseTest {
     public void testOpenMenuWhyEmpowerDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
                 "About us",
+                "Contact us",
                 "Cybersecurity",
-                "Press Center",
-                "Contact us"
+                "Press Center"
         );
-
         List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
+                .clickFinancialProfessionalsMenu()
                 .getMobileHeader()
-                .clickHamburgerMenuPlanSponsors()
+                .clickHamburgerMenuFinancialProfessionals()
                 .clickHamburgerWhyEmpowerOpenMenu()
                 .getHamburgerWhyEmpowerOpenMenuLinks();
 
@@ -208,7 +208,7 @@ public class StagePlanSponsorsMobileTest extends BaseTest {
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
+                .clickFinancialProfessionalsMenu()
                 .closeCookieBanner()
                 .scrollToBottom();
 
@@ -221,24 +221,10 @@ public class StagePlanSponsorsMobileTest extends BaseTest {
                 .closeCookieBanner()
                 .getMobileHeader()
                 .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu()
+                .clickFinancialProfessionalsMenu()
                 .scrollToBottom()
                 .scrollToUp();
 
         Assert.assertTrue(basePage.isMobileHeaderExpand());
     }
-
-    @Test(groups = {"mobile", "tablet"})
-    public void testMobilePlanSponsorsMenuFunctionality() {
-        PlanSponsorsPage page = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .getMobileHeader()
-                .clickHamburgerMenuIndividuals()
-                .clickPlanSponsorsMenu();
-
-        Assert.assertEquals(page.getHeadingText(), "Trusted leader. Proven innovator.");
-        Assert.assertTrue(page.isNewUrl("/plan-sponsors"));
-    }
-
-
 }

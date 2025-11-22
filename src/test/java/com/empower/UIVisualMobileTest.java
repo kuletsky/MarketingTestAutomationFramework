@@ -4,7 +4,7 @@ import com.empower.pages.IndividualsPage;
 import org.testng.annotations.Test;
 
 
-public class StageUIVisualMobileTest extends BaseTest {
+public class UIVisualMobileTest extends BaseTest {
 
     @Test(groups = {"mobile-visual"})
     public void testTP1() {

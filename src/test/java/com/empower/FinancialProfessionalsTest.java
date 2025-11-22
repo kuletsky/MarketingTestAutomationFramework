@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class StageFinancialProfessionalsTest extends BaseTest {
+public class FinancialProfessionalsTest extends BaseTest {
 
     @Test(groups = {"desktop"})
     public void testEmpowerLogo() {

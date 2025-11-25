@@ -1,10 +1,8 @@
 package com.empower;
 
-import com.empower.pages.IndividualsPage;
 import com.empower.utils.Utils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,7 +14,11 @@ public class BaseTest {
     @SuppressWarnings("unchecked")
     public void setUp() throws Exception {
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
+        if ("desktop".equalsIgnoreCase(System.getProperty("resolution"))) {
+            driver.manage().window().maximize();
+        }
+
         driver.get("https://empwrretiremtstg.prod.acquia-sites.com");
     }
 

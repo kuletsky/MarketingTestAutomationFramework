@@ -34,22 +34,6 @@ public class FinancialProfessionalsTest extends BaseTest {
         Assert.assertTrue(page.isNewUrl("financial-professionals-login"));
     }
 
-//    @Test(groups = {"desktop"})
-//    public void testPartnerLoginButton() {
-//        new IndividualsPage(getDriver())
-//                .getHeader()
-//                .clickFinancialProfessionalsMenu()
-//                .clickLoginButton()
-//                .clickIAgreePopup();
-//
-//        PartnerPage page = new LoginV1Page(getDriver())
-//                        .clickPartnerLoginButton();
-//
-//        Assert.assertTrue(page.isNewUrl("plan.empower-retirement.com"));
-////        Assert.assertEquals(page.getHeadingText(),"Partner");
-//    }
-
-
     @Test(groups = {"desktop"})
     public void testFinancialProfessionalsMenuFunctionality() {
         FinancialProfessionalsPage page = new IndividualsPage(getDriver())
@@ -157,9 +141,8 @@ public class FinancialProfessionalsTest extends BaseTest {
     public void testOpenMenuInsightsDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
                 "Investment Insights",
-                "The Currency",
-                "Cybersecurity",
-                "Legislative & regulatory news"
+                "Legislative & regulatory news",
+                "The Currency"
         );
         FinancialProfessionalsPage page = new IndividualsPage(getDriver())
                 .getDesktopHeader()

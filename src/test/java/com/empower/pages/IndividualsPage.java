@@ -233,6 +233,9 @@ public class IndividualsPage extends BasePage {
     @FindBy(css = "[aria-label='Markets']")
     private WebElement marketMenu;
 
+    @FindBy(xpath = "//*[text()='Continue']")
+    private WebElement continueButton;
+
 
     public IndividualsLoginV1Page clickLoginButton() {
         safeClick(loginButton);
@@ -330,6 +333,7 @@ public class IndividualsPage extends BasePage {
 //    @Step("Click CTA button \"Connect my accounts\" button")
     public SignupPage clickMobileCTAButtonConnectMyAccounts2() {
         safeClick(mobileCTAButtonConnectMyAccounts2);
+        wait10UntilClickable(continueButton).click();
 
         return new SignupPage(getDriver());
     }
@@ -571,8 +575,8 @@ public class IndividualsPage extends BasePage {
 
 //    @Step("Click CTA button \"Open an account\" 1")
     public SignupPage clickCTAButtonOpenAccount1() {
-//        safeClick(CTAButtonOpenAccount1);
         safeClick(CTAButtonConnectMyAccounts1);
+        wait10UntilClickable(continueButton).click();
         return new SignupPage(getDriver());
     }
 
@@ -586,13 +590,13 @@ public class IndividualsPage extends BasePage {
 //    @Step("Click CTA button \"Open an account\" 2")
     public SignupPage clickCTAButtonOpenAccount2() {
         safeClick(CTAButtonOpenAccount2);
+        wait10UntilClickable(continueButton).click();
 
         return new SignupPage(getDriver());
     }
 
 //    @Step("Click CTA button \" Schedule to call\" 2")
     public SchedulePage clickCTAButtonScheduleCall2() {
-//        safeClick(CTAButtonScheduleCall2);
         wait10UntilClickable(CTAButtonScheduleCall2).click();
         return new SchedulePage(getDriver());
     }
@@ -600,6 +604,7 @@ public class IndividualsPage extends BasePage {
 //    @Step("Click CTA button \"Connect my accounts\" button")
     public SignupPage clickCTAButtonConnectMyAccounts1() {
         safeClick(CTAButtonConnectMyAccounts1);
+        wait10UntilClickable(continueButton).click();
 
         return new SignupPage(getDriver());
     }

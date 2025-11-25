@@ -34,6 +34,9 @@ public class SignupPage extends BasePage {
 
 
 
+//    public String getHeadingText() {
+//        return ByWait10UntilVisible(headingText).getText().trim();
+//    }
 
     public String getHeadingOfPopup() {
         return wait10UntilVisible(headingOfPopUp).getText().trim();

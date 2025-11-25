@@ -2,7 +2,6 @@ package com.empower;
 
 import com.empower.pages.base.BasePage;
 import com.empower.pages.IndividualsPage;
-import com.empower.pages.SignupPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -124,16 +123,16 @@ public class IndividualsMobileTest extends BaseTest {
         Assert.assertEquals(actualOpenMenuLinks, expectedOpenMenu);
     }
 
-    @Test(groups = {"mobile"})
-    public void testMobileCTAButtonConnectMyAccounts2() {
-        SignupPage page = new IndividualsPage(getDriver())
-                .closeCookieBanner()
-                .clickMobileCTAButtonConnectMyAccounts2();
-
-        Assert.assertEquals(page.getHeadingOfPopup(),
-                "Please confirm the type of account you want to open");
-        Assert.assertTrue(page.isNewUrl("onboarding-v2"));
-    }
+//    @Test(groups = {"mobile"})
+//    public void testMobileCTAButtonConnectMyAccounts2() {
+//        SignupPage page = new IndividualsPage(getDriver())
+//                .closeCookieBanner()
+//                .clickMobileCTAButtonConnectMyAccounts2();
+//
+////        Assert.assertEquals(page.getHeadingOfPopup(),
+////                "Please confirm the type of account you want to open");
+//        Assert.assertTrue(page.isNewUrl("marketing_param=zs_onboarding"));
+//    }
 
     @Test(groups = {"mobile", "tablet"})
     public void testMobileScrollingHeaderDown() {

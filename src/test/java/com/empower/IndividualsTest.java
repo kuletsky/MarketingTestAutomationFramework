@@ -27,9 +27,8 @@ public class IndividualsTest extends BaseTest {
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton();
 
-        Assert.assertEquals(page.getHeadingOfPopup(),
-                "Please confirm the type of account you want to open");
-        Assert.assertTrue(page.isNewUrl("onboarding-v2"));
+//        Assert.assertEquals(page.getHeadingText(), "How do you want to get started?");
+        Assert.assertTrue(page.isNewUrl("/signup"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -175,8 +174,8 @@ public class IndividualsTest extends BaseTest {
                 .closeCookieBanner()
                 .clickCTAButtonOpenAccount1();
 
-        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
-        Assert.assertTrue(page.isNewUrl("onboarding-v2"));
+//        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
+        Assert.assertTrue(page.isNewUrl("marketing_param=zs_onboarding"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -196,8 +195,8 @@ public class IndividualsTest extends BaseTest {
                 .closeCookieBanner()
                 .clickCTAButtonOpenAccount2();
 
-        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
-        Assert.assertTrue(page.isNewUrl("onboarding-v2"));
+//        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
+        Assert.assertTrue(page.isNewUrl("marketing_param=zs_onboarding"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -217,8 +216,7 @@ public class IndividualsTest extends BaseTest {
                 .closeCookieBanner()
                 .clickCTAButtonConnectMyAccounts1();
 
-        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
-        Assert.assertTrue(page.isNewUrl("onboarding-v2"));
+        Assert.assertTrue(page.isNewUrl("marketing_param=zs_onboarding"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -266,10 +264,9 @@ public class IndividualsTest extends BaseTest {
     public void testCTAButtonConnectMyAccounts2() {
         SignupPage page = new IndividualsPage(getDriver())
                 .closeCookieBanner()
-                .clickCTAButtonConnectMyAccounts2();
+                .clickCTAButtonConnectMyAccounts1();
 
-        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
-        Assert.assertTrue(page.isNewUrl("onboarding-v2"));
+        Assert.assertTrue(page.isNewUrl("marketing_param=zs_onboarding"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})

@@ -4,8 +4,6 @@ import browserstack.shaded.org.json.JSONObject;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-import javax.sound.midi.Soundbank;
-import java.sql.SQLOutput;
 import java.util.List;
 
 public class PerformanceHelper {

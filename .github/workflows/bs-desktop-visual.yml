@@ -36,4 +36,4 @@ jobs:
         run: mvn -B -q -DskipTests package
 
       - name: Run Desktop suite on BrowserStack
-        run: mvn -B test -Pdesktop-visual-test
+        run: mvn -B test -Pdesktop-visual-test -Dresolution=desktop

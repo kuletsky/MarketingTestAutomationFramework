@@ -164,9 +164,8 @@ public class FinancialProfessionalsMobileTest extends BaseTest {
     public void testOpenMenuInsightsDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
                 "Investment Insights",
-                "The Currency",
-                "Cybersecurity",
-                "Legislative & regulatory news"
+                "Legislative & regulatory news",
+                "The Currency"
         );
         List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
                 .closeCookieBanner()

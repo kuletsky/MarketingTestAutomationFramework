@@ -1,4 +1,4 @@
-name: DESKTOP tests via BrowserStack
+name: FORMS Desktop tests via BrowserStack
 
 on:
 #  pull_request:

@@ -37,7 +37,7 @@ public class FooterTest extends BaseTest {
                 .getFooter()
                 .clickFooterLink(linkText);
 
-        Assert.assertTrue(footer.isNewUrl(expectedUrl),
+        Assert.assertTrue(footer.isUrlChangedOn(expectedUrl),
                 "Expected: " + expectedUrl + ", but actual is " + getDriver().getCurrentUrl());
     }
 
@@ -65,7 +65,7 @@ public class FooterTest extends BaseTest {
                 .getFooter()
                 .clickFooterLink(linkText);
 
-        Assert.assertTrue(footer.isNewUrl(expectedUrl),
+        Assert.assertTrue(footer.isUrlChangedOn(expectedUrl),
                 "Expected: " + expectedUrl + ", but actual is " + getDriver().getCurrentUrl());
 //        Assert.assertEquals(footer.getHeadingText(headingText), headingText);
     }
@@ -88,7 +88,7 @@ public class FooterTest extends BaseTest {
                 .clickFooterLink(linkText)
                 .clickContinueButtonWithoutNewTab();
 
-        Assert.assertTrue(footer.isNewUrl(expectedUrl),
+        Assert.assertTrue(footer.isUrlChangedOn(expectedUrl),
                 "Expected: " + expectedUrl + ", but actual is " + footer.getCurrentUrl());
     }
 
@@ -109,7 +109,7 @@ public class FooterTest extends BaseTest {
                 .clickDisclaimerLink(linkText)
                 .clickContinueButtonWithoutNewTab();
 
-        Assert.assertTrue(footer.isNewUrl(expectedUrl));
+        Assert.assertTrue(footer.isUrlChangedOn(expectedUrl));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -196,7 +196,7 @@ public class FooterTest extends BaseTest {
                 .getHeadingText();
 
         Assert.assertEquals(actualHeading, "Invest well. Live a little.™");
-        Assert.assertTrue(new BasePage(getDriver()).isNewUrl("empwrretiremtstg.prod.acquia-sites.com/"),
+        Assert.assertTrue(new BasePage(getDriver()).isUrlChangedOn("empwrretiremtstg.prod.acquia-sites.com/"),
                 "Expected: empwrretiremtstg.prod.acquia-sites.com/" + ", but actual is " + getDriver().getCurrentUrl());
     }
 
@@ -208,7 +208,7 @@ public class FooterTest extends BaseTest {
                 .clickBrokerCheckLink()
                 .clickContinueButtonWithNewTab();
 
-        Assert.assertTrue(footer.isNewUrl("brokercheck.finra.org"),
+        Assert.assertTrue(footer.isUrlChangedOn("brokercheck.finra.org"),
                 "Expected: brokercheck.finra.org" + ", but actual is " + getDriver().getCurrentUrl());
     }
 
@@ -233,7 +233,7 @@ public class FooterTest extends BaseTest {
                 .clickFooterSocialMediaIcon(linkText)
                 .clickContinueButtonWithNewTab();
 
-        Assert.assertTrue(footer.isNewUrl(expectedUrl),
+        Assert.assertTrue(footer.isUrlChangedOn(expectedUrl),
                 "Expected: " + expectedUrl + ", but actual is " + getDriver().getCurrentUrl());
     }
 }

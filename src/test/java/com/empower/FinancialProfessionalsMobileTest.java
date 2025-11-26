@@ -22,7 +22,7 @@ public class FinancialProfessionalsMobileTest extends BaseTest {
                 .getHeadingText();
 
         Assert.assertEquals(actualHeading, "Invest well. Live a little.™");
-        Assert.assertTrue(new BasePage(getDriver()).isNewUrl("https://empwrretiremtstg.prod.acquia-sites.com/"));
+        Assert.assertTrue(new BasePage(getDriver()).isUrlChangedOn("https://empwrretiremtstg.prod.acquia-sites.com/"));
     }
 
     @Test(groups = {"mobile", "tablet"})
@@ -48,7 +48,7 @@ public class FinancialProfessionalsMobileTest extends BaseTest {
                 .clickLoginButton();
 
         Assert.assertTrue(page.getHeadingText().contains("The information"));
-        Assert.assertTrue(page.isNewUrl("financial-professionals-login"));
+        Assert.assertTrue(page.isUrlChangedOn("financial-professionals-login"));
     }
 
     @Test(groups = {"mobile", "tablet"})

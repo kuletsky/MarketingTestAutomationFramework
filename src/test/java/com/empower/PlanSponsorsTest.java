@@ -22,7 +22,7 @@ public class PlanSponsorsTest extends BaseTest {
                 .getHeadingText();
 
         Assert.assertEquals(actualHeading, "Invest well. Live a little.™");
-        Assert.assertTrue(new BasePage(getDriver()).isNewUrl("https://empwrretiremtstg.prod.acquia-sites.com/"));
+        Assert.assertTrue(new BasePage(getDriver()).isUrlChangedOn("https://empwrretiremtstg.prod.acquia-sites.com/"));
     }
 
     @Test(groups = {"desktop"})
@@ -33,7 +33,7 @@ public class PlanSponsorsTest extends BaseTest {
                 .clickLoginButton();
 
 //        Assert.assertEquals(page.getHeadingText(), "plan service center");
-        Assert.assertTrue(page.isNewUrl("plan.empower-retirement.com/planweb"));
+        Assert.assertTrue(page.isUrlChangedOn("plan.empower-retirement.com/planweb"));
     }
 
     @Test(groups = {"desktop"})
@@ -75,7 +75,7 @@ public class PlanSponsorsTest extends BaseTest {
                 .clickPlanSponsorsMenu();
 
         Assert.assertEquals(page.getHeadingText(), "Trusted leader. Proven innovator.");
-        Assert.assertTrue(page.isNewUrl("plan-sponsors"));
+        Assert.assertTrue(page.isUrlChangedOn("plan-sponsors"));
     }
 
     @Test(groups = {"desktop"})

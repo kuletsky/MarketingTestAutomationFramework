@@ -4,7 +4,7 @@ import com.empower.pages.IndividualsPage;
 import org.testng.annotations.Test;
 
 
-public class StageUIVisualTest extends BaseTest {
+public class UIVisualTest extends BaseTest {
 
     @Test(groups = {"desktop-visual"})
     public void testTP1() {

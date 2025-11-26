@@ -5,9 +5,9 @@ on:
 #    branches:
 #      - main
 
-#  schedule:
-#    - cron: '0 2 * * *'
-#  workflow_dispatch:
+  schedule:
+    - cron: '0 21 * * *'
+  workflow_dispatch:
 
 jobs:
   run-tests:
@@ -36,4 +36,4 @@ jobs:
         run: mvn -B -q -DskipTests package
 
       - name: Run Desktop suite on BrowserStack
-        run: mvn clean test -Pdesktop-test -Dset.resolution=desktop
+        run: mvn clean test -Pdesktop-test -Dresolution=desktop -Dtest=SingleFrontDoorFormsTest

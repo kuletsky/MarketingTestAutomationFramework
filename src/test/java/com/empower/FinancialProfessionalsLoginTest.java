@@ -16,7 +16,7 @@ public class FinancialProfessionalsLoginTest extends BaseTest {
                 .clickIAgreePopup()
                 .clickFinancialProfessionalsLoginButton();
 
-        Assert.assertTrue(page.isNewUrl("plan.empower-retirement.com"));
+        Assert.assertTrue(page.isUrlChangedOn("plan.empower-retirement.com"));
     }
 
     @Test(groups = {"desktop"})
@@ -30,7 +30,7 @@ public class FinancialProfessionalsLoginTest extends BaseTest {
                 .clickFinancialProfessionalsRegisterNowButton()
                 .clickContinuePopup();
 
-        Assert.assertTrue(page.isNewUrl("plan.retirementpartner.com"));
+        Assert.assertTrue(page.isUrlChangedOn("plan.retirementpartner.com"));
     }
 
     @Test(groups = {"desktop"})
@@ -44,7 +44,7 @@ public class FinancialProfessionalsLoginTest extends BaseTest {
                 .clickFinancialProfessionalsRegisterRixtremaButton()
                 .clickContinuePopup();
 
-        Assert.assertTrue(page.isNewUrl("rixtrema.net"));
+        Assert.assertTrue(page.isUrlChangedOn("rixtrema.net"));
     }
 
 }

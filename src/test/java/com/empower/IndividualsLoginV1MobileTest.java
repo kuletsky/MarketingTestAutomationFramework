@@ -14,7 +14,7 @@ public class IndividualsLoginV1MobileTest extends BaseTest {
                 .clickParticipantLoginButton();
 
 //        Assert.assertEquals(page.getHeadingText(), "Your Retirement Plan");
-        Assert.assertTrue(page.isNewUrl("/participant"));
+        Assert.assertTrue(page.isUrlChangedOn("/participant"));
     }
 
     @Test(groups = {"tablet", "mobile"})
@@ -25,7 +25,7 @@ public class IndividualsLoginV1MobileTest extends BaseTest {
                 .clickPersonalCapitalLoginButton();
 
 //        Assert.assertEquals(page.getHeadingText(), "Sign in to Empower Personal Dashboard™");
-        Assert.assertTrue(page.isNewUrl("personalcapital.com"));
+        Assert.assertTrue(page.isUrlChangedOn("personalcapital.com"));
     }
 
 //    @Test(groups = {"desktop"})

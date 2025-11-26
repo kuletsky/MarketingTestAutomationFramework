@@ -165,7 +165,7 @@ public class BasePage extends BaseModel{
         }
     }
 
-    public Boolean isNewUrl(String url) {
+    public Boolean isUrlChangedOn(String url) {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(10))
                 .until(ExpectedConditions.urlContains(url));
     }

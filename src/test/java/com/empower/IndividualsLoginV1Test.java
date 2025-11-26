@@ -13,7 +13,7 @@ public class IndividualsLoginV1Test extends BaseTest {
                 .clickParticipantLoginButton();
 
 //        Assert.assertEquals(page.getHeadingText(), "Your Retirement Plan");
-        Assert.assertTrue(page.isNewUrl("participant.empower-retirement.com"));
+        Assert.assertTrue(page.isUrlChangedOn("participant.empower-retirement.com"));
     }
 
     @Test(groups = {"desktop"})
@@ -23,7 +23,7 @@ public class IndividualsLoginV1Test extends BaseTest {
                 .clickPersonalCapitalLoginButton();
 
 //        Assert.assertEquals(page.getHeadingText(), "Sign in to Empower Personal Dashboard™");
-        Assert.assertTrue(page.isNewUrl("home.personalcapital.com"));
+        Assert.assertTrue(page.isUrlChangedOn("home.personalcapital.com"));
     }
 
     @Test(groups = {"desktop", "tablet", "mobile"})
@@ -33,7 +33,7 @@ public class IndividualsLoginV1Test extends BaseTest {
                 .closeCookieBanner(IndividualsLoginV1Page.class)
                 .clickPersonalWealthLoginButton();
 
-        Assert.assertTrue(page.isNewUrl("ira.empower-retirement.com"));
+        Assert.assertTrue(page.isUrlChangedOn("ira.empower-retirement.com"));
     }
 
     @Test(groups = {"desktop", "tablet", "mobile"})
@@ -43,7 +43,7 @@ public class IndividualsLoginV1Test extends BaseTest {
                 .closeCookieBanner(IndividualsLoginV1Page.class)
                 .clickPlanServiceCenterLoginButton();
 
-        Assert.assertTrue(page.isNewUrl("plan.empower-retirement.com"));
+        Assert.assertTrue(page.isUrlChangedOn("plan.empower-retirement.com"));
 //        Assert.assertEquals(page.getHeadingText(), "plan service center");
     }
 
@@ -54,7 +54,7 @@ public class IndividualsLoginV1Test extends BaseTest {
                 .closeCookieBanner(IndividualsLoginV1Page.class)
                 .clickPartnerLoginButton();
 
-        Assert.assertTrue(page.isNewUrl("retirementpartner.com"));
+        Assert.assertTrue(page.isUrlChangedOn("retirementpartner.com"));
 //        Assert.assertEquals(page.getHeadingText(),"Partner");
     }
 }

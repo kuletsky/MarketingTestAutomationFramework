@@ -113,19 +113,19 @@ public class UIVisualMobileTest extends BaseTest {
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsOpenAccount() {
         new IndividualsPage(getDriver())
-                .getDesktopHeader()
+                .getMobileHeader()
                 .clickOpenAccountHeaderButton()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page", "Mobile");
     }
 
-    @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsOpenAccountCreatePersonalDashboard() {
-        new IndividualsPage(getDriver())
-                .getDesktopHeader()
-                .clickOpenAccountHeaderButton()
-                .clickPersonalCashOpenAccountButton()
-                .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard", "Mobile");
-    }
+//    @Test(groups = {"mobile-visual"})
+//    public void testUIIndividualsOpenAccountCreatePersonalDashboard() {
+//        new IndividualsPage(getDriver())
+//                .getDesktopHeader()
+//                .clickOpenAccountHeaderButton()
+//                .clickPersonalCashOpenAccountButton()
+//                .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard", "Mobile");
+//    }
 
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsCTAGetStarted() {

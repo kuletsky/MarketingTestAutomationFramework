@@ -33,9 +33,9 @@ public abstract class BaseModel {
         return wait10;
     }
 
-    protected WebDriverWait getWait3() {
+    protected WebDriverWait getWait20() {
         if (wait3 == null) {
-            wait3 = new WebDriverWait(driver, Duration.ofSeconds(3));
+            wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
         }
 
         return wait3;
@@ -43,10 +43,6 @@ public abstract class BaseModel {
 
     protected WebElement wait10UntilVisible(WebElement element) {
         return getWait10().until(ExpectedConditions.visibilityOf(element));
-    }
-
-    protected WebElement wait3UntilVisible(WebElement element) {
-        return getWait3().until(ExpectedConditions.visibilityOf(element));
     }
 
     protected WebElement ByWait10UntilClickable(By element) {
@@ -64,4 +60,20 @@ public abstract class BaseModel {
     protected WebElement ByWait10UntilVisible(By element) {
         return getWait10().until(ExpectedConditions.visibilityOfElementLocated(element));
     }
+
+//    protected WebElement wait10UntilPresent(By locator) {
+//        return getWait10().until(ExpectedConditions.presenceOfElementLocated(locator));
+//    }
+
+    protected WebElement wait20UntilPresent(By locator) {
+        WebElement el = getWait20().until(ExpectedConditions.presenceOfElementLocated(locator));
+        getWait10().until(ExpectedConditions.attributeToBeNotEmpty(el, "value"));
+
+        return el;
+    }
+
+    protected WebElement wait10UntilPresent(By locator) {
+        return getWait10().until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
 }

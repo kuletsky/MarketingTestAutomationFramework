@@ -18,7 +18,7 @@ public class IndividualsTest extends BaseTest {
                 .clickEmpowerLogo();
 
         Assert.assertEquals(page.getHeadingText(), "Invest well. Live a little.™");
-        Assert.assertTrue(page.isNewUrl("empwrretiremtstg"), "https://empwrretiremtstg.prod.acquia-sites.com/");
+        Assert.assertTrue(page.isUrlChangedOn("empwrretiremtstg"), "https://empwrretiremtstg.prod.acquia-sites.com/");
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -28,7 +28,7 @@ public class IndividualsTest extends BaseTest {
                 .clickOpenAccountHeaderButton();
 
 //        Assert.assertEquals(page.getHeadingText(), "How do you want to get started?");
-        Assert.assertTrue(page.isNewUrl("/signup"));
+        Assert.assertTrue(page.isUrlChangedOn("/signup"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -38,7 +38,7 @@ public class IndividualsTest extends BaseTest {
 
         Assert.assertEquals(page.getHeadingText(),
                 "Where would you like to log in?");
-        Assert.assertTrue(page.isNewUrl("login-v1"));
+        Assert.assertTrue(page.isUrlChangedOn("login-v1"));
     }
 
     @Test(groups = {"desktop"})
@@ -77,7 +77,7 @@ public class IndividualsTest extends BaseTest {
                 .clickIndividualsMenu();
 
         Assert.assertEquals(page.getHeadingText(), "Invest well. Live a little.™");
-        Assert.assertTrue(page.isNewUrl("https://empwrretiremtstg.prod.acquia-sites.com/"));
+        Assert.assertTrue(page.isUrlChangedOn("https://empwrretiremtstg.prod.acquia-sites.com/"));
     }
 
     @Test(groups = {"desktop"})
@@ -175,7 +175,7 @@ public class IndividualsTest extends BaseTest {
                 .clickCTAButtonOpenAccount1();
 
 //        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
-        Assert.assertTrue(page.isNewUrl("marketing_param=zs_onboarding"));
+        Assert.assertTrue(page.isUrlChangedOn("marketing_param=zs_onboarding"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -186,7 +186,7 @@ public class IndividualsTest extends BaseTest {
                 .clickContinueButton();
 
 //        Assert.assertEquals(page.getHeadingText(), "helping hand.");
-        Assert.assertTrue(page.isNewUrl("/schedule-appointment"));
+        Assert.assertTrue(page.isUrlChangedOn("/schedule-appointment"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -196,7 +196,7 @@ public class IndividualsTest extends BaseTest {
                 .clickCTAButtonOpenAccount2();
 
 //        Assert.assertEquals(page.getHeadingOfPopup(), "Please confirm the type of account you want to open");
-        Assert.assertTrue(page.isNewUrl("marketing_param=zs_onboarding"));
+        Assert.assertTrue(page.isUrlChangedOn("marketing_param=zs_onboarding"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -207,7 +207,7 @@ public class IndividualsTest extends BaseTest {
                 .clickContinueButton();
 
 //        Assert.assertEquals(page.getHeadingText(), "helping hand.");
-        Assert.assertTrue(page.isNewUrl("/schedule-appointment"));
+        Assert.assertTrue(page.isUrlChangedOn("/schedule-appointment"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -216,7 +216,7 @@ public class IndividualsTest extends BaseTest {
                 .closeCookieBanner()
                 .clickCTAButtonConnectMyAccounts1();
 
-        Assert.assertTrue(page.isNewUrl("marketing_param=zs_onboarding"));
+        Assert.assertTrue(page.isUrlChangedOn("marketing_param=zs_onboarding"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -226,7 +226,7 @@ public class IndividualsTest extends BaseTest {
                 .clickCTAButtonTakeMeThere();
 
         Assert.assertEquals(page.getHeadingText(), "Your helping hand to invest well");
-        Assert.assertTrue(page.isNewUrl("products-solutions"));
+        Assert.assertTrue(page.isUrlChangedOn("products-solutions"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -236,7 +236,7 @@ public class IndividualsTest extends BaseTest {
                 .clickCTAButtonExploreTheTools();
 
         Assert.assertEquals(page.getHeadingText(), "Financial freedom starts here");
-        Assert.assertTrue(page.isNewUrl("tools"));
+        Assert.assertTrue(page.isUrlChangedOn("tools"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -246,7 +246,7 @@ public class IndividualsTest extends BaseTest {
                 .clickCTAButtonStartRollover();
 
         Assert.assertTrue(page.getHeadingText().contains("The right IRA. Right now."));
-        Assert.assertTrue(page.isNewUrl("iras"));
+        Assert.assertTrue(page.isUrlChangedOn("iras"));
     }
 
 //    @Test(groups = {"desktop", "mobile", "tablet"})
@@ -266,7 +266,7 @@ public class IndividualsTest extends BaseTest {
                 .closeCookieBanner()
                 .clickCTAButtonConnectMyAccounts1();
 
-        Assert.assertTrue(page.isNewUrl("marketing_param=zs_onboarding"));
+        Assert.assertTrue(page.isUrlChangedOn("marketing_param=zs_onboarding"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -276,7 +276,7 @@ public class IndividualsTest extends BaseTest {
                 .clickCTAButtonLearnMore();
 
         Assert.assertEquals(page.getHeadingTextOfSecurityPage(),"Cybersecurity you can count on");
-        Assert.assertTrue(page.isNewUrl("cybersecurity"));
+        Assert.assertTrue(page.isUrlChangedOn("cybersecurity"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -286,7 +286,7 @@ public class IndividualsTest extends BaseTest {
                 .clickCTAButtonGetStarted();
 
 //        Assert.assertEquals(page.getHeadingTextOfPersonalStrategy(), "Cybersecurity you can count on");
-        Assert.assertTrue(page.isNewUrl("signup/personal-strategy"));
+        Assert.assertTrue(page.isUrlChangedOn("signup/personal-strategy"));
     }
 
     @Test(groups = {"desktop", "mobile", "tablet"})
@@ -296,7 +296,7 @@ public class IndividualsTest extends BaseTest {
                 .clickCTAButtonAboutPersonalStrategy();
 
         Assert.assertTrue(page.getHeadingTextAboutPersonalStrategy().contains("Portfolio management"));
-        Assert.assertTrue(page.isNewUrl("products-solutions/personal-strategy"));
+        Assert.assertTrue(page.isUrlChangedOn("products-solutions/personal-strategy"));
     }
 
 }

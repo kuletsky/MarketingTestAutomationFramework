@@ -1,20 +1,18 @@
 package com.empower;
 
+import com.empower.pages.IndividualsPage;
 import com.empower.pages.SignupPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SingleFrontDoorFormsTest extends BaseTest {
+        private final static String FORM_URL = "https://empwrretiremtstg.prod.acquia-sites.com/demo-single-front-door-ctas";
 
-    @BeforeMethod
-    public void openURL() {
-        getDriver().get("https://empwrretiremtstg.prod.acquia-sites.com/demo-single-front-door-ctas");
-    }
-
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testDefaultForm() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewDefaultForm();
 
@@ -25,9 +23,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("/signup/onboarding"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testRetirementIntentAffiliate() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormRetirementIntentAffiliate();
 
@@ -38,9 +37,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("RetirementIntentAffiliate"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testZS_tools() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormZS_tools();
 
@@ -51,9 +51,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("zs_tools"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testZS_investment() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormZS_investment();
 
@@ -64,9 +65,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("zs_investment"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testZS_retirement() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormZS_retirement();
 
@@ -77,9 +79,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("zs_retirement"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testZS_networth() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormZS_networth();
 
@@ -90,9 +93,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("zs_networth"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testZS_budgeting() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormZS_budgeting();
 
@@ -103,9 +107,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("zs_budgeting"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testZS_cashflow() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormZS_cashflow();
 
@@ -116,9 +121,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("zs_cashflow"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testZS_savingsplanner() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormZS_savingsplanner();
 
@@ -129,9 +135,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("zs_savingsplanner"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testZS_onboarding() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormZS_onboarding();
 
@@ -142,9 +149,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("zs_onboarding"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testZS_customretirement() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormZS_customretirement();
 
@@ -155,9 +163,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("zs_customretirement"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testAO_premierira() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormAO_premierira();
 
@@ -168,9 +177,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("ao_premierira"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testAO_premierinvestmentaccount() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormAO_premieririnvestmentaccount();
 
@@ -181,9 +191,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("ao_premierinvestmentaccount"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testAO_personalstrategy() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormAO_personalstrategy();
 
@@ -194,9 +205,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("ao_personalstrategy"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testAO_personalcash() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickViewFormAO_personalcash();
 
@@ -207,9 +219,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("ao_personalcash"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testSetImpactCookie() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickSetImpactCookie();
 
@@ -220,9 +233,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("impact_partner"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testSetReferralCookie() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickSetReferralCookie();
 
@@ -233,9 +247,10 @@ public class SingleFrontDoorFormsTest extends BaseTest {
         Assert.assertTrue(page.isUrlChangedOn("Referral"));
     }
 
-    @Test(groups = {"desktop"})
+    @Test(groups = {"forms"})
     public void testSetZeroStateCookie() {
-        SignupPage page = new SignupPage(getDriver())
+        SignupPage page = new IndividualsPage(getDriver())
+                .gotoURL(FORM_URL)
                 .closeCookieBanner(SignupPage.class)
                 .clickSetZeroStateCookie();
 

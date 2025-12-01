@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Desktop Forms Suite" parallel="methods" thread-count="5">
-    <test name="Desktop Forms tests">
+<suite name="Desktop Suite" parallel="methods" thread-count="5">
+    <test name="Form tests">
         <groups>
             <run>
-                <include name="critical"/>
+                <include name="forms"/>
             </run>
         </groups>
         <packages>

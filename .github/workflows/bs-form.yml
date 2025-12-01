@@ -1,4 +1,4 @@
-name: FORMS Desktop tests via BrowserStack
+name: FORM tests via BrowserStack
 
 on:
 #  pull_request:
@@ -14,17 +14,17 @@ jobs:
     name: 'Run tests on BrowserStack'
     runs-on: ubuntu-latest
     env:
-      BROWSERSTACK_CONFIG_FILE: browserstack-desktop.yml
+      BROWSERSTACK_CONFIG_FILE: browserstack-form.yml
 
     steps:
       - name: Git clone
         uses: actions/checkout@v4
 
-      - name: Write browserstack-desktop.yml from secret
+      - name: Write browserstack-form.yml from secret
         env:
-          CONFIG_BS: ${{ secrets.BROWSERSTACK_DESKTOP }}
+          CONFIG_BS: ${{ secrets.BROWSERSTACK_FORM }}
         run: |
-          echo "$CONFIG_BS" > browserstack-desktop.yml
+          echo "$CONFIG_BS" > browserstack-form.yml
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -36,4 +36,4 @@ jobs:
         run: mvn -B -q -DskipTests package
 
       - name: Run Desktop suite on BrowserStack
-        run: mvn clean test -Pdesktop-test -Dresolution=desktop -Dtest=SingleFrontDoorFormsTest
+        run: mvn clean test -Pform-test -Dresolution=desktop

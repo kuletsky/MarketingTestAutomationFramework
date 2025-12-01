@@ -35,3 +35,4 @@ generate-report.sh
 log/
 logs/
 
+/browserstack-form.yml

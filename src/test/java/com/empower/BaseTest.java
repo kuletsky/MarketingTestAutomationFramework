@@ -12,7 +12,7 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     @SuppressWarnings("unchecked")
-    public void setUp() throws Exception {
+    public void setUp() {
         driver = new ChromeDriver();
 
         if ("desktop".equalsIgnoreCase(System.getProperty("resolution"))) {
@@ -24,13 +24,13 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult testResult) throws Exception {
-        if (!testResult.isSuccess() && driver != null) {
-            Utils.takeScreenshot(
-                    driver,
-                    testResult.getTestClass().getRealClass().getSimpleName(),
-                    testResult.getName()
-            );
-        }
+//        if (!testResult.isSuccess() && driver != null) {
+//            Utils.takeScreenshot(
+//                    driver,
+//                    testResult.getTestClass().getRealClass().getSimpleName(),
+//                    testResult.getName()
+//            );
+//        }
 
         if (driver != null) {
             driver.quit();

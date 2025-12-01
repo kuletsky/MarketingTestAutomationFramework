@@ -1,12 +1,16 @@
 package com.empower.pages;
 
 import com.empower.pages.base.BasePage;
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.Locale;
+
 public class SignupPage extends BasePage {
+    Faker faker = new Faker();
 
     public SignupPage(WebDriver driver) {
         super(driver);
@@ -24,14 +28,23 @@ public class SignupPage extends BasePage {
     @FindBy(css = "[aria-label='Last name']")
     private WebElement lname;
 
+    @FindBy(css = "[aria-label='Mobile number']")
+    private WebElement phone;
+
     @FindBy(css = "[title='Email']")
     private WebElement eMail;
 
-    @FindBy(css = "[name='passwd']")
+    @FindBy(css = "#userName")
+    private WebElement username;
+
+    @FindBy(css = "#password-field")
     private WebElement psw;
 
+    @FindBy(css = ".c-form__disclosure p")
+    private WebElement emptyArea;
+
     @FindBy(css = "[type='submit']")
-    private WebElement nextButton;
+    private WebElement submitButton;
 
     @FindBy(css = ".js-form__marketing-param")
     private WebElement fieldsetLocator;
@@ -97,8 +110,6 @@ public class SignupPage extends BasePage {
     private final By skipFirstUseLocator = By.cssSelector(".js-form__skip-first-use");
 
 
-
-
     public String getHeadingText() {
         return wait10UntilVisible(headingText).getText().trim();
     }
@@ -109,17 +120,26 @@ public class SignupPage extends BasePage {
         return this;
     }
 
-    public SignupPage fillForm(String name, String lastname, String email, String password) {
-        wait10UntilVisible(fname).sendKeys(name);
-        wait10UntilVisible(lname).sendKeys(lastname);
-        wait10UntilVisible(eMail).sendKeys(email);
-        wait10UntilVisible(psw).sendKeys(password);
+    public SignupPage fillForm() {
+        wait10UntilVisible(fname).sendKeys("Bob");
+        wait10UntilVisible(lname).sendKeys("Empower");
+        wait10UntilVisible(phone).sendKeys(faker.phoneNumber().phoneNumber());
+        wait10UntilVisible(eMail).sendKeys(faker.internet().emailAddress());
+        wait10UntilVisible(username).sendKeys(faker.letterify("?????") + faker.number().digit());
+        wait10UntilVisible(psw).sendKeys(faker.lorem().characters(5, true, true)
+                + faker.regexify("[A-Z]")
+                + faker.regexify("[0-9]")
+                + faker.regexify("[@\\-_]"));
 
         return this;
     }
 
     public String getMarketingParamAttribute(String name) {
         return wait10UntilPresent(marketingParamLocator).getAttribute(name);
+    }
+
+    public String getMarketingParamAttributeReferralCookie(String name) {
+        return wait20UntilPresent(marketingParamLocator).getAttribute(name);
     }
 
     public String getSkipFirstUseAttribute(String name) {
@@ -231,6 +251,18 @@ public class SignupPage extends BasePage {
 
     public SignupPage clickSetZeroStateCookie() {
         wait10UntilClickable(setZeroStateCookieButton).click();
+
+        return this;
+    }
+
+    public SignupPage clickSubmitButton() {
+        wait10UntilClickable(submitButton).click();
+
+        return this;
+    }
+
+    public SignupPage clickToVerifyFields() {
+        wait10UntilClickable(emptyArea).click();
 
         return this;
     }

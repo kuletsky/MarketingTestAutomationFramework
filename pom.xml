@@ -46,6 +46,11 @@
             <version>LATEST</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version> <!-- Use the latest version available -->
+        </dependency>
     </dependencies>
 
     <build>

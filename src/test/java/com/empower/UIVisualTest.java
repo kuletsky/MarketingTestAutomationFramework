@@ -146,7 +146,7 @@ public class UIVisualTest extends BaseTest {
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
                 .closeCookieBanner(SignupPage.class)
-                .clickPremierIRAOpenAccountButton()
+//                .clickPremierIRAOpenAccountButton()
                 .takePercyFullPageScreenshot(getDriver(), "Premier IRA account","Desktop");
     }
 
@@ -156,7 +156,7 @@ public class UIVisualTest extends BaseTest {
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
                 .closeCookieBanner(SignupPage.class)
-                .clickPremierInvestmentOpenAccountButton()
+//                .clickPremierInvestmentOpenAccountButton()
                 .takePercyFullPageScreenshot(getDriver(), "Premier Investment account","Desktop");
     }
 
@@ -166,7 +166,7 @@ public class UIVisualTest extends BaseTest {
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
                 .closeCookieBanner(SignupPage.class)
-                .clickPersonalDashboardOpenAccountButton()
+//                .clickPersonalDashboardOpenAccountButton()
                 .takePercyFullPageScreenshot(getDriver(), "Personal Dashboard account","Desktop");
     }
 

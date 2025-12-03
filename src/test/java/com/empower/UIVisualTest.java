@@ -1,6 +1,7 @@
 package com.empower;
 
 import com.empower.pages.IndividualsPage;
+import com.empower.pages.SignupPage;
 import org.testng.annotations.Test;
 
 
@@ -134,6 +135,7 @@ public class UIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
+                .closeCookieBanner(SignupPage.class)
                 .clickPersonalCashOpenAccountButton()
                 .takePercyFullPageScreenshot(getDriver(), "Personal Cash account","Desktop");
     }
@@ -143,6 +145,7 @@ public class UIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
+                .closeCookieBanner(SignupPage.class)
                 .clickPremierIRAOpenAccountButton()
                 .takePercyFullPageScreenshot(getDriver(), "Premier IRA account","Desktop");
     }
@@ -152,6 +155,7 @@ public class UIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
+                .closeCookieBanner(SignupPage.class)
                 .clickPremierInvestmentOpenAccountButton()
                 .takePercyFullPageScreenshot(getDriver(), "Premier Investment account","Desktop");
     }
@@ -161,6 +165,7 @@ public class UIVisualTest extends BaseTest {
         new IndividualsPage(getDriver())
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
+                .closeCookieBanner(SignupPage.class)
                 .clickPersonalDashboardOpenAccountButton()
                 .takePercyFullPageScreenshot(getDriver(), "Personal Dashboard account","Desktop");
     }

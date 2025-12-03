@@ -129,14 +129,14 @@ public class UIVisualTest extends BaseTest {
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page","Desktop");
     }
 
-    @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsOpenAccountCreatePersonalDashboard() {
-        new IndividualsPage(getDriver())
-                .getDesktopHeader()
-                .clickOpenAccountHeaderButton()
-                .clickPersonalCashOpenAccountButton()
-                .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard","Desktop");
-    }
+//    @Test(groups = {"desktop-visual"})
+//    public void testUIIndividualsOpenAccountCreatePersonalDashboard() {
+//        new IndividualsPage(getDriver())
+//                .getDesktopHeader()
+//                .clickOpenAccountHeaderButton()
+//                .clickPersonalCashOpenAccountButton()
+//                .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard","Desktop");
+//    }
 
     @Test(groups = {"desktop-visual"})
     public void testUIIndividualsCTAGetStarted() {

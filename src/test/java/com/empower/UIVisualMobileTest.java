@@ -118,14 +118,41 @@ public class UIVisualMobileTest extends BaseTest {
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page", "Mobile");
     }
 
-//    @Test(groups = {"mobile-visual"})
-//    public void testUIIndividualsOpenAccountCreatePersonalDashboard() {
-//        new IndividualsPage(getDriver())
-//                .getDesktopHeader()
-//                .clickOpenAccountHeaderButton()
-//                .clickPersonalCashOpenAccountButton()
-//                .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard", "Mobile");
-//    }
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsOpenAccountPersonalCash() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickOpenAccountHeaderButton()
+                .clickPersonalCashOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Personal Cash account","Desktop");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsOpenAccountPremierIRA() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickOpenAccountHeaderButton()
+                .clickPremierIRAOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Premier IRA account","Desktop");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsOpenAccountPremierInvestment() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickOpenAccountHeaderButton()
+                .clickPremierInvestmentOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Premier Investment account","Desktop");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsOpenAccountPersonalDashboard() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickOpenAccountHeaderButton()
+                .clickPersonalDashboardOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Personal Dashboard account","Desktop");
+    }
 
     @Test(groups = {"mobile-visual"})
     public void testUIIndividualsCTAGetStarted() {

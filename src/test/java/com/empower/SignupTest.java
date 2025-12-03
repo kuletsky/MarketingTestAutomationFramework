@@ -9,7 +9,6 @@ public class SignupTest extends BaseTest {
 
     @Test(groups = {"critical"})
     public void testCreatePersonalDashboard() {
-//        getDriver().get("https://www.empower.com");
         new IndividualsPage(getDriver())
                 .getDesktopHeader()
                 .clickOpenAccountHeaderButton()
@@ -19,11 +18,5 @@ public class SignupTest extends BaseTest {
         Assert.assertEquals(text, "How do you want to get started?");
 
 
-//                .fillForm(
-//                        "Arkadiy",
-//                        "Abramovich",
-//                        "arcadiyabramovich@lmail.com",
-//                        "ArcadiyAbramovich62!!!!")
-//                .clickNextButton();
     }
 }

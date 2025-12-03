@@ -22,6 +22,15 @@ public class SignupPage extends BasePage {
     @FindBy(css = "[href*='signup/cash']")
     private WebElement personalCashButton;
 
+    @FindBy(css = "[href*='signup/premier-ira']")
+    private WebElement premierIRAButton;
+
+    @FindBy(css = "[href*='signup/premier-investment']")
+    private WebElement premierInvestmentButton;
+
+    @FindBy(css = "[href*='signup/tools']")
+    private WebElement personalDashboardButton;
+
     @FindBy(css = "[aria-label='First name']")
     private WebElement fname;
 
@@ -116,6 +125,24 @@ public class SignupPage extends BasePage {
 
     public SignupPage clickPersonalCashOpenAccountButton() {
         safeClick(personalCashButton);
+
+        return this;
+    }
+
+    public SignupPage clickPremierIRAOpenAccountButton() {
+        safeClick(premierIRAButton);
+
+        return this;
+    }
+
+    public SignupPage clickPremierInvestmentOpenAccountButton() {
+        safeClick(premierInvestmentButton);
+
+        return this;
+    }
+
+    public SignupPage clickPersonalDashboardOpenAccountButton() {
+        safeClick(personalDashboardButton);
 
         return this;
     }

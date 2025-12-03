@@ -129,14 +129,41 @@ public class UIVisualTest extends BaseTest {
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page","Desktop");
     }
 
-//    @Test(groups = {"desktop-visual"})
-//    public void testUIIndividualsOpenAccountCreatePersonalDashboard() {
-//        new IndividualsPage(getDriver())
-//                .getDesktopHeader()
-//                .clickOpenAccountHeaderButton()
-//                .clickPersonalCashOpenAccountButton()
-//                .takePercyFullPageScreenshot(getDriver(), "Create Personal Dashboard","Desktop");
-//    }
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsOpenAccountPersonalCash() {
+        new IndividualsPage(getDriver())
+                .getDesktopHeader()
+                .clickOpenAccountHeaderButton()
+                .clickPersonalCashOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Personal Cash account","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsOpenAccountPremierIRA() {
+        new IndividualsPage(getDriver())
+                .getDesktopHeader()
+                .clickOpenAccountHeaderButton()
+                .clickPremierIRAOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Premier IRA account","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsOpenAccountPremierInvestment() {
+        new IndividualsPage(getDriver())
+                .getDesktopHeader()
+                .clickOpenAccountHeaderButton()
+                .clickPremierInvestmentOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Premier Investment account","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsOpenAccountPersonalDashboard() {
+        new IndividualsPage(getDriver())
+                .getDesktopHeader()
+                .clickOpenAccountHeaderButton()
+                .clickPersonalDashboardOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Personal Dashboard account","Desktop");
+    }
 
     @Test(groups = {"desktop-visual"})
     public void testUIIndividualsCTAGetStarted() {

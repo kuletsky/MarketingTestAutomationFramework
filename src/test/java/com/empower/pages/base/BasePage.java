@@ -307,7 +307,7 @@ public class BasePage extends BaseModel{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(d -> ((JavascriptExecutor) d).executeScript("return document.readyState==='complete'").equals(true));
 
-        scrollToBottom();
+//        scrollToBottom();
 //        scrollToUp();
         // 2) Wait for an animation element to exist, then seek & pause to a deterministic frame
 //        new WebDriverWait(driver, Duration.ofSeconds(60)).until(d ->

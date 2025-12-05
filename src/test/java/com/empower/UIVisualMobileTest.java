@@ -8,6 +8,54 @@ import org.testng.annotations.Test;
 public class UIVisualMobileTest extends BaseTest {
 
     @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsOpenAccount() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickOpenAccountHeaderButton()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page", "Mobile");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsOpenAccountPersonalCash() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickOpenAccountHeaderButton()
+                .closeCookieBanner(SignupPage.class)
+                .clickPersonalCashOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Personal Cash account","Desktop");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsOpenAccountPremierIRA() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickOpenAccountHeaderButton()
+                .closeCookieBanner(SignupPage.class)
+                .clickPremierIRAOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Premier IRA account","Desktop");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsOpenAccountPremierInvestment() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickOpenAccountHeaderButton()
+                .closeCookieBanner(SignupPage.class)
+                .clickPremierInvestmentOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Premier Investment account","Desktop");
+    }
+
+    @Test(groups = {"mobile-visual"})
+    public void testUIIndividualsOpenAccountPersonalDashboard() {
+        new IndividualsPage(getDriver())
+                .getMobileHeader()
+                .clickOpenAccountHeaderButton()
+                .closeCookieBanner(SignupPage.class)
+                .clickPersonalDashboardOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Personal Dashboard account","Desktop");
+    }
+
+    @Test(groups = {"mobile-visual"})
     public void testTP1() {
         new IndividualsPage(getDriver())
                 .gotoURL("https://empwrretiremtstg.prod.acquia-sites.com/empulsify/test-all-components-light-them")
@@ -109,54 +157,6 @@ public class UIVisualMobileTest extends BaseTest {
                 .clickHamburgerProductsSolutionsLink()
                 .clickHamburgerRolloverLink()
                 .takePercyFullPageScreenshot(getDriver(), "Individuals Rollover", "Mobile");
-    }
-
-    @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsOpenAccount() {
-        new IndividualsPage(getDriver())
-                .getMobileHeader()
-                .clickOpenAccountHeaderButton()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page", "Mobile");
-    }
-
-    @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsOpenAccountPersonalCash() {
-        new IndividualsPage(getDriver())
-                .getMobileHeader()
-                .clickOpenAccountHeaderButton()
-                .closeCookieBanner(SignupPage.class)
-                .clickPersonalCashOpenAccountButton()
-                .takePercyFullPageScreenshot(getDriver(), "Personal Cash account","Desktop");
-    }
-
-    @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsOpenAccountPremierIRA() {
-        new IndividualsPage(getDriver())
-                .getMobileHeader()
-                .clickOpenAccountHeaderButton()
-                .closeCookieBanner(SignupPage.class)
-                .clickPremierIRAOpenAccountButton()
-                .takePercyFullPageScreenshot(getDriver(), "Premier IRA account","Desktop");
-    }
-
-    @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsOpenAccountPremierInvestment() {
-        new IndividualsPage(getDriver())
-                .getMobileHeader()
-                .clickOpenAccountHeaderButton()
-                .closeCookieBanner(SignupPage.class)
-                .clickPremierInvestmentOpenAccountButton()
-                .takePercyFullPageScreenshot(getDriver(), "Premier Investment account","Desktop");
-    }
-
-    @Test(groups = {"mobile-visual"})
-    public void testUIIndividualsOpenAccountPersonalDashboard() {
-        new IndividualsPage(getDriver())
-                .getMobileHeader()
-                .clickOpenAccountHeaderButton()
-                .closeCookieBanner(SignupPage.class)
-                .clickPersonalDashboardOpenAccountButton()
-                .takePercyFullPageScreenshot(getDriver(), "Personal Dashboard account","Desktop");
     }
 
     @Test(groups = {"mobile-visual"})

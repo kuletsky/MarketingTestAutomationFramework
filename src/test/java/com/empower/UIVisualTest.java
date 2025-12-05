@@ -8,6 +8,54 @@ import org.testng.annotations.Test;
 public class UIVisualTest extends BaseTest {
 
     @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsOpenAccount() {
+        new IndividualsPage(getDriver())
+                .getDesktopHeader()
+                .clickOpenAccountHeaderButton()
+                .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsOpenAccountPersonalCash() {
+        new IndividualsPage(getDriver())
+                .getDesktopHeader()
+                .clickOpenAccountHeaderButton()
+                .closeCookieBanner(SignupPage.class)
+                .clickPersonalCashOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Personal Cash account","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsOpenAccountPremierIRA() {
+        new IndividualsPage(getDriver())
+                .getDesktopHeader()
+                .clickOpenAccountHeaderButton()
+//                .closeCookieBanner(SignupPage.class)
+                .clickPremierIRAOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Premier IRA account","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsOpenAccountPremierInvestment() {
+        new IndividualsPage(getDriver())
+                .getDesktopHeader()
+                .clickOpenAccountHeaderButton()
+//                .closeCookieBanner(SignupPage.class)
+                .clickPremierInvestmentOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Premier Investment account","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
+    public void testUIIndividualsOpenAccountPersonalDashboard() {
+        new IndividualsPage(getDriver())
+                .getDesktopHeader()
+                .clickOpenAccountHeaderButton()
+//                .closeCookieBanner(SignupPage.class)
+                .clickPersonalDashboardOpenAccountButton()
+                .takePercyFullPageScreenshot(getDriver(), "Personal Dashboard account","Desktop");
+    }
+
+    @Test(groups = {"desktop-visual"})
     public void testTP1() {
         new IndividualsPage(getDriver())
                 .gotoURL("https://empwrretiremtstg.prod.acquia-sites.com/empulsify/test-all-components-light-them")
@@ -123,54 +171,6 @@ public class UIVisualTest extends BaseTest {
     }
 
     @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsOpenAccount() {
-        new IndividualsPage(getDriver())
-                .getDesktopHeader()
-                .clickOpenAccountHeaderButton()
-                .takePercyFullPageScreenshot(getDriver(), "Individuals Open account page","Desktop");
-    }
-
-    @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsOpenAccountPersonalCash() {
-        new IndividualsPage(getDriver())
-                .getDesktopHeader()
-                .clickOpenAccountHeaderButton()
-                .closeCookieBanner(SignupPage.class)
-                .clickPersonalCashOpenAccountButton()
-                .takePercyFullPageScreenshot(getDriver(), "Personal Cash account","Desktop");
-    }
-
-    @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsOpenAccountPremierIRA() {
-        new IndividualsPage(getDriver())
-                .getDesktopHeader()
-                .clickOpenAccountHeaderButton()
-//                .closeCookieBanner(SignupPage.class)
-                .clickPremierIRAOpenAccountButton()
-                .takePercyFullPageScreenshot(getDriver(), "Premier IRA account","Desktop");
-    }
-
-    @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsOpenAccountPremierInvestment() {
-        new IndividualsPage(getDriver())
-                .getDesktopHeader()
-                .clickOpenAccountHeaderButton()
-//                .closeCookieBanner(SignupPage.class)
-                .clickPremierInvestmentOpenAccountButton()
-                .takePercyFullPageScreenshot(getDriver(), "Premier Investment account","Desktop");
-    }
-
-    @Test(groups = {"desktop-visual"})
-    public void testUIIndividualsOpenAccountPersonalDashboard() {
-        new IndividualsPage(getDriver())
-                .getDesktopHeader()
-                .clickOpenAccountHeaderButton()
-//                .closeCookieBanner(SignupPage.class)
-                .clickPersonalDashboardOpenAccountButton()
-                .takePercyFullPageScreenshot(getDriver(), "Personal Dashboard account","Desktop");
-    }
-
-    @Test(groups = {"desktop-visual"})
     public void testUIIndividualsCTAGetStarted() {
         new IndividualsPage(getDriver())
                 .closeCookieBanner()
@@ -218,7 +218,7 @@ public class UIVisualTest extends BaseTest {
                 .clickWhyEmpowerCybersecurityLink()
                 .takePercyFullPageScreenshot(getDriver(), "Cybersecurity page","Desktop");
     }
-/// //////////////////////////////////////////////////////////////////////////////////////////////////
+
     @Test(groups = {"desktop-visual"})
     public void testUIPlanSponsorsMarketsGovernment() {
         new IndividualsPage(getDriver())

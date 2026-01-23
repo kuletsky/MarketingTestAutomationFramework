@@ -57,7 +57,8 @@ public class IndividualsMobileTest extends BaseTest {
                 "High-yield cash account",
                 "Rollover",
                 "IRAs",
-                "Investment accounts"
+                "Investment accounts",
+                "Tax filing"
         );
         List<String> actualOpenMenuLinks = new IndividualsPage(getDriver())
                 .getMobileHeader()

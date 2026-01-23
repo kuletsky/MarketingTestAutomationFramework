@@ -107,7 +107,8 @@ public class IndividualsTest extends BaseTest {
                 "High-yield cash account",
                 "Rollover",
                 "IRAs",
-                "Investment accounts"
+                "Investment accounts",
+                "Tax filing"
         );
 
         IndividualsPage page = new IndividualsPage(getDriver())

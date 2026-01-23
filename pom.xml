@@ -11,9 +11,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 <!--        <maven.compiler.source>17</maven.compiler.source>-->
 <!--        <maven.compiler.target>17</maven.compiler.target>-->
-        <testng.version>7.11.0</testng.version>
+        <testng.version>7.12.0</testng.version>
         <surefire.version>3.5.4</surefire.version>
-        <selenium.version>4.38.0</selenium.version>
+        <selenium.version>4.40.0</selenium.version>
         <json-simple.version>4.0.1</json-simple.version>
 
         <suiteXmlFile>config/desktop-test.testng.xml</suiteXmlFile>
@@ -83,7 +83,7 @@
                     <forkCount>1</forkCount>
                     <reuseForks>false</reuseForks>
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                    <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>
+<!--                    <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>-->
 
                     <argLine>
                         -javaagent:${com.browserstack:browserstack-java-sdk:jar}
@@ -130,7 +130,7 @@
                             <forkCount>1</forkCount>
                             <reuseForks>false</reuseForks>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>
+<!--                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>-->
 
                             <argLine>
                                 -javaagent:${com.browserstack:browserstack-java-sdk:jar}
@@ -159,7 +159,7 @@
                             <forkCount>1</forkCount>
                             <reuseForks>false</reuseForks>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>
+<!--                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>-->
 
                             <argLine>
                                 -javaagent:${com.browserstack:browserstack-java-sdk:jar}
@@ -188,7 +188,7 @@
                             <forkCount>1</forkCount>
                             <reuseForks>false</reuseForks>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>
+<!--                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>-->
 
                             <argLine>
                                 -javaagent:${com.browserstack:browserstack-java-sdk:jar}
@@ -217,7 +217,7 @@
                             <forkCount>1</forkCount>
                             <reuseForks>false</reuseForks>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>
+<!--                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>-->
 
                             <argLine>
                                 -javaagent:${com.browserstack:browserstack-java-sdk:jar}
@@ -246,7 +246,7 @@
                             <forkCount>1</forkCount>
                             <reuseForks>false</reuseForks>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>
+<!--                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>-->
 
                             <argLine>
                                 -javaagent:${com.browserstack:browserstack-java-sdk:jar}
@@ -275,7 +275,7 @@
                             <forkCount>1</forkCount>
                             <reuseForks>false</reuseForks>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>
+<!--                            <systemOutOrErrStripAnsi>true</systemOutOrErrStripAnsi>-->
 
                             <argLine>
                                 -javaagent:${com.browserstack:browserstack-java-sdk:jar}

@@ -36,7 +36,7 @@ public class IndividualsMobileTest extends BaseTest {
     @Test(groups = {"mobile", "tablet"})
     public void testHamburgerPrimaryMenuDisplayed() {
         List<String> expectedPrimaryMenu = Arrays.asList(
-                "Products & Solutions",
+                "Products & Services",
                 "Tools",
                 "Learn",
                 "Why Empower"

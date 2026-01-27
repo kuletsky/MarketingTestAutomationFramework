@@ -57,7 +57,7 @@ public class IndividualsTest extends BaseTest {
     @Test(groups = {"desktop"})
     public void testPrimaryMenuDesktopDisplayed() {
         List<String> expectedPrimaryMenu = Arrays.asList(
-                "Products & Solutions",
+                "Products & Services",
                 "Tools",
                 "Learn",
                 "Why Empower"

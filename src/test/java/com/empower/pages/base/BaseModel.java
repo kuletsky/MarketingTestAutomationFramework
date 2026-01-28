@@ -45,6 +45,10 @@ public abstract class BaseModel {
         return getWait10().until(ExpectedConditions.visibilityOf(element));
     }
 
+    protected WebElement wait20UntilVisible(WebElement element) {
+        return getWait20().until(ExpectedConditions.visibilityOf(element));
+    }
+
     protected WebElement ByWait10UntilClickable(By element) {
         return getWait10().until(ExpectedConditions.elementToBeClickable(element));
     }

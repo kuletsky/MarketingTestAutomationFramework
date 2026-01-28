@@ -120,7 +120,7 @@ public class SignupPage extends BasePage {
 
 
     public String getHeadingText() {
-        return wait10UntilVisible(headingText).getText().trim();
+        return wait20UntilVisible(headingText).getText().trim();
     }
 
     public SignupPage clickPersonalCashOpenAccountButton() {

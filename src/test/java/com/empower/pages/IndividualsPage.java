@@ -110,7 +110,7 @@ public class IndividualsPage extends BasePage {
     @FindBy(css = "nav[aria-label='Why Empower Secondary'] [aria-label='Cybersecurity']")
     private WebElement whyEmpowerCybersecurityLink;
 
-    @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='High-yield cash account']")
+    @FindBy(css = "nav[aria-label='Products & Services Secondary'] [aria-label='High-yield cash account']")
     private WebElement cashAccountLink;
 
     @FindBy(css = "#dropdown-mobile-0 [aria-label='High-yield cash account']")

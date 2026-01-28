@@ -65,7 +65,7 @@ public class IndividualsPage extends BasePage {
     @FindBy(css = "[aria-label='Products & Solutions']")
     private WebElement productsSolutionsMenu;
 
-    @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='View All']")
+    @FindBy(css = "nav[aria-label='Products & Services Secondary'] [aria-label='View All']")
     private WebElement viewAllLinkPS;
 
     @FindBy(css = "#dropdown-mobile-0 [aria-label='View All']")
@@ -116,7 +116,7 @@ public class IndividualsPage extends BasePage {
     @FindBy(css = "#dropdown-mobile-0 [aria-label='High-yield cash account']")
     private WebElement hamburgerCashAccountLink;
 
-    @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='Rollover']")
+    @FindBy(css = "nav[aria-label='Products & Services Secondary'] [aria-label='Rollover']")
     private WebElement rolloverLink;
 
     @FindBy(css = "#dropdown-desktop-0-1 [aria-label='Private Client']")
@@ -125,10 +125,10 @@ public class IndividualsPage extends BasePage {
     @FindBy(css = "#dropdown-desktop-0-1 [aria-label='Personal Strategy']")
     private WebElement personalStrategyLink;
 
-    @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='IRAs']")
+    @FindBy(css = "nav[aria-label='Products & Services Secondary'] [aria-label='IRAs']")
     private WebElement iraLink;
 
-    @FindBy(css = "nav[aria-label='Products & Solutions Secondary'] [aria-label='Investment accounts']")
+    @FindBy(css = "nav[aria-label='Products & Services Secondary'] [aria-label='Investment accounts']")
     private WebElement investmentAccountLink;
 
     @FindBy(css = "[aria-controls='dropdown-desktop-0-1']")
@@ -146,7 +146,7 @@ public class IndividualsPage extends BasePage {
     @FindBy(css = "#solutions-dropdown li.relative > a, #solutions-dropdown li.relative > button")
     private List<WebElement> productsSolutionsLinks;
 
-    @FindBy(xpath = "//div[@class='opacity-100 col-start-1 row-start-1 content-center transition-opacity'] //p[text()='Products & solutions']")
+    @FindBy(xpath = "//div[@class='opacity-100 col-start-1 row-start-1 content-center transition-opacity'] //p[text()='Products & services']")
     private WebElement headingPSMenu;
 
     @FindBy(css = "[aria-label='Tools']")

@@ -100,7 +100,7 @@ public class IndividualsTest extends BaseTest {
     }
 
     @Test(groups = {"desktop"})
-    public void testOpenMenuProductSolutionsDisplayed() {
+    public void testOpenMenuProductServicesDisplayed() {
         List<String> expectedOpenMenu = Arrays.asList(
                 "View All",
                 "Wealth Management",
@@ -115,7 +115,7 @@ public class IndividualsTest extends BaseTest {
                 .clickProductsSolutionsOpenMenu();
 
         Assert.assertEquals(page.getProductsSolutionsLinks(), expectedOpenMenu);
-        Assert.assertEquals(page.getHeadingProductsSolutionsMenu(), "Products & solutions");
+        Assert.assertEquals(page.getHeadingProductsSolutionsMenu(), "Products & services");
     }
 
     @Test(groups = {"desktop"})

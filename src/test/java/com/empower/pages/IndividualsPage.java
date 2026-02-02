@@ -119,10 +119,10 @@ public class IndividualsPage extends BasePage {
     @FindBy(css = "nav[aria-label='Products & Services Secondary'] [aria-label='Rollover']")
     private WebElement rolloverLink;
 
-    @FindBy(css = "#dropdown-desktop-0-1 [aria-label='Private Client']")
+    @FindBy(css = "#dropdown-desktop-0-0 [aria-label='Private Client']")
     private WebElement privetClientLink;
 
-    @FindBy(css = "#dropdown-desktop-0-1 [aria-label='Personal Strategy']")
+    @FindBy(css = "#dropdown-desktop-0-0 [aria-label='Personal Strategy']")
     private WebElement personalStrategyLink;
 
     @FindBy(css = "nav[aria-label='Products & Services Secondary'] [aria-label='IRAs']")
@@ -131,7 +131,7 @@ public class IndividualsPage extends BasePage {
     @FindBy(css = "nav[aria-label='Products & Services Secondary'] [aria-label='Investment accounts']")
     private WebElement investmentAccountLink;
 
-    @FindBy(css = "[aria-controls='dropdown-desktop-0-1']")
+    @FindBy(css = "[aria-controls='dropdown-desktop-0-0']")
     private WebElement wealthManagementLink;
 
     @FindBy(css = "#dropdown-mobile-0 [aria-label='Rollover']")
@@ -188,7 +188,7 @@ public class IndividualsPage extends BasePage {
     @FindBy(xpath = "//div[@data-drupal-paragraph-name='animated_content_block_item']//span[text()='Schedule a call']")
     private WebElement CTAButtonScheduleCall2;
 
-    @FindBy(xpath = "//div[@data-drupal-paragraph-name=\"animated_content_block_item\"]//span[text()=\"Connect my accounts\"]")
+    @FindBy(xpath = "//div[@data-drupal-paragraph-name='animated_content_block_item']//span[text()='Connect my accounts']")
     private WebElement CTAButtonConnectMyAccounts1;
 
     @FindBy(xpath = "//span[text()='Take me there']")

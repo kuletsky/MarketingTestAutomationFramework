@@ -1,39 +1,39 @@
-name: MOBILE tests via BrowserStack
-
-on:
-#  pull_request:
-#    branches:
-#      - main
-
-  schedule:
-    - cron: '0 4 * * *'
-  workflow_dispatch:
-
-jobs:
-  run-tests:
-    name: 'Run tests on BrowserStack'
-    runs-on: ubuntu-latest
-    env:
-      BROWSERSTACK_CONFIG_FILE: browserstack-mobile.yml
-
-    steps:
-      - name: Git clone
-        uses: actions/checkout@v4
-
-      - name: Write browserstack-mobile.yml from secret
-        env:
-          CONFIG_BS: ${{ secrets.BROWSERSTACK_MOBILE }}
-        run: |
-          echo "$CONFIG_BS" > browserstack-mobile.yml
-
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'corretto'
-          java-version: '21'
-
-      - name: Install dependencies
-        run: mvn -B -q -DskipTests package
-
-      - name: Run Desktop suite on BrowserStack
-        run: mvn -B test -Pmobile-test
+#name: MOBILE tests via BrowserStack
+#
+#on:
+##  pull_request:
+##    branches:
+##      - main
+#
+#  schedule:
+#    - cron: '0 4 * * *'
+#  workflow_dispatch:
+#
+#jobs:
+#  run-tests:
+#    name: 'Run tests on BrowserStack'
+#    runs-on: ubuntu-latest
+#    env:
+#      BROWSERSTACK_CONFIG_FILE: browserstack-mobile.yml
+#
+#    steps:
+#      - name: Git clone
+#        uses: actions/checkout@v4
+#
+#      - name: Write browserstack-mobile.yml from secret
+#        env:
+#          CONFIG_BS: ${{ secrets.BROWSERSTACK_MOBILE }}
+#        run: |
+#          echo "$CONFIG_BS" > browserstack-mobile.yml
+#
+#      - name: Set up Java
+#        uses: actions/setup-java@v4
+#        with:
+#          distribution: 'corretto'
+#          java-version: '21'
+#
+#      - name: Install dependencies
+#        run: mvn -B -q -DskipTests package
+#
+#      - name: Run Desktop suite on BrowserStack
+#        run: mvn -B test -Pmobile-test

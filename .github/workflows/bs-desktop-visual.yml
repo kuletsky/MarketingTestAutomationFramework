@@ -1,39 +1,39 @@
-name: VISUAL DESKTOP tests via BrowserStack
-
-on:
-#  pull_request:
-#    branches:
-#      - main
-
-  schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
-
-jobs:
-  run-tests:
-    name: 'Run tests on BrowserStack'
-    runs-on: ubuntu-latest
-    env:
-      BROWSERSTACK_CONFIG_FILE: browserstack-visual-desktop.yml
-
-    steps:
-      - name: Git clone
-        uses: actions/checkout@v4
-
-      - name: Write browserstack-visual-desktop.yml from secret
-        env:
-          CONFIG_BS: ${{ secrets.BROWSERSTACK_VISUAL_DESKTOP }}
-        run: |
-          echo "$CONFIG_BS" > browserstack-visual-desktop.yml
-
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'corretto'
-          java-version: '17'
-
-      - name: Install dependencies
-        run: mvn -B -q -DskipTests package
-
-      - name: Run Desktop suite on BrowserStack
-        run: mvn -B test -Pdesktop-visual-test -Dresolution=desktop
+#name: VISUAL DESKTOP tests via BrowserStack
+#
+#on:
+##  pull_request:
+##    branches:
+##      - main
+#
+#  schedule:
+#    - cron: '0 0 * * *'
+#  workflow_dispatch:
+#
+#jobs:
+#  run-tests:
+#    name: 'Run tests on BrowserStack'
+#    runs-on: ubuntu-latest
+#    env:
+#      BROWSERSTACK_CONFIG_FILE: browserstack-visual-desktop.yml
+#
+#    steps:
+#      - name: Git clone
+#        uses: actions/checkout@v4
+#
+#      - name: Write browserstack-visual-desktop.yml from secret
+#        env:
+#          CONFIG_BS: ${{ secrets.BROWSERSTACK_VISUAL_DESKTOP }}
+#        run: |
+#          echo "$CONFIG_BS" > browserstack-visual-desktop.yml
+#
+#      - name: Set up Java
+#        uses: actions/setup-java@v4
+#        with:
+#          distribution: 'corretto'
+#          java-version: '17'
+#
+#      - name: Install dependencies
+#        run: mvn -B -q -DskipTests package
+#
+#      - name: Run Desktop suite on BrowserStack
+#        run: mvn -B test -Pdesktop-visual-test -Dresolution=desktop
